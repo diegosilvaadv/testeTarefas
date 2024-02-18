@@ -45,7 +45,7 @@ SET
     dataTarefa = ${dataTarefa},
     hora = ${hora},
     ePendente = ${ePendente}
-WHERE ID = ${id};
+WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -62,7 +62,7 @@ Future performEditarCategoriaTarefas(
 UPDATE CategoriaTarefas
 SET 
     nomeCategoria = '${nomeCategoria}',
-WHERE ID = ${id};
+WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -76,7 +76,7 @@ Future performDeletarCategoriaTarefas(
 }) {
   final query = '''
 DELETE FROM CategoriaTarefas
- WHERE ID = ${id};
+ WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -90,7 +90,7 @@ Future performDeletarListaTarefas(
 }) {
   final query = '''
 DELETE FROM ListaTarefas
- WHERE ID = ${id};
+ WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -107,7 +107,7 @@ Future performConcluirListaTarefas(
 UPDATE ListaTarefas
 SET 
     ePendente = '${ePendente}',
-WHERE ID = ${id};
+WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -122,7 +122,7 @@ Future performSelectCategoriaTarefas(
 }) {
   final query = '''
 INSERT INTO CategoriaTarefas (selectCategoria) VALUES (${selectCategoria})
-WHERE ID = ${id};
+WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
