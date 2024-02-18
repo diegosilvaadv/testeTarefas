@@ -15,7 +15,7 @@ export 'acoes_tarefas_concluidas_model.dart';
 class AcoesTarefasConcluidasWidget extends StatefulWidget {
   const AcoesTarefasConcluidasWidget({
     super.key,
-    required this.tarefasRef,
+    this.tarefasRef,
   });
 
   final GetListaTarefasRow? tarefasRef;

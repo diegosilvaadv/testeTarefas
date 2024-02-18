@@ -808,7 +808,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                             valueOrDefault<
                                                                 String>(
                                                               dateTimeFormat(
-                                                                'd/M/y',
+                                                                'dd/MM/yyyy | kk:mm',
                                                                 _model
                                                                     .datePicked,
                                                                 locale: FFLocalizations.of(

@@ -1393,20 +1393,11 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                 child: Padding(
                                                   padding: EdgeInsets.all(10.0),
                                                   child: FutureBuilder<
-                                                      List<GetListaTarefasRow>>(
+                                                      List<
+                                                          GetListaTarefasCopyRow>>(
                                                     future: SQLiteManager
                                                         .instance
-                                                        .getListaTarefas(
-                                                      categoriaID:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .categoriaSelecionada
-                                                            ?.toString(),
-                                                        '1',
-                                                      ),
-                                                      ePendente: 1,
-                                                    ),
+                                                        .getListaTarefasCopy(),
                                                     builder:
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
@@ -1428,7 +1419,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                           ),
                                                         );
                                                       }
-                                                      final listViewConcluidasGetListaTarefasRowList =
+                                                      final listViewConcluidasGetListaTarefasCopyRowList =
                                                           snapshot.data!;
                                                       return ReorderableListView
                                                           .builder(
@@ -1437,12 +1428,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            listViewConcluidasGetListaTarefasRowList
+                                                            listViewConcluidasGetListaTarefasCopyRowList
                                                                 .length,
                                                         itemBuilder: (context,
                                                             listViewConcluidasIndex) {
-                                                          final listViewConcluidasGetListaTarefasRow =
-                                                              listViewConcluidasGetListaTarefasRowList[
+                                                          final listViewConcluidasGetListaTarefasCopyRow =
+                                                              listViewConcluidasGetListaTarefasCopyRowList[
                                                                   listViewConcluidasIndex];
                                                           return Container(
                                                             key: ValueKey(
@@ -1521,7 +1512,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                                                                                   child: AutoSizeText(
                                                                                     valueOrDefault<String>(
-                                                                                      listViewConcluidasGetListaTarefasRow.nometarefa,
+                                                                                      listViewConcluidasGetListaTarefasCopyRow.nometarefa,
                                                                                       '--',
                                                                                     ).maybeHandleOverflow(
                                                                                       maxChars: 145,
@@ -1586,7 +1577,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'dd/MM/yy',
-                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasCopyRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',
@@ -1623,7 +1614,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'kk:mm',
-                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasCopyRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',
@@ -1659,9 +1650,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: AcoesTarefasConcluidasWidget(
-                                                                                          tarefasRef: listViewConcluidasGetListaTarefasRow,
-                                                                                        ),
+                                                                                        child: AcoesTarefasConcluidasWidget(),
                                                                                       ),
                                                                                     );
                                                                                   },

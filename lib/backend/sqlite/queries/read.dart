@@ -47,7 +47,6 @@ class GetListaTarefasRow extends SqliteRow {
 
   String get nometarefa => data['nometarefa'] as String;
   int get dataTarefa => data['dataTarefa'] as int;
-  int get hora => data['hora'] as int;
   int get ePendente => data['ePendente'] as int;
   int get id => data['id'] as int;
   int? get categoriaID => data['categoriaID'] as int?;
@@ -118,3 +117,25 @@ class GetCategoriaColorRow extends SqliteRow {
 }
 
 /// END GETCATEGORIACOLOR
+
+/// BEGIN GETLISTATAREFASCOPY
+Future<List<GetListaTarefasCopyRow>> performGetListaTarefasCopy(
+  Database database,
+) {
+  final query = '''
+Select * from ListaTarefas
+''';
+  return _readQuery(database, query, (d) => GetListaTarefasCopyRow(d));
+}
+
+class GetListaTarefasCopyRow extends SqliteRow {
+  GetListaTarefasCopyRow(Map<String, dynamic> data) : super(data);
+
+  String get nometarefa => data['nometarefa'] as String;
+  int get dataTarefa => data['dataTarefa'] as int;
+  int get ePendente => data['ePendente'] as int;
+  int get id => data['id'] as int;
+  int? get categoriaID => data['categoriaID'] as int?;
+}
+
+/// END GETLISTATAREFASCOPY

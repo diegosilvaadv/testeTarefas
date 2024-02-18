@@ -63,6 +63,11 @@ class SQLiteManager {
         selectCategoria: selectCategoria,
       );
 
+  Future<List<GetListaTarefasCopyRow>> getListaTarefasCopy() =>
+      performGetListaTarefasCopy(
+        _database,
+      );
+
   /// END READ QUERY CALLS
 
   /// START UPDATE QUERY CALLS
