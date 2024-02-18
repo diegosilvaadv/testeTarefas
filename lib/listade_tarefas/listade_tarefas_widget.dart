@@ -16,7 +16,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 import 'listade_tarefas_model.dart';
 export 'listade_tarefas_model.dart';
 
@@ -260,7 +259,17 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             .fromSTEB(10.0,
                                                                 15.0, 0.0, 0.0),
                                                     child: Text(
-                                                      'Escolha uma categoria abaixo',
+                                                      valueOrDefault<String>(
+                                                        formatNumber(
+                                                          _model
+                                                              .categoriaSelecionada,
+                                                          formatType:
+                                                              FormatType.custom,
+                                                          format: '',
+                                                          locale: '',
+                                                        ),
+                                                        '0000',
+                                                      ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -688,9 +697,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                     future: SQLiteManager
                                                         .instance
                                                         .getListaTarefas(
-                                                      categoriaID: FFAppState()
+                                                      categoria: FFAppState()
                                                           .selectCategoria,
-                                                      ePendente: 0,
                                                     ),
                                                     builder:
                                                         (context, snapshot) {
@@ -1327,42 +1335,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                   Duration(
                                                                       milliseconds:
                                                                           100),
-                                                                  () async {
-                                                                    _model.listaTarafaPend =
-                                                                        await SQLiteManager
-                                                                            .instance
-                                                                            .getListaTarefas(
-                                                                      categoriaID:
-                                                                          _model
-                                                                              .categoriaSelecionada!,
-                                                                      ePendente:
-                                                                          0,
-                                                                    );
-                                                                    safeSetState(
-                                                                        () {
-                                                                      _model
-                                                                          .simpleSearchResults = TextSearch(_model
-                                                                              .listaTarafaPend!
-                                                                              .map((e) => e
-                                                                                  .nometarefa)
-                                                                              .toList()
-                                                                              .map((str) => TextSearchItem.fromTerms(str, [
-                                                                                    str
-                                                                                  ]))
-                                                                              .toList())
-                                                                          .search(_model
-                                                                              .inputBuscaTarefaController
-                                                                              .text)
-                                                                          .map((r) =>
-                                                                              r.object)
-                                                                          .take(25)
-                                                                          .toList();
-                                                                      ;
-                                                                    });
-
-                                                                    setState(
-                                                                        () {});
-                                                                  },
+                                                                  () => setState(
+                                                                      () {}),
                                                                 ),
                                                                 obscureText:
                                                                     false,

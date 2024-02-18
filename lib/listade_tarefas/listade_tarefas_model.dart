@@ -17,7 +17,6 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:text_search/text_search.dart';
 
 class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   ///  Local state fields for this page.
@@ -45,9 +44,6 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   TextEditingController? inputBuscaTarefaConcluidaController;
   String? Function(BuildContext, String?)?
       inputBuscaTarefaConcluidaControllerValidator;
-  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in InputBuscaTarefaConcluida widget.
-  List<GetListaTarefasRow>? listaTarafaPend;
-  List<String> simpleSearchResults = [];
   // Model for NavBarListadeTarefas component.
   late NavBarListadeTarefasModel navBarListadeTarefasModel;
 
