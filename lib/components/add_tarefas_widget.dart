@@ -1063,41 +1063,35 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
-                                                  onPressed:
-                                                      (_model.categoriaSelecionado ==
-                                                              null)
-                                                          ? null
-                                                          : () async {
-                                                              if (_model.formKey1
-                                                                          .currentState ==
-                                                                      null ||
-                                                                  !_model
-                                                                      .formKey1
-                                                                      .currentState!
-                                                                      .validate()) {
-                                                                return;
-                                                              }
-                                                              await SQLiteManager
-                                                                  .instance
-                                                                  .addListaTarefas(
-                                                                nometarefa: _model
-                                                                    .inputTarefaController
-                                                                    .text,
-                                                                dataTarefa: functions
-                                                                    .converteDataToInteger(
-                                                                        _model
-                                                                            .datePicked!),
-                                                                categoriaID: _model
-                                                                    .categoriaSelecionado!
-                                                                    .toString(),
-                                                                hora: 0,
-                                                              );
-                                                              setState(() {
-                                                                _model
-                                                                    .inputTarefaController
-                                                                    ?.clear();
-                                                              });
-                                                            },
+                                                  onPressed: () async {
+                                                    if (_model.formKey1
+                                                                .currentState ==
+                                                            null ||
+                                                        !_model.formKey1
+                                                            .currentState!
+                                                            .validate()) {
+                                                      return;
+                                                    }
+                                                    await SQLiteManager.instance
+                                                        .addListaTarefas(
+                                                      nometarefa: _model
+                                                          .inputTarefaController
+                                                          .text,
+                                                      dataTarefa: functions
+                                                          .converteDataToInteger(
+                                                              _model
+                                                                  .datePicked!),
+                                                      categoriaID: _model
+                                                          .categoriaSelecionado!
+                                                          .toString(),
+                                                      hora: 0,
+                                                    );
+                                                    setState(() {
+                                                      _model
+                                                          .inputTarefaController
+                                                          ?.clear();
+                                                    });
+                                                  },
                                                   text: 'Adicionar',
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
@@ -1128,8 +1122,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
-                                                    disabledColor:
-                                                        Color(0x70B4F7E9),
                                                   ),
                                                 ),
                                               ),
