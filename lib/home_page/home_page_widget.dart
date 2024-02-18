@@ -257,11 +257,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.network(
-                                      valueOrDefault<String>(
-                                        functions.converterBase64PNG(
-                                            FFAppState().base64lmage),
-                                        'https://cvws.icloud-content.com/B/ATHi7TGdbluMEFyfrDMxpku9cQA5AWOezRPuSjZL-RfuUgD-BBDZpMQy/Designer+-+Transparente.png?o=AkSi3WKksTQLCHM3djL2c87NAndxi9wRXCwoXq1jFrTd&v=1&x=3&a=CAogsQ7ZF_lLZTsEOUKnCsSK1J_edeMZY9rT5rUMahtDRBMSbxCwvJXsyjEYsJnx7coxIgEAUgS9cQA5WgTZpMQyaicRclwy68iNuoXJUMhihNDda5V6wZwFpWzcZixH71MU4x4EvfYrzdhyJ-_OnOFpt4h3pbBL_SDnTJY-C4XSTixcGs9hLgsQmPUQ8Lie0PY4rA&e=1703721847&fl=&r=92b231ac-031e-47fa-a1c8-b6e015b9e156-1&k=dlfp1nswSQkCffBivEj_Yw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=_jolQ8w1umeFokjT5ETV_0KS3I8&cd=i',
-                                      ),
+                                      'https://cvws.icloud-content.com/B/ATHi7TGdbluMEFyfrDMxpku9cQA5AWOezRPuSjZL-RfuUgD-BBDZpMQy/Designer+-+Transparente.png?o=AkSi3WKksTQLCHM3djL2c87NAndxi9wRXCwoXq1jFrTd&v=1&x=3&a=CAogsQ7ZF_lLZTsEOUKnCsSK1J_edeMZY9rT5rUMahtDRBMSbxCwvJXsyjEYsJnx7coxIgEAUgS9cQA5WgTZpMQyaicRclwy68iNuoXJUMhihNDda5V6wZwFpWzcZixH71MU4x4EvfYrzdhyJ-_OnOFpt4h3pbBL_SDnTJY-C4XSTixcGs9hLgsQmPUQ8Lie0PY4rA&e=1703721847&fl=&r=92b231ac-031e-47fa-a1c8-b6e015b9e156-1&k=dlfp1nswSQkCffBivEj_Yw&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=_jolQ8w1umeFokjT5ETV_0KS3I8&cd=i',
                                       fit: BoxFit.cover,
                                     ),
                                   ),
@@ -301,7 +297,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          FFAppState().NomeUser,
+                                          'Hello World',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

@@ -2,7 +2,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -32,8 +31,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
     super.initState();
     _model = createModel(context, () => PerfilUserModel());
 
-    _model.inpuNomePerfilController ??=
-        TextEditingController(text: FFAppState().NomeUser);
+    _model.inpuNomePerfilController ??= TextEditingController();
     _model.inpuNomePerfilFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -160,7 +158,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                FFAppState().NomeUser,
+                                                'Hello World',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -206,11 +204,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                             image: DecorationImage(
                                               fit: BoxFit.cover,
                                               image: Image.network(
-                                                valueOrDefault<String>(
-                                                  functions.converterBase64PNG(
-                                                      FFAppState().base64lmage),
-                                                  'https://cvws.icloud-content.com/B/ATHi7TGdbluMEFyfrDMxpku9cQA5AfAkQE5w39ByiVVyocLqr3icZGeZ/Designer+-+Transparente.png?o=AtFGZi4fvl2iWB9O1DJIcUWe-2iAM__r74RA3oMp1UO1&v=1&x=3&a=CAogBlGQeTHWnxsERzi0G0CRdMAFabcSQOLfYrxsr_h8J2sSbxCCluinzTEYgvPDqc0xIgEAUgS9cQA5WgScZGeZaicdHqJluvKWQlt5lkuacYwkAmKsIWeltELk5BM7QS4_yWOt9mEyhylyJ_SnQL2JpRfwfYudHZHeerni3qkX3Gj0xJ7F7NMenoHRFV0MhgCvGg&e=1704383805&fl=&r=1bb538db-d41a-4623-b4b9-b68b22a6ac6b-1&k=KETZeGsOB6uqrhcXckokPQ&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=r9gyC_VHprAbfBApzD_y2BBbYCo&cd=i',
-                                                ),
+                                                'https://cvws.icloud-content.com/B/AZEtcKHc2Hew1Sx_zlVFkOiKW5ooAZuhw7SROKK9FxD7eaGwgbirMMRZ/Designer++PNG+%281%29.png?o=AosHDppkJcu4Y7PTDztZeDaqqS38abdIKexyc1WYbJuC&v=1&x=3&a=CAogj4qYHsP8PdUNKTuVNTAElLJa2jClO7NKKnQ8Nwmv7M8SbxC-5qu1yjEYvsOHt8oxIgEAUgSKW5ooWgSrMMRZaieH5qs8HcbZcRXzgtaNMOvLPaiX4cxVh5Mwxzl6Bcwj7p_6Rvz0VHdyJ6MmqeX-ZakSMfx_tQWbGvF_wtqxC-1QYv9oGQ9QVouKkV-V3vBL1g&e=1703606870&fl=&r=ac56b91e-2a6c-4aaf-bb7f-8436e1ebf37b-1&k=SbRun5k-Ejq0aXA0X6GItA&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=VS55odC1T_yflbaEOA2S3j_4MhM&cd=i',
                                               ).image,
                                             ),
                                             boxShadow: [
@@ -256,10 +250,6 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        setState(() {
-                                          FFAppState().PopUpTarefas = true;
-                                        });
-
                                         context.pushNamed('HomePage');
                                       },
                                       text: 'Adicionar',
@@ -417,11 +407,6 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
-                                              setState(() {
-                                                FFAppState().NomeUser = _model
-                                                    .inpuNomePerfilController
-                                                    .text;
-                                              });
                                               setState(() {
                                                 _model.inpuNomePerfilController
                                                     ?.clear();

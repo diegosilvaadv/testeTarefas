@@ -339,7 +339,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     .transparent,
                                                             onTap: () async {
                                                               setState(() {
-                                                                _model.categoriaSelecionada =
+                                                                FFAppState()
+                                                                        .selectCategoria =
                                                                     categoriasPendentesGetCategoriasRow
                                                                         .id;
                                                               });
@@ -367,6 +368,24 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     1,
                                                                 id: categoriasPendentesGetCategoriasRow
                                                                     .id,
+                                                              );
+
+                                                              context.goNamed(
+                                                                'ListadeTarefas',
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
                                                               );
 
                                                               setState(() {});
@@ -669,8 +688,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                     future: SQLiteManager
                                                         .instance
                                                         .getListaTarefas(
-                                                      categoriaID: _model
-                                                          .categoriaSelecionada!
+                                                      categoriaID: FFAppState()
+                                                          .selectCategoria
                                                           .toString(),
                                                       ePendente: 0,
                                                     ),
@@ -1510,22 +1529,33 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               Expanded(
                                                                                 child: Padding(
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
-                                                                                  child: AutoSizeText(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewConcluidasGetListaTarefasCopyRow.nometarefa,
-                                                                                      '--',
-                                                                                    ).maybeHandleOverflow(
-                                                                                      maxChars: 145,
-                                                                                      replacement: '…',
+                                                                                  child: InkWell(
+                                                                                    splashColor: Colors.transparent,
+                                                                                    focusColor: Colors.transparent,
+                                                                                    hoverColor: Colors.transparent,
+                                                                                    highlightColor: Colors.transparent,
+                                                                                    onTap: () async {
+                                                                                      await SQLiteManager.instance.deletarListaTarefas(
+                                                                                        id: listViewConcluidasGetListaTarefasCopyRow.id,
+                                                                                      );
+                                                                                    },
+                                                                                    child: AutoSizeText(
+                                                                                      valueOrDefault<String>(
+                                                                                        listViewConcluidasGetListaTarefasCopyRow.nometarefa,
+                                                                                        '--',
+                                                                                      ).maybeHandleOverflow(
+                                                                                        maxChars: 145,
+                                                                                        replacement: '…',
+                                                                                      ),
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                            fontFamily: 'Poppins',
+                                                                                            color: Color(0xFF0D0705),
+                                                                                            fontSize: 14.0,
+                                                                                            fontWeight: FontWeight.bold,
+                                                                                          ),
+                                                                                      minFontSize: 12.0,
                                                                                     ),
-                                                                                    textAlign: TextAlign.start,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
-                                                                                          color: Color(0xFF0D0705),
-                                                                                          fontSize: 14.0,
-                                                                                          fontWeight: FontWeight.bold,
-                                                                                        ),
-                                                                                    minFontSize: 12.0,
                                                                                   ),
                                                                                 ),
                                                                               ),

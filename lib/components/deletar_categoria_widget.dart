@@ -2,6 +2,7 @@ import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/instant_timer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -89,8 +90,34 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
                   await SQLiteManager.instance.deletarCategoriaTarefas(
                     id: widget.deletGategoria!,
                   );
-                  Navigator.pop(context);
-                  Navigator.pop(context);
+                  _model.categorias =
+                      await SQLiteManager.instance.getListaTarefas(
+                    categoriaID: widget.deletGategoria!.toString(),
+                    ePendente: 0,
+                  );
+                  setState(() {
+                    FFAppState().contador = -1;
+                  });
+                  _model.instantTimer10 = InstantTimer.periodic(
+                    duration: Duration(milliseconds: 1000),
+                    callback: (timer) async {
+                      while (
+                          FFAppState().contador <= _model.categorias!.length) {
+                        setState(() {
+                          FFAppState().contador = FFAppState().contador + 1;
+                        });
+                        await SQLiteManager.instance.deletarListaTarefas(
+                          id: _model.categorias![FFAppState().contador].id,
+                        );
+                      }
+                      _model.instantTimer10?.cancel();
+                      Navigator.pop(context);
+                      Navigator.pop(context);
+                    },
+                    startImmediately: true,
+                  );
+
+                  setState(() {});
                 },
                 text: 'Deletar',
                 icon: Icon(

@@ -8,7 +8,6 @@ import 'package:timeago/timeago.dart' as timeago;
 import 'lat_lng.dart';
 import 'place.dart';
 import 'uploaded_file.dart';
-import '/backend/schema/structs/index.dart';
 import '/backend/sqlite/sqlite_manager.dart';
 
 String? saudacao() {
@@ -22,57 +21,12 @@ String? saudacao() {
   }
 }
 
-List<TarefasStruct> somar(
-  List<TarefasStruct>? listaA,
-  List<TarefasStruct>? listaB,
-) {
-  List<TarefasStruct> listaC = [];
-
-  listaC.addAll(listaA!);
-  listaC.addAll(listaB!);
-
-  return listaC;
-}
-
 String? converterBase64PNG(String? imageBase64) {
   // converta imagem base 64 em png
   if (imageBase64 == null) {
     return null;
   }
   return 'data:image/png;base64,' + imageBase64;
-}
-
-List<TarefasStruct> stringParaListaTarefaCategoria(
-  String texto,
-  String idCategoria,
-) {
-  List<String> itens = texto.split(',').map((item) => item.trim()).toList();
-
-  // Cria a lista de objetos TarefaCategoria
-  List<TarefasStruct> listaTarefaCategoria = [];
-  for (String item in itens) {
-    listaTarefaCategoria.add(TarefasStruct(
-        categoriaID: idCategoria,
-        nomeTarefe:
-            item)); // Substitua "ID_DA_CATEGORIA" pelo ID real da categoria
-  }
-
-  return listaTarefaCategoria;
-}
-
-List<TarefasStruct> filtrarPorCategoria(
-  List<TarefasStruct> lista,
-  String categoriaFiltrada,
-) {
-  List<TarefasStruct> listaFiltrada = [];
-
-  for (var item in lista) {
-    if (item.categoriaID != categoriaFiltrada) {
-      listaFiltrada.add(item);
-    }
-  }
-
-  return listaFiltrada;
 }
 
 bool temSemelhante(
