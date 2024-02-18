@@ -139,6 +139,7 @@ class _AcoesTarefasConcluidasWidgetState
                           _model.resultadoTarefas =
                               await SQLiteManager.instance.getListaTarefas(
                             categoria: widget.tarefasRef!.categoriaID!,
+                            ePendente: 1,
                           );
                           setState(() {
                             FFAppState().contador = -1;

@@ -93,6 +93,7 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
                   _model.categorias =
                       await SQLiteManager.instance.getListaTarefas(
                     categoria: widget.deletGategoria!,
+                    ePendente: 0,
                   );
                   setState(() {
                     FFAppState().contador = -1;

@@ -699,6 +699,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         .getListaTarefas(
                                                       categoria: FFAppState()
                                                           .selectCategoria,
+                                                      ePendente: 0,
                                                     ),
                                                     builder:
                                                         (context, snapshot) {
@@ -1433,11 +1434,14 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                 child: Padding(
                                                   padding: EdgeInsets.all(10.0),
                                                   child: FutureBuilder<
-                                                      List<
-                                                          GetListaTarefasCopyRow>>(
+                                                      List<GetListaTarefasRow>>(
                                                     future: SQLiteManager
                                                         .instance
-                                                        .getListaTarefasCopy(),
+                                                        .getListaTarefas(
+                                                      categoria: _model
+                                                          .categoriaSelecionada!,
+                                                      ePendente: 1,
+                                                    ),
                                                     builder:
                                                         (context, snapshot) {
                                                       // Customize what your widget looks like when it's loading.
@@ -1459,7 +1463,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                           ),
                                                         );
                                                       }
-                                                      final listViewConcluidasGetListaTarefasCopyRowList =
+                                                      final listViewConcluidasGetListaTarefasRowList =
                                                           snapshot.data!;
                                                       return ReorderableListView
                                                           .builder(
@@ -1468,12 +1472,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            listViewConcluidasGetListaTarefasCopyRowList
+                                                            listViewConcluidasGetListaTarefasRowList
                                                                 .length,
                                                         itemBuilder: (context,
                                                             listViewConcluidasIndex) {
-                                                          final listViewConcluidasGetListaTarefasCopyRow =
-                                                              listViewConcluidasGetListaTarefasCopyRowList[
+                                                          final listViewConcluidasGetListaTarefasRow =
+                                                              listViewConcluidasGetListaTarefasRowList[
                                                                   listViewConcluidasIndex];
                                                           return Container(
                                                             key: ValueKey(
@@ -1557,12 +1561,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     highlightColor: Colors.transparent,
                                                                                     onTap: () async {
                                                                                       await SQLiteManager.instance.deletarListaTarefas(
-                                                                                        id: listViewConcluidasGetListaTarefasCopyRow.id,
+                                                                                        id: listViewConcluidasGetListaTarefasRow.id,
                                                                                       );
                                                                                     },
                                                                                     child: AutoSizeText(
                                                                                       valueOrDefault<String>(
-                                                                                        listViewConcluidasGetListaTarefasCopyRow.nometarefa,
+                                                                                        listViewConcluidasGetListaTarefasRow.nometarefa,
                                                                                         '--',
                                                                                       ).maybeHandleOverflow(
                                                                                         maxChars: 145,
@@ -1630,7 +1634,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     Text(
                                                                                       valueOrDefault<String>(
                                                                                         formatNumber(
-                                                                                          listViewConcluidasGetListaTarefasCopyRow.categoriaID,
+                                                                                          listViewConcluidasGetListaTarefasRow.categoriaID,
                                                                                           formatType: FormatType.custom,
                                                                                           format: '',
                                                                                           locale: '',
@@ -1643,7 +1647,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'dd/MM/yy',
-                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasCopyRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',
@@ -1667,7 +1671,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     Text(
                                                                                       valueOrDefault<String>(
                                                                                         formatNumber(
-                                                                                          listViewConcluidasGetListaTarefasCopyRow.ePendente,
+                                                                                          listViewConcluidasGetListaTarefasRow.ePendente,
                                                                                           formatType: FormatType.custom,
                                                                                           format: '',
                                                                                           locale: '',
@@ -1680,7 +1684,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'kk:mm',
-                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasCopyRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',

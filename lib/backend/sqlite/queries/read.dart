@@ -32,10 +32,11 @@ class GetCategoriasRow extends SqliteRow {
 Future<List<GetListaTarefasRow>> performGetListaTarefas(
   Database database, {
   int? categoria,
+  int? ePendente,
 }) {
   final query = '''
 Select * from ListaTarefas
-WHERE categoriaID = ${categoria};
+WHERE categoriaID = ${categoria} AND ePendente = ${ePendente};
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasRow(d));
 }

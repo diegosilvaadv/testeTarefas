@@ -59,7 +59,7 @@ Future performEditarCategoriaTarefas(
 UPDATE CategoriaTarefas
 SET 
 nomeCategoria = '${nomeCategoria}'
- WHERE id = ${id};
+ WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
