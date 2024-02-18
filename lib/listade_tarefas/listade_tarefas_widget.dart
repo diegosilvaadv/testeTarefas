@@ -348,7 +348,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                       .instance
                                                                       .getCategoriaColor(
                                                                 selectCategoria:
-                                                                    0,
+                                                                    1,
                                                               );
                                                               await SQLiteManager
                                                                   .instance
@@ -1135,7 +1135,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     .id,
                                                               );
                                                               setState(() {
-                                                                _model.categoriaSelecionada =
+                                                                FFAppState()
+                                                                        .selectCategoria =
                                                                     categoriaConcluidasGetCategoriasRow
                                                                         .id;
                                                               });

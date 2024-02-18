@@ -224,7 +224,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                 await SQLiteManager.instance
                                     .editarCategoriaTarefas(
                                   nomeCategoria:
-                                      widget.idCategorias!.nomeCategoria,
+                                      _model.inputNomeCategoriaController.text,
                                   id: widget.idCategorias!.id,
                                 );
 
