@@ -138,8 +138,7 @@ class _AcoesTarefasConcluidasWidgetState
                         if (confirmDialogResponse) {
                           _model.resultadoTarefas =
                               await SQLiteManager.instance.getListaTarefas(
-                            categoriaID:
-                                widget.tarefasRef!.categoriaID!.toString(),
+                            categoriaID: widget.tarefasRef!.categoriaID!,
                             ePendente: 1,
                           );
                           setState(() {

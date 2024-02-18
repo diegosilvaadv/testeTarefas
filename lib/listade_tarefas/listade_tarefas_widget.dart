@@ -689,8 +689,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         .instance
                                                         .getListaTarefas(
                                                       categoriaID: FFAppState()
-                                                          .selectCategoria
-                                                          .toString(),
+                                                          .selectCategoria,
                                                       ePendente: 0,
                                                     ),
                                                     builder:
@@ -1323,9 +1322,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         await SQLiteManager
                                                                             .instance
                                                                             .getListaTarefas(
-                                                                      categoriaID: _model
-                                                                          .categoriaSelecionada!
-                                                                          .toString(),
+                                                                      categoriaID:
+                                                                          _model
+                                                                              .categoriaSelecionada!,
                                                                       ePendente:
                                                                           0,
                                                                     );

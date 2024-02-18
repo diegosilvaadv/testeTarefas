@@ -23,7 +23,6 @@ class GetCategoriasRow extends SqliteRow {
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;
-  String get iDcategoria => data['IDcategoria'] as String;
   int get selectCategoria => data['selectCategoria'] as int;
 }
 
@@ -32,7 +31,7 @@ class GetCategoriasRow extends SqliteRow {
 /// BEGIN GETLISTATAREFAS
 Future<List<GetListaTarefasRow>> performGetListaTarefas(
   Database database, {
-  String? categoriaID,
+  int? categoriaID,
   int? ePendente,
 }) {
   final query = '''
@@ -90,7 +89,6 @@ class GetCategoriasSelecionadaRow extends SqliteRow {
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;
-  String get iDcategoria => data['IDcategoria'] as String;
 }
 
 /// END GETCATEGORIASSELECIONADA
@@ -112,7 +110,6 @@ class GetCategoriaColorRow extends SqliteRow {
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;
-  String get iDcategoria => data['IDcategoria'] as String;
   int get selectCategoria => data['selectCategoria'] as int;
 }
 

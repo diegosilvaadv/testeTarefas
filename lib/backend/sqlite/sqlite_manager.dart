@@ -34,7 +34,7 @@ class SQLiteManager {
       );
 
   Future<List<GetListaTarefasRow>> getListaTarefas({
-    String? categoriaID,
+    int? categoriaID,
     int? ePendente,
   }) =>
       performGetListaTarefas(
