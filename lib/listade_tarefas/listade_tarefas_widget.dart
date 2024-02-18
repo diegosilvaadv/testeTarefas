@@ -1641,7 +1641,15 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                       child: Text(
-                                                                                        'Concluida: ',
+                                                                                        valueOrDefault<String>(
+                                                                                          formatNumber(
+                                                                                            listViewConcluidasGetListaTarefasCopyRow.categoriaID,
+                                                                                            formatType: FormatType.custom,
+                                                                                            format: '',
+                                                                                            locale: '',
+                                                                                          ),
+                                                                                          '0',
+                                                                                        ),
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
