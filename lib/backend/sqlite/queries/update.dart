@@ -6,7 +6,7 @@ Future performAddCategoriaTarefas(
   String? nomeCategoria,
 }) {
   final query = '''
-INSERT INTO CategoriaTarefas (nomeCategoria, selectCategoria) VALUES ('${nomeCategoria}'0);
+INSERT INTO CategoriaTarefas (nomeCategoria, selectCategoria) VALUES ('${nomeCategoria}',0);
 ''';
   return database.rawQuery(query);
 }

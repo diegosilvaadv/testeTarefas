@@ -143,7 +143,8 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: Color(0xFF036B90),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
                                         fontSize: 16.0,
                                       ),
                                 ),
