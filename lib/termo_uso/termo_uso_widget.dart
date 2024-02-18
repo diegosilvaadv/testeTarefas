@@ -1,8 +1,10 @@
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'termo_uso_model.dart';
 export 'termo_uso_model.dart';
@@ -55,14 +57,14 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
         key: scaffoldKey,
         backgroundColor: Colors.white,
         appBar: AppBar(
-          backgroundColor: const Color(0xFF037C63),
+          backgroundColor: Color(0xFF037C63),
           automaticallyImplyLeading: false,
           leading: FlutterFlowIconButton(
             borderColor: Colors.transparent,
             borderRadius: 30.0,
             borderWidth: 1.0,
             buttonSize: 60.0,
-            icon: const Icon(
+            icon: Icon(
               Icons.arrow_back_rounded,
               color: Colors.white,
               size: 30.0,
@@ -72,9 +74,9 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
             },
           ),
           title: Align(
-            alignment: const AlignmentDirectional(0.0, 0.0),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
               child: Text(
                 FFLocalizations.of(context).getText(
                   'mwp5fg5j' /* Termos de uso */,
@@ -89,12 +91,12 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
               ),
             ),
           ),
-          actions: const [],
+          actions: [],
           centerTitle: false,
           elevation: 0.0,
         ),
         body: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+          padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -107,7 +109,7 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 8.0),
                       child: Container(
                         height: 25.0,
                         decoration: BoxDecoration(
@@ -121,7 +123,7 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 8.0),
                       child: Container(
                         height: 15.0,
                         decoration: BoxDecoration(
@@ -134,20 +136,20 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
                       ),
                     ),
                   ]
-                      .divide(const SizedBox(width: 8.0))
-                      .addToStart(const SizedBox(width: 16.0))
-                      .addToEnd(const SizedBox(width: 16.0)),
+                      .divide(SizedBox(width: 8.0))
+                      .addToStart(SizedBox(width: 16.0))
+                      .addToEnd(SizedBox(width: 16.0)),
                 ),
               ),
               Expanded(
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Expanded(
                         child: Align(
-                          alignment: const AlignmentDirectional(0.0, 0.0),
+                          alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
                               'mpf1rfih' /* Termo de uso Termo de uso Term... */,
@@ -166,7 +168,7 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
                   ),
                 ),
               ),
-            ].divide(const SizedBox(height: 12.0)),
+            ].divide(SizedBox(height: 12.0)),
           ),
         ),
       ),

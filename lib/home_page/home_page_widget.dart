@@ -1,10 +1,12 @@
 import '/components/nav_bar_home_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'home_page_model.dart';
 export 'home_page_model.dart';
@@ -67,7 +69,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     Container(
                       width: double.infinity,
                       height: 109.0,
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         color: Color(0xFF039FD5),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(20.0),
@@ -77,16 +79,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         ),
                       ),
                       child: Align(
-                        alignment: const AlignmentDirectional(0.0, 0.0),
+                        alignment: AlignmentDirectional(0.0, 0.0),
                         child: Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 10.0, 15.0),
                           child: Column(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.end,
                             children: [
                               Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 8.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
@@ -107,9 +109,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: const AlignmentDirectional(0.0, 0.0),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 8.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
@@ -128,7 +130,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             ),
                                       ),
                                       Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             2.0, 0.0, 5.0, 2.0),
                                         child: Text(
                                           dateTimeFormat(
@@ -150,14 +152,14 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       Expanded(
                                         child: Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 20.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
                                             mainAxisAlignment:
                                                 MainAxisAlignment.end,
                                             children: [
-                                              const Icon(
+                                              Icon(
                                                 Icons.watch_later_outlined,
                                                 color: Colors.white,
                                                 size: 18.0,
@@ -196,9 +198,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                       ),
                     ),
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 10.0, 10.0, 0.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -206,7 +208,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Container(
-                              decoration: const BoxDecoration(),
+                              decoration: BoxDecoration(),
                               child: Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -214,7 +216,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     width: 50.0,
                                     height: 50.0,
                                     clipBehavior: Clip.antiAlias,
-                                    decoration: const BoxDecoration(
+                                    decoration: BoxDecoration(
                                       shape: BoxShape.circle,
                                     ),
                                     child: Image.network(
@@ -240,9 +242,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   children: [
                                     Align(
                                       alignment:
-                                          const AlignmentDirectional(-1.0, 1.0),
+                                          AlignmentDirectional(-1.0, 1.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
@@ -259,9 +261,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment: const AlignmentDirectional(0.0, 0.0),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
                                           FFAppState().NomeUser,
@@ -292,7 +294,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(7.0, 20.0, 7.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(7.0, 20.0, 7.0, 10.0),
                       child: Container(
                         width: double.infinity,
                         height: 139.0,
@@ -302,19 +304,19 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             BoxShadow(
                               blurRadius: 4.0,
                               color: FlutterFlowTheme.of(context).alternate,
-                              offset: const Offset(0.0, 2.0),
+                              offset: Offset(0.0, 2.0),
                             )
                           ],
                           borderRadius: BorderRadius.circular(10.0),
                           border: Border.all(
-                            color: const Color(0x4CFFFFFF),
+                            color: Color(0x4CFFFFFF),
                           ),
                         ),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   5.0, 35.0, 5.0, 0.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -331,7 +333,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       context.pushNamed(
                                         'ListadeTarefas',
                                         extra: <String, dynamic>{
-                                          kTransitionInfoKey: const TransitionInfo(
+                                          kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
@@ -343,7 +345,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     child: Column(
                                       mainAxisSize: MainAxisSize.min,
                                       children: [
-                                        const Padding(
+                                        Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 0.0, 3.0, 3.0),
@@ -355,7 +357,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         ),
                                         Padding(
                                           padding:
-                                              const EdgeInsetsDirectional.fromSTEB(
+                                              EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 0.0, 3.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
@@ -365,7 +367,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Readex Pro',
-                                                  color: const Color(0xFF02749C),
+                                                  color: Color(0xFF02749C),
                                                   fontSize: 12.0,
                                                   fontWeight: FontWeight.w600,
                                                 ),
@@ -397,7 +399,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                         wrapWithModel(
                           model: _model.navBarHomeModel,
                           updateCallback: () => setState(() {}),
-                          child: const NavBarHomeWidget(),
+                          child: NavBarHomeWidget(),
                         ),
                       ],
                     ),

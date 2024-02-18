@@ -4,7 +4,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'editar_tarefas_model.dart';
 export 'editar_tarefas_model.dart';
@@ -54,20 +57,20 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, -1.0),
+      alignment: AlignmentDirectional(0.0, -1.0),
       child: Form(
         key: _model.formKey,
         autovalidateMode: AutovalidateMode.disabled,
         child: Align(
-          alignment: const AlignmentDirectional(0.0, 0.0),
+          alignment: AlignmentDirectional(0.0, 0.0),
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 10.0),
             child: Container(
               width: MediaQuery.sizeOf(context).width * 1.0,
               height: 451.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     blurRadius: 4.0,
                     color: Color(0x33000000),
@@ -79,16 +82,16 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                   color: Colors.white,
                 ),
               ),
-              alignment: const AlignmentDirectional(0.0, 0.0),
+              alignment: AlignmentDirectional(0.0, 0.0),
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Align(
-                      alignment: const AlignmentDirectional(0.0, 0.0),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
-                        padding: const EdgeInsetsDirectional.fromSTEB(
+                        padding: EdgeInsetsDirectional.fromSTEB(
                             10.0, 0.0, 10.0, 10.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
@@ -96,7 +99,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                           crossAxisAlignment: CrossAxisAlignment.center,
                           children: [
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 2.0, 40.0, 0.0),
                               child: InkWell(
                                 splashColor: Colors.transparent,
@@ -106,7 +109,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                 onTap: () async {
                                   context.safePop();
                                 },
-                                child: const Icon(
+                                child: Icon(
                                   Icons.arrow_back,
                                   color: Color(0xFF036B90),
                                   size: 35.0,
@@ -114,7 +117,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                               ),
                             ),
                             Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   2.0, 0.0, 0.0, 5.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -125,7 +128,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: const Color(0xFF036B90),
+                                      color: Color(0xFF036B90),
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -137,13 +140,13 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Expanded(
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 15.0),
                               child: Container(
                                 width: 100.0,
@@ -152,11 +155,11 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                   color: Colors.white,
                                   borderRadius: BorderRadius.circular(10.0),
                                   border: Border.all(
-                                    color: const Color(0xFF42BEA5),
+                                    color: Color(0xFF42BEA5),
                                   ),
                                 ),
                                 child: Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       8.0, 0.0, 8.0, 5.0),
                                   child: TextFormField(
                                     controller:
@@ -180,7 +183,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFF42BEA5),
+                                            color: Color(0xFF42BEA5),
                                             fontSize: 12.0,
                                           ),
                                       enabledBorder: InputBorder.none,
@@ -192,7 +195,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: const Color(0xFF138F76),
+                                          color: Color(0xFF138F76),
                                           fontSize: 17.0,
                                         ),
                                     validator: _model
@@ -207,7 +210,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
+                      padding: EdgeInsetsDirectional.fromSTEB(
                           10.0, 10.0, 10.0, 10.0),
                       child: InkWell(
                         splashColor: Colors.transparent,
@@ -215,7 +218,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                         hoverColor: Colors.transparent,
                         highlightColor: Colors.transparent,
                         onTap: () async {
-                          final datePickedDate = await showDatePicker(
+                          final _datePickedDate = await showDatePicker(
                             context: context,
                             initialDate: functions.converterintegerToData(
                                 widget.taferaRef!.dataTarefa),
@@ -253,9 +256,9 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                             },
                           );
 
-                          TimeOfDay? datePickedTime;
-                          if (datePickedDate != null) {
-                            datePickedTime = await showTimePicker(
+                          TimeOfDay? _datePickedTime;
+                          if (_datePickedDate != null) {
+                            _datePickedTime = await showTimePicker(
                               context: context,
                               initialTime: TimeOfDay.fromDateTime(
                                   functions.converterintegerToData(
@@ -292,15 +295,15 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                             );
                           }
 
-                          if (datePickedDate != null &&
-                              datePickedTime != null) {
+                          if (_datePickedDate != null &&
+                              _datePickedTime != null) {
                             safeSetState(() {
                               _model.datePicked = DateTime(
-                                datePickedDate.year,
-                                datePickedDate.month,
-                                datePickedDate.day,
-                                datePickedTime!.hour,
-                                datePickedTime.minute,
+                                _datePickedDate.year,
+                                _datePickedDate.month,
+                                _datePickedDate.day,
+                                _datePickedTime!.hour,
+                                _datePickedTime.minute,
                               );
                             });
                           }
@@ -313,12 +316,12 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                 .secondaryBackground,
                             borderRadius: BorderRadius.circular(8.0),
                             border: Border.all(
-                              color: const Color(0xFFCBCCCD),
+                              color: Color(0xFFCBCCCD),
                               width: 2.0,
                             ),
                           ),
                           child: Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 10.0, 0.0, 10.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -338,10 +341,10 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                       FlutterFlowTheme.of(context).bodyMedium,
                                 ),
                                 Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
                                   child: FlutterFlowIconButton(
-                                    borderColor: const Color(0xFFCBCCCD),
+                                    borderColor: Color(0xFFCBCCCD),
                                     borderRadius: 8.0,
                                     borderWidth: 1.0,
                                     buttonSize: 40.0,
@@ -363,7 +366,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                       ),
                     ),
                     Padding(
-                      padding: const EdgeInsets.all(10.0),
+                      padding: EdgeInsets.all(10.0),
                       child: FutureBuilder<List<GetCategoriasSelecionadaRow>>(
                         future: SQLiteManager.instance.getCategoriasSelecionada(
                           id: widget.taferaRef?.categoriaID?.toString(),
@@ -396,7 +399,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                     categoriasPendentesGetCategoriasSelecionadaRowList[
                                         categoriasPendentesIndex];
                                 return Padding(
-                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
                                   child: Container(
                                     height: 47.0,
@@ -406,7 +409,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                       borderRadius: BorderRadius.circular(7.0),
                                     ),
                                     child: Padding(
-                                      padding: const EdgeInsets.all(5.0),
+                                      padding: EdgeInsets.all(5.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         mainAxisAlignment:
@@ -414,7 +417,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                         children: [
                                           Padding(
                                             padding:
-                                                const EdgeInsetsDirectional.fromSTEB(
+                                                EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 0.0, 7.0, 0.0),
                                             child: Text(
                                               valueOrDefault<String>(
@@ -427,7 +430,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                                   .bodyMedium
                                                   .override(
                                                     fontFamily: 'Poppins',
-                                                    color: const Color(0xFF171818),
+                                                    color: Color(0xFF171818),
                                                     fontSize: 15.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
@@ -446,7 +449,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 15.0, 10.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
                           await SQLiteManager.instance.editarListaTarefas(
@@ -455,7 +458,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                 .converteDataToInteger(_model.datePicked!),
                             hora: 0,
                             id: widget.taferaRef!.id,
-                            ePendente: widget.taferaRef?.ePendente.toString(),
+                            ePendente: widget.taferaRef?.ePendente?.toString(),
                           );
                           Navigator.pop(context);
                           Navigator.pop(context);
@@ -466,11 +469,11 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 60.0,
-                          padding: const EdgeInsetsDirectional.fromSTEB(
+                          padding: EdgeInsetsDirectional.fromSTEB(
                               24.0, 0.0, 24.0, 0.0),
-                          iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 0.0),
-                          color: const Color(0xFF1788E2),
+                          color: Color(0xFF1788E2),
                           textStyle:
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Readex Pro',
@@ -478,7 +481,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                     fontSize: 20.0,
                                   ),
                           elevation: 3.0,
-                          borderSide: const BorderSide(
+                          borderSide: BorderSide(
                             color: Colors.transparent,
                             width: 1.0,
                           ),

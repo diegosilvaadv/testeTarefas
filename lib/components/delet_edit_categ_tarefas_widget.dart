@@ -5,7 +5,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'delet_edit_categ_tarefas_model.dart';
 export 'delet_edit_categ_tarefas_model.dart';
@@ -53,9 +55,9 @@ class _DeletEditCategTarefasWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(1.0, 0.0),
+      alignment: AlignmentDirectional(1.0, 0.0),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
         child: Container(
           width: 280.0,
           height: 286.0,
@@ -63,12 +65,12 @@ class _DeletEditCategTarefasWidgetState
             borderRadius: BorderRadius.circular(15.0),
             shape: BoxShape.rectangle,
             border: Border.all(
-              color: const Color(0xFF0B7AD4),
+              color: Color(0xFF0B7AD4),
             ),
           ),
-          alignment: const AlignmentDirectional(1.0, 0.0),
+          alignment: AlignmentDirectional(1.0, 0.0),
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -84,7 +86,7 @@ class _DeletEditCategTarefasWidgetState
                       onTap: () async {
                         context.safePop();
                       },
-                      child: const Icon(
+                      child: Icon(
                         Icons.arrow_back,
                         color: Colors.white,
                         size: 35.0,
@@ -95,7 +97,7 @@ class _DeletEditCategTarefasWidgetState
                 Builder(
                   builder: (context) => Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         await showDialog(
@@ -105,7 +107,7 @@ class _DeletEditCategTarefasWidgetState
                               elevation: 0,
                               insetPadding: EdgeInsets.zero,
                               backgroundColor: Colors.transparent,
-                              alignment: const AlignmentDirectional(0.0, 0.0)
+                              alignment: AlignmentDirectional(0.0, 0.0)
                                   .resolve(Directionality.of(context)),
                               child: EditCategoriaWidget(
                                 idCategorias: widget.categoriapendente,
@@ -117,7 +119,7 @@ class _DeletEditCategTarefasWidgetState
                       text: FFLocalizations.of(context).getText(
                         'j627emah' /* Editar */,
                       ),
-                      icon: const FaIcon(
+                      icon: FaIcon(
                         FontAwesomeIcons.edit,
                         size: 20.0,
                       ),
@@ -125,10 +127,10 @@ class _DeletEditCategTarefasWidgetState
                         width: 270.0,
                         height: 70.0,
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         iconPadding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                        color: const Color(0xFF02AB89),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: Color(0xFF02AB89),
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
                                   fontFamily: 'Poppins',
@@ -137,7 +139,7 @@ class _DeletEditCategTarefasWidgetState
                                   fontWeight: FontWeight.w600,
                                 ),
                         elevation: 0.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                           width: 0.0,
                         ),
@@ -146,7 +148,7 @@ class _DeletEditCategTarefasWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await showModalBottomSheet(
@@ -167,7 +169,7 @@ class _DeletEditCategTarefasWidgetState
                     text: FFLocalizations.of(context).getText(
                       '7zozisa8' /* Deletar */,
                     ),
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.delete_sharp,
                       size: 25.0,
                     ),
@@ -175,10 +177,10 @@ class _DeletEditCategTarefasWidgetState
                       width: 270.0,
                       height: 70.0,
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: const Color(0xB5990A0F),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                      color: Color(0xB5990A0F),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
@@ -187,7 +189,7 @@ class _DeletEditCategTarefasWidgetState
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 0.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 0.0,
                       ),

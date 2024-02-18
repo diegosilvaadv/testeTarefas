@@ -14,6 +14,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 import 'listade_tarefas_model.dart';
@@ -86,7 +87,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                 Container(
                   width: double.infinity,
                   height: 90.0,
-                  decoration: const BoxDecoration(
+                  decoration: BoxDecoration(
                     color: Color(0xFF039FD5),
                     borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(20.0),
@@ -96,28 +97,28 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                     ),
                   ),
                   child: Align(
-                    alignment: const AlignmentDirectional(0.0, 0.0),
+                    alignment: AlignmentDirectional(0.0, 0.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 10.0, 10.0),
+                          EdgeInsetsDirectional.fromSTEB(15.0, 0.0, 10.0, 10.0),
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.end,
                               children: [
                                 FlutterFlowIconButton(
-                                  borderColor: const Color(0x004B39EF),
+                                  borderColor: Color(0x004B39EF),
                                   borderRadius: 20.0,
                                   borderWidth: 1.0,
                                   buttonSize: 40.0,
-                                  fillColor: const Color(0x004B39EF),
-                                  icon: const FaIcon(
+                                  fillColor: Color(0x004B39EF),
+                                  icon: FaIcon(
                                     FontAwesomeIcons.arrowCircleLeft,
                                     color: Colors.white,
                                     size: 30.0,
@@ -127,9 +128,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                   },
                                 ),
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, 0.0),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Padding(
-                                    padding: const EdgeInsetsDirectional.fromSTEB(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 1.0, 55.0, 3.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
@@ -157,13 +158,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                 ),
                 Expanded(
                   child: Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                     child: Container(
                       width: double.infinity,
                       height: double.infinity,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).secondaryBackground,
-                        borderRadius: const BorderRadius.only(
+                        borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),
                           topLeft: Radius.circular(0.0),
@@ -172,7 +173,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                         child: Column(
                           mainAxisSize: MainAxisSize.max,
                           children: [
@@ -180,13 +181,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                               child: Column(
                                 children: [
                                   Align(
-                                    alignment: const Alignment(0.0, 0),
+                                    alignment: Alignment(0.0, 0),
                                     child: TabBar(
                                       isScrollable: true,
-                                      labelColor: const Color(0xFFAEA702),
-                                      unselectedLabelColor: const Color(0xFF8B8B93),
+                                      labelColor: Color(0xFFAEA702),
+                                      unselectedLabelColor: Color(0xFF8B8B93),
                                       labelPadding:
-                                          const EdgeInsetsDirectional.fromSTEB(
+                                          EdgeInsetsDirectional.fromSTEB(
                                               8.0, 0.0, 8.0, 0.0),
                                       labelStyle: FlutterFlowTheme.of(context)
                                           .titleMedium
@@ -195,16 +196,16 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                             fontSize: 18.0,
                                             fontWeight: FontWeight.bold,
                                           ),
-                                      unselectedLabelStyle: const TextStyle(),
-                                      indicatorColor: const Color(0xFF02886F),
+                                      unselectedLabelStyle: TextStyle(),
+                                      indicatorColor: Color(0xFF02886F),
                                       indicatorWeight: 3.0,
-                                      padding: const EdgeInsets.all(2.0),
+                                      padding: EdgeInsets.all(2.0),
                                       tabs: [
                                         Row(
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            const Padding(
+                                            Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: Icon(
@@ -224,7 +225,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                           mainAxisAlignment:
                                               MainAxisAlignment.center,
                                           children: [
-                                            const Padding(
+                                            Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(8.0, 0.0, 8.0, 0.0),
                                               child: FaIcon(
@@ -263,7 +264,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                 Expanded(
                                                   child: Padding(
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(10.0,
                                                                 15.0, 0.0, 0.0),
                                                     child: Text(
@@ -278,7 +279,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                           .override(
                                                             fontFamily:
                                                                 'Poppins',
-                                                            color: const Color(
+                                                            color: Color(
                                                                 0xFF545050),
                                                             fontSize: 12.0,
                                                             fontWeight:
@@ -290,7 +291,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child: FutureBuilder<
                                                   List<GetCategoriasRow>>(
                                                 future: SQLiteManager.instance
@@ -332,7 +333,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 categoriasPendentesIndex];
                                                         return Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -389,9 +390,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 color: categoriasPendentesGetCategoriasRow
                                                                             .selectCategoria ==
                                                                         1
-                                                                    ? const Color(
+                                                                    ? Color(
                                                                         0xFF027CA7)
-                                                                    : const Color(
+                                                                    : Color(
                                                                         0xFFE0F6F0),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -400,7 +401,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             5.0),
                                                                 child: Row(
@@ -412,7 +413,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           5.0,
                                                                           0.0,
                                                                           5.0,
@@ -434,7 +435,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
-                                                                              color: categoriasPendentesGetCategoriasRow.selectCategoria == 1 ? Colors.white : const Color(0xFFAAADAE),
+                                                                              color: categoriasPendentesGetCategoriasRow.selectCategoria == 1 ? Colors.white : Color(0xFFAAADAE),
                                                                               fontSize: 14.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
@@ -442,7 +443,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             12.0,
                                                                       ),
                                                                     ),
-                                                                    const SizedBox(
+                                                                    SizedBox(
                                                                       height:
                                                                           22.0,
                                                                       child:
@@ -493,7 +494,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             safeSetState(() {}));
                                                                       },
                                                                       child:
-                                                                          const FaIcon(
+                                                                          FaIcon(
                                                                         FontAwesomeIcons
                                                                             .edit,
                                                                         color: Color(
@@ -518,7 +519,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Container(
@@ -529,7 +530,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                               .of(context)
                                                           .secondaryBackground,
                                                       borderRadius:
-                                                          const BorderRadius.only(
+                                                          BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 10.0),
@@ -545,7 +546,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                       ),
                                                       border: Border.all(
                                                         color:
-                                                            const Color(0xFFC0C1C2),
+                                                            Color(0xFFC0C1C2),
                                                       ),
                                                     ),
                                                     child: Row(
@@ -555,11 +556,11 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         Expanded(
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -575,7 +576,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     EasyDebounce
                                                                         .debounce(
                                                                   '_model.inputBuscaTarefaController',
-                                                                  const Duration(
+                                                                  Duration(
                                                                       milliseconds:
                                                                           100),
                                                                   () => setState(
@@ -623,7 +624,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF138F76),
                                                                       fontSize:
                                                                           20.0,
@@ -636,7 +637,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             ),
                                                           ),
                                                         ),
-                                                        const SizedBox(
+                                                        SizedBox(
                                                           height: 40.0,
                                                           child:
                                                               VerticalDivider(
@@ -648,7 +649,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -673,24 +674,19 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               child: Container(
                                                 width: double.infinity,
                                                 height: 100.0,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   color: Colors.white,
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(10.0),
+                                                  padding: EdgeInsets.all(10.0),
                                                   child: FutureBuilder<
                                                       List<GetListaTarefasRow>>(
                                                     future: SQLiteManager
                                                         .instance
                                                         .getListaTarefas(
-                                                      categoriaID:
-                                                          valueOrDefault<
-                                                              String>(
-                                                        _model
-                                                            .categoriaSelecionada
-                                                            ?.toString(),
-                                                        '1',
-                                                      ),
+                                                      categoriaID: _model
+                                                          .categoriaSelecionada!
+                                                          .toString(),
                                                       ePendente: 0,
                                                     ),
                                                     builder:
@@ -746,12 +742,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     listViewPendentesIndex];
                                                             return Container(
                                                               key: ValueKey(
-                                                                  "ListView_6dts1koc" '_' +
+                                                                  "ListView_6dts1koc" +
+                                                                      '_' +
                                                                       listViewPendentesIndex
                                                                           .toString()),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsetsDirectional
+                                                                    EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             10.0,
@@ -770,7 +767,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             context)
                                                                         .secondaryBackground,
                                                                     borderRadius:
-                                                                        const BorderRadius
+                                                                        BorderRadius
                                                                             .only(
                                                                       bottomLeft:
                                                                           Radius.circular(
@@ -788,7 +785,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     border:
                                                                         Border
                                                                             .all(
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFEE8B60),
                                                                     ),
                                                                   ),
@@ -800,12 +797,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                       Expanded(
                                                                         child:
                                                                             Align(
-                                                                          alignment: const AlignmentDirectional(
+                                                                          alignment: AlignmentDirectional(
                                                                               0.0,
                                                                               -1.0),
                                                                           child:
                                                                               Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 2.0,
                                                                                 0.0,
                                                                                 2.0,
@@ -818,7 +815,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               children: [
                                                                                 Expanded(
                                                                                   child: Padding(
-                                                                                    padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                                                                                     child: AutoSizeText(
                                                                                       valueOrDefault<String>(
                                                                                         listViewPendentesGetListaTarefasRow.nometarefa,
@@ -830,7 +827,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       textAlign: TextAlign.start,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Poppins',
-                                                                                            color: const Color(0xFF0D0705),
+                                                                                            color: Color(0xFF0D0705),
                                                                                             fontSize: 14.0,
                                                                                             fontWeight: FontWeight.bold,
                                                                                           ),
@@ -843,7 +840,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                      const StyledDivider(
+                                                                      StyledDivider(
                                                                         height:
                                                                             5.0,
                                                                         thickness:
@@ -858,7 +855,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             DividerLineStyle.dashed,
                                                                       ),
                                                                       Padding(
-                                                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
                                                                             5.0,
                                                                             0.0,
                                                                             5.0,
@@ -876,7 +873,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -887,7 +884,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         size: 20.0,
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             '5qjv8xg8' /* Data: */,
@@ -895,7 +892,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           textAlign: TextAlign.start,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Readex Pro',
-                                                                                                color: const Color(0xFF57636C),
+                                                                                                color: Color(0xFF57636C),
                                                                                                 fontSize: 13.0,
                                                                                               ),
                                                                                         ),
@@ -912,7 +909,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
-                                                                                              color: const Color(0xFF08BBBB),
+                                                                                              color: Color(0xFF08BBBB),
                                                                                               fontSize: 13.0,
                                                                                             ),
                                                                                       ),
@@ -920,7 +917,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   ),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                                   child: Row(
                                                                                     mainAxisSize: MainAxisSize.max,
                                                                                     mainAxisAlignment: MainAxisAlignment.start,
@@ -931,7 +928,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         size: 20.0,
                                                                                       ),
                                                                                       Padding(
-                                                                                        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
                                                                                           FFLocalizations.of(context).getText(
                                                                                             'goxovvdd' /* Hora: */,
@@ -939,7 +936,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           textAlign: TextAlign.start,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Readex Pro',
-                                                                                                color: const Color(0xFF57636C),
+                                                                                                color: Color(0xFF57636C),
                                                                                                 fontSize: 13.0,
                                                                                               ),
                                                                                         ),
@@ -956,7 +953,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
-                                                                                              color: const Color(0xFF08BBBB),
+                                                                                              color: Color(0xFF08BBBB),
                                                                                               fontSize: 13.0,
                                                                                             ),
                                                                                       ),
@@ -966,7 +963,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               ],
                                                                             ),
                                                                             Padding(
-                                                                              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 3.0),
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 3.0),
                                                                               child: FFButtonWidget(
                                                                                 onPressed: () async {
                                                                                   await showModalBottomSheet(
@@ -993,9 +990,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                 options: FFButtonOptions(
                                                                                   width: 71.0,
                                                                                   height: 23.0,
-                                                                                  padding: const EdgeInsets.all(0.0),
-                                                                                  iconPadding: const EdgeInsets.all(2.0),
-                                                                                  color: const Color(0xFFBCBDBD),
+                                                                                  padding: EdgeInsets.all(0.0),
+                                                                                  iconPadding: EdgeInsets.all(2.0),
+                                                                                  color: Color(0xFFBCBDBD),
                                                                                   textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                         fontFamily: 'Poppins',
                                                                                         color: Colors.white,
@@ -1003,7 +1000,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
                                                                                   elevation: 3.0,
-                                                                                  borderSide: const BorderSide(
+                                                                                  borderSide: BorderSide(
                                                                                     color: Colors.transparent,
                                                                                     width: 1.0,
                                                                                   ),
@@ -1038,7 +1035,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               CrossAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 15.0, 0.0, 0.0),
                                               child: Text(
@@ -1052,7 +1049,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         .override(
                                                           fontFamily: 'Poppins',
                                                           color:
-                                                              const Color(0xFF545050),
+                                                              Color(0xFF545050),
                                                           fontSize: 13.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -1060,7 +1057,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               ),
                                             ),
                                             Padding(
-                                              padding: const EdgeInsets.all(10.0),
+                                              padding: EdgeInsets.all(10.0),
                                               child: FutureBuilder<
                                                   List<GetCategoriasRow>>(
                                                 future: SQLiteManager.instance
@@ -1102,7 +1099,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 categoriaConcluidasIndex];
                                                         return Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1159,9 +1156,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 color: categoriaConcluidasGetCategoriasRow
                                                                             .selectCategoria ==
                                                                         1
-                                                                    ? const Color(
+                                                                    ? Color(
                                                                         0xFF048CBC)
-                                                                    : const Color(
+                                                                    : Color(
                                                                         0xFFE0F6F0),
                                                                 borderRadius:
                                                                     BorderRadius
@@ -1170,7 +1167,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                               ),
                                                               child: Padding(
                                                                 padding:
-                                                                    const EdgeInsets
+                                                                    EdgeInsets
                                                                         .all(
                                                                             5.0),
                                                                 child: Row(
@@ -1182,16 +1179,19 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           .center,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           5.0,
                                                                           0.0,
                                                                           5.0,
                                                                           0.0),
                                                                       child:
                                                                           AutoSizeText(
-                                                                        categoriaConcluidasGetCategoriasRow
-                                                                            .nomeCategoria
-                                                                            .maybeHandleOverflow(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          categoriaConcluidasGetCategoriasRow
+                                                                              .nomeCategoria,
+                                                                          '--',
+                                                                        ).maybeHandleOverflow(
                                                                           maxChars:
                                                                               60,
                                                                           replacement:
@@ -1201,7 +1201,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             .bodyMedium
                                                                             .override(
                                                                               fontFamily: 'Poppins',
-                                                                              color: categoriaConcluidasGetCategoriasRow.selectCategoria == 1 ? Colors.white : const Color(0xFFAAADAE),
+                                                                              color: categoriaConcluidasGetCategoriasRow.selectCategoria == 1 ? Colors.white : Color(0xFFAAADAE),
                                                                               fontSize: 15.0,
                                                                               fontWeight: FontWeight.bold,
                                                                             ),
@@ -1225,7 +1225,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Padding(
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           10.0, 0.0, 10.0, 0.0),
                                                   child: Container(
@@ -1236,7 +1236,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                               .of(context)
                                                           .secondaryBackground,
                                                       borderRadius:
-                                                          const BorderRadius.only(
+                                                          BorderRadius.only(
                                                         bottomLeft:
                                                             Radius.circular(
                                                                 10.0),
@@ -1252,7 +1252,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                       ),
                                                       border: Border.all(
                                                         color:
-                                                            const Color(0xFFC0C1C2),
+                                                            Color(0xFFC0C1C2),
                                                       ),
                                                     ),
                                                     child: Row(
@@ -1262,11 +1262,11 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         Expanded(
                                                           child: Align(
                                                             alignment:
-                                                                const AlignmentDirectional(
+                                                                AlignmentDirectional(
                                                                     0.0, 0.0),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -1282,7 +1282,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     EasyDebounce
                                                                         .debounce(
                                                                   '_model.inputBuscaTarefaConcluidaController',
-                                                                  const Duration(
+                                                                  Duration(
                                                                       milliseconds:
                                                                           100),
                                                                   () async {
@@ -1315,6 +1315,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               r.object)
                                                                           .take(25)
                                                                           .toList();
+                                                                      ;
                                                                     });
 
                                                                     setState(
@@ -1363,7 +1364,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF138F76),
                                                                       fontSize:
                                                                           20.0,
@@ -1376,7 +1377,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             ),
                                                           ),
                                                         ),
-                                                        const SizedBox(
+                                                        SizedBox(
                                                           height: 40.0,
                                                           child:
                                                               VerticalDivider(
@@ -1388,7 +1389,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         ),
                                                         Padding(
                                                           padding:
-                                                              const EdgeInsetsDirectional
+                                                              EdgeInsetsDirectional
                                                                   .fromSTEB(
                                                                       0.0,
                                                                       0.0,
@@ -1413,11 +1414,11 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               child: Container(
                                                 width: double.infinity,
                                                 height: 100.0,
-                                                decoration: const BoxDecoration(
+                                                decoration: BoxDecoration(
                                                   color: Colors.white,
                                                 ),
                                                 child: Padding(
-                                                  padding: const EdgeInsets.all(10.0),
+                                                  padding: EdgeInsets.all(10.0),
                                                   child: FutureBuilder<
                                                       List<GetListaTarefasRow>>(
                                                     future: SQLiteManager
@@ -1467,12 +1468,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                   listViewConcluidasIndex];
                                                           return Container(
                                                             key: ValueKey(
-                                                                "ListView_lsqgkhtg" '_' +
+                                                                "ListView_lsqgkhtg" +
+                                                                    '_' +
                                                                     listViewConcluidasIndex
                                                                         .toString()),
                                                             child: Padding(
                                                               padding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           0.0,
                                                                           10.0,
@@ -1488,7 +1490,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           context)
                                                                       .secondaryBackground,
                                                                   borderRadius:
-                                                                      const BorderRadius
+                                                                      BorderRadius
                                                                           .only(
                                                                     bottomLeft:
                                                                         Radius.circular(
@@ -1505,7 +1507,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                   ),
                                                                   border: Border
                                                                       .all(
-                                                                    color: const Color(
+                                                                    color: Color(
                                                                         0xFF33A2E0),
                                                                   ),
                                                                 ),
@@ -1517,12 +1519,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     Expanded(
                                                                       child:
                                                                           Align(
-                                                                        alignment: const AlignmentDirectional(
+                                                                        alignment: AlignmentDirectional(
                                                                             0.0,
                                                                             -1.0),
                                                                         child:
                                                                             Padding(
-                                                                          padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
                                                                               2.0,
                                                                               0.0,
                                                                               2.0,
@@ -1538,7 +1540,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             children: [
                                                                               Expanded(
                                                                                 child: Padding(
-                                                                                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 5.0, 10.0, 0.0),
                                                                                   child: AutoSizeText(
                                                                                     valueOrDefault<String>(
                                                                                       listViewConcluidasGetListaTarefasRow.nometarefa,
@@ -1550,7 +1552,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     textAlign: TextAlign.start,
                                                                                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                           fontFamily: 'Poppins',
-                                                                                          color: const Color(0xFF0D0705),
+                                                                                          color: Color(0xFF0D0705),
                                                                                           fontSize: 14.0,
                                                                                           fontWeight: FontWeight.bold,
                                                                                         ),
@@ -1564,7 +1566,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                       ),
                                                                     ),
                                                                     Padding(
-                                                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
                                                                           0.0,
                                                                           5.0,
@@ -1585,13 +1587,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                 CrossAxisAlignment.start,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'ufvrtv92' /* Concluida:  */,
@@ -1611,12 +1613,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
-                                                                                        '--',
+                                                                                        '0',
                                                                                       ),
                                                                                       textAlign: TextAlign.start,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Readex Pro',
-                                                                                            color: const Color(0xFF08BBBB),
+                                                                                            color: Color(0xFF08BBBB),
                                                                                             fontSize: 13.0,
                                                                                           ),
                                                                                     ),
@@ -1624,13 +1626,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                 ),
                                                                               ),
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Padding(
-                                                                                      padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                       child: Text(
                                                                                         FFLocalizations.of(context).getText(
                                                                                           'kljep671' /* Hora: */,
@@ -1638,7 +1640,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
-                                                                                              color: const Color(0xFF57636C),
+                                                                                              color: Color(0xFF57636C),
                                                                                               fontSize: 13.0,
                                                                                             ),
                                                                                       ),
@@ -1650,12 +1652,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           functions.converterintegerToData(listViewConcluidasGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
-                                                                                        '--',
+                                                                                        '0',
                                                                                       ),
                                                                                       textAlign: TextAlign.start,
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                             fontFamily: 'Readex Pro',
-                                                                                            color: const Color(0xFF08BBBB),
+                                                                                            color: Color(0xFF08BBBB),
                                                                                             fontSize: 13.0,
                                                                                           ),
                                                                                     ),
@@ -1665,7 +1667,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             ],
                                                                           ),
                                                                           Padding(
-                                                                            padding: const EdgeInsetsDirectional.fromSTEB(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
                                                                                 0.0,
                                                                                 0.0,
                                                                                 7.0,
@@ -1697,9 +1699,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                               options: FFButtonOptions(
                                                                                 width: 70.0,
                                                                                 height: 23.0,
-                                                                                padding: const EdgeInsets.all(0.0),
-                                                                                iconPadding: const EdgeInsets.all(0.0),
-                                                                                color: const Color(0xFFBCBDBD),
+                                                                                padding: EdgeInsets.all(0.0),
+                                                                                iconPadding: EdgeInsets.all(0.0),
+                                                                                color: Color(0xFFBCBDBD),
                                                                                 textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                                                                                       fontFamily: 'Poppins',
                                                                                       color: Colors.white,
@@ -1707,7 +1709,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       fontWeight: FontWeight.w600,
                                                                                     ),
                                                                                 elevation: 3.0,
-                                                                                borderSide: const BorderSide(
+                                                                                borderSide: BorderSide(
                                                                                   color: Colors.transparent,
                                                                                   width: 1.0,
                                                                                 ),
@@ -1718,7 +1720,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                    const StyledDivider(
+                                                                    StyledDivider(
                                                                       height:
                                                                           5.0,
                                                                       thickness:
@@ -1763,14 +1765,14 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                   ),
                 ),
                 Container(
-                  decoration: const BoxDecoration(),
+                  decoration: BoxDecoration(),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       wrapWithModel(
                         model: _model.navBarListadeTarefasModel,
                         updateCallback: () => setState(() {}),
-                        child: const NavBarListadeTarefasWidget(),
+                        child: NavBarListadeTarefasWidget(),
                       ),
                     ],
                   ),

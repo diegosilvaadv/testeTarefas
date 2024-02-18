@@ -6,6 +6,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'acoes_tarefas_concluidas_model.dart';
 export 'acoes_tarefas_concluidas_model.dart';
@@ -53,9 +55,9 @@ class _AcoesTarefasConcluidasWidgetState
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(1.0, 0.0),
+      alignment: AlignmentDirectional(1.0, 0.0),
       child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
+        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
         child: Container(
           width: 314.0,
           height: 589.0,
@@ -63,12 +65,12 @@ class _AcoesTarefasConcluidasWidgetState
             borderRadius: BorderRadius.circular(15.0),
             shape: BoxShape.rectangle,
             border: Border.all(
-              color: const Color(0xFF0B7AD4),
+              color: Color(0xFF0B7AD4),
             ),
           ),
-          alignment: const AlignmentDirectional(1.0, 0.0),
+          alignment: AlignmentDirectional(1.0, 0.0),
           child: Padding(
-            padding: const EdgeInsets.all(20.0),
+            padding: EdgeInsets.all(20.0),
             child: Column(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.start,
@@ -90,10 +92,10 @@ class _AcoesTarefasConcluidasWidgetState
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 80.0,
-                    padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
+                    padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     iconPadding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: const Color(0xFFE2B601),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: Color(0xFFE2B601),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,
@@ -101,7 +103,7 @@ class _AcoesTarefasConcluidasWidgetState
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -110,26 +112,26 @@ class _AcoesTarefasConcluidasWidgetState
                 ),
                 Expanded(
                   child: Align(
-                    alignment: const AlignmentDirectional(-1.0, 0.0),
+                    alignment: AlignmentDirectional(-1.0, 0.0),
                     child: FFButtonWidget(
                       onPressed: () async {
                         var confirmDialogResponse = await showDialog<bool>(
                               context: context,
                               builder: (alertDialogContext) {
                                 return AlertDialog(
-                                  title: const Text('TEM  CERTEZA ?'),
-                                  content: const Text(
+                                  title: Text('TEM  CERTEZA ?'),
+                                  content: Text(
                                       'Deseja mover todas para  Tarefas  Pendentes ?'),
                                   actions: [
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, false),
-                                      child: const Text('Não'),
+                                      child: Text('Não'),
                                     ),
                                     TextButton(
                                       onPressed: () => Navigator.pop(
                                           alertDialogContext, true),
-                                      child: const Text('Sim'),
+                                      child: Text('Sim'),
                                     ),
                                   ],
                                 );
@@ -147,7 +149,7 @@ class _AcoesTarefasConcluidasWidgetState
                             FFAppState().contador = -1;
                           });
                           _model.instantTimer = InstantTimer.periodic(
-                            duration: const Duration(milliseconds: 1000),
+                            duration: Duration(milliseconds: 1000),
                             callback: (timer) async {
                               while (FFAppState().contador <=
                                   _model.resultadoTarefas!.length) {
@@ -182,8 +184,8 @@ class _AcoesTarefasConcluidasWidgetState
                       options: FFButtonOptions(
                         width: 270.0,
                         height: 70.0,
-                        padding: const EdgeInsets.all(0.0),
-                        iconPadding: const EdgeInsets.all(0.0),
+                        padding: EdgeInsets.all(0.0),
+                        iconPadding: EdgeInsets.all(0.0),
                         color: FlutterFlowTheme.of(context).success,
                         textStyle:
                             FlutterFlowTheme.of(context).titleSmall.override(
@@ -193,7 +195,7 @@ class _AcoesTarefasConcluidasWidgetState
                                   fontWeight: FontWeight.w600,
                                 ),
                         elevation: 3.0,
-                        borderSide: const BorderSide(
+                        borderSide: BorderSide(
                           color: Colors.transparent,
                         ),
                         borderRadius: BorderRadius.circular(8.0),
@@ -224,9 +226,9 @@ class _AcoesTarefasConcluidasWidgetState
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 70.0,
-                    padding: const EdgeInsets.all(0.0),
-                    iconPadding: const EdgeInsets.all(0.0),
-                    color: const Color(0xFF0171CB),
+                    padding: EdgeInsets.all(0.0),
+                    iconPadding: EdgeInsets.all(0.0),
+                    color: Color(0xFF0171CB),
                     textStyle: FlutterFlowTheme.of(context).titleSmall.override(
                           fontFamily: 'Poppins',
                           color: Colors.white,
@@ -234,7 +236,7 @@ class _AcoesTarefasConcluidasWidgetState
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 3.0,
-                    borderSide: const BorderSide(
+                    borderSide: BorderSide(
                       color: Colors.transparent,
                       width: 1.0,
                     ),
@@ -242,7 +244,7 @@ class _AcoesTarefasConcluidasWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await showModalBottomSheet(
@@ -266,9 +268,9 @@ class _AcoesTarefasConcluidasWidgetState
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 70.0,
-                      padding: const EdgeInsets.all(0.0),
-                      iconPadding: const EdgeInsets.all(0.0),
-                      color: const Color(0xB5990A0F),
+                      padding: EdgeInsets.all(0.0),
+                      iconPadding: EdgeInsets.all(0.0),
+                      color: Color(0xB5990A0F),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
@@ -277,7 +279,7 @@ class _AcoesTarefasConcluidasWidgetState
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),
@@ -286,7 +288,7 @@ class _AcoesTarefasConcluidasWidgetState
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.safePop();
@@ -297,9 +299,9 @@ class _AcoesTarefasConcluidasWidgetState
                     options: FFButtonOptions(
                       width: 164.0,
                       height: 46.0,
-                      padding: const EdgeInsets.all(0.0),
-                      iconPadding: const EdgeInsets.all(0.0),
-                      color: const Color(0xFFE37B07),
+                      padding: EdgeInsets.all(0.0),
+                      iconPadding: EdgeInsets.all(0.0),
+                      color: Color(0xFFE37B07),
                       textStyle:
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
@@ -308,7 +310,7 @@ class _AcoesTarefasConcluidasWidgetState
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 3.0,
-                      borderSide: const BorderSide(
+                      borderSide: BorderSide(
                         color: Colors.transparent,
                         width: 1.0,
                       ),

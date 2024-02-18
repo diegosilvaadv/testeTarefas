@@ -12,14 +12,14 @@ Future<List<T>> _readQuery<T>(
 Future<List<GetCategoriasRow>> performGetCategorias(
   Database database,
 ) {
-  const query = '''
+  final query = '''
 Select * from CategoriaTarefas
 ''';
   return _readQuery(database, query, (d) => GetCategoriasRow(d));
 }
 
 class GetCategoriasRow extends SqliteRow {
-  GetCategoriasRow(super.data);
+  GetCategoriasRow(Map<String, dynamic> data) : super(data);
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;
@@ -37,13 +37,13 @@ Future<List<GetListaTarefasRow>> performGetListaTarefas(
 }) {
   final query = '''
 Select * from ListaTarefas
-WHERE categoriaID,  ePendente = $categoriaID, $ePendente;
+WHERE categoriaID,  ePendente = ${categoriaID}, ${ePendente};
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasRow(d));
 }
 
 class GetListaTarefasRow extends SqliteRow {
-  GetListaTarefasRow(super.data);
+  GetListaTarefasRow(Map<String, dynamic> data) : super(data);
 
   String get nometarefa => data['nometarefa'] as String;
   int get dataTarefa => data['dataTarefa'] as int;
@@ -59,14 +59,14 @@ class GetListaTarefasRow extends SqliteRow {
 Future<List<GetPerfilUserRow>> performGetPerfilUser(
   Database database,
 ) {
-  const query = '''
+  final query = '''
 Select * from PerfilUser
 ''';
   return _readQuery(database, query, (d) => GetPerfilUserRow(d));
 }
 
 class GetPerfilUserRow extends SqliteRow {
-  GetPerfilUserRow(super.data);
+  GetPerfilUserRow(Map<String, dynamic> data) : super(data);
 
   String get fotoPerfil => data['fotoPerfil'] as String;
   String get nomeUser => data['nomeUser'] as String;
@@ -81,13 +81,13 @@ Future<List<GetCategoriasSelecionadaRow>> performGetCategoriasSelecionada(
 }) {
   final query = '''
 Select * from CategoriaTarefas
-WHERE id = $id;
+WHERE id = ${id};
 ''';
   return _readQuery(database, query, (d) => GetCategoriasSelecionadaRow(d));
 }
 
 class GetCategoriasSelecionadaRow extends SqliteRow {
-  GetCategoriasSelecionadaRow(super.data);
+  GetCategoriasSelecionadaRow(Map<String, dynamic> data) : super(data);
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;
@@ -103,13 +103,13 @@ Future<List<GetCategoriaColorRow>> performGetCategoriaColor(
 }) {
   final query = '''
 Select * from CategoriaTarefas
-WHERE selectCategoria = $selectCategoria;
+WHERE selectCategoria = ${selectCategoria};
 ''';
   return _readQuery(database, query, (d) => GetCategoriaColorRow(d));
 }
 
 class GetCategoriaColorRow extends SqliteRow {
-  GetCategoriaColorRow(super.data);
+  GetCategoriaColorRow(Map<String, dynamic> data) : super(data);
 
   String get nomeCategoria => data['nomeCategoria'] as String;
   int get id => data['id'] as int;

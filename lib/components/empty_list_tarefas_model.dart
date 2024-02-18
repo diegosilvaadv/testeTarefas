@@ -1,6 +1,10 @@
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'empty_list_tarefas_widget.dart' show EmptyListTarefasWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class EmptyListTarefasModel extends FlutterFlowModel<EmptyListTarefasWidget> {
   /// Initialization and disposal methods.

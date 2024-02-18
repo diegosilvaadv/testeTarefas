@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '/backend/schema/structs/index.dart';
+import '/backend/sqlite/sqlite_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'flutter_flow/flutter_flow_util.dart';
 
@@ -96,186 +97,186 @@ class FFAppState extends ChangeNotifier {
 
   List<TarefasStruct> _ListadeTarefas = [];
   List<TarefasStruct> get ListadeTarefas => _ListadeTarefas;
-  set ListadeTarefas(List<TarefasStruct> value) {
-    _ListadeTarefas = value;
+  set ListadeTarefas(List<TarefasStruct> _value) {
+    _ListadeTarefas = _value;
     prefs.setStringList(
-        'ff_ListadeTarefas', value.map((x) => x.serialize()).toList());
+        'ff_ListadeTarefas', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToListadeTarefas(TarefasStruct value) {
-    _ListadeTarefas.add(value);
+  void addToListadeTarefas(TarefasStruct _value) {
+    _ListadeTarefas.add(_value);
     prefs.setStringList('ff_ListadeTarefas',
         _ListadeTarefas.map((x) => x.serialize()).toList());
   }
 
-  void removeFromListadeTarefas(TarefasStruct value) {
-    _ListadeTarefas.remove(value);
+  void removeFromListadeTarefas(TarefasStruct _value) {
+    _ListadeTarefas.remove(_value);
     prefs.setStringList('ff_ListadeTarefas',
         _ListadeTarefas.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromListadeTarefas(int index) {
-    _ListadeTarefas.removeAt(index);
+  void removeAtIndexFromListadeTarefas(int _index) {
+    _ListadeTarefas.removeAt(_index);
     prefs.setStringList('ff_ListadeTarefas',
         _ListadeTarefas.map((x) => x.serialize()).toList());
   }
 
   void updateListadeTarefasAtIndex(
-    int index,
+    int _index,
     TarefasStruct Function(TarefasStruct) updateFn,
   ) {
-    _ListadeTarefas[index] = updateFn(_ListadeTarefas[index]);
+    _ListadeTarefas[_index] = updateFn(_ListadeTarefas[_index]);
     prefs.setStringList('ff_ListadeTarefas',
         _ListadeTarefas.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInListadeTarefas(int index, TarefasStruct value) {
-    _ListadeTarefas.insert(index, value);
+  void insertAtIndexInListadeTarefas(int _index, TarefasStruct _value) {
+    _ListadeTarefas.insert(_index, _value);
     prefs.setStringList('ff_ListadeTarefas',
         _ListadeTarefas.map((x) => x.serialize()).toList());
   }
 
   String _CategoriasSelecionadas = '';
   String get CategoriasSelecionadas => _CategoriasSelecionadas;
-  set CategoriasSelecionadas(String value) {
-    _CategoriasSelecionadas = value;
+  set CategoriasSelecionadas(String _value) {
+    _CategoriasSelecionadas = _value;
   }
 
   List<CategoriasStruct> _CategoriaAux = [];
   List<CategoriasStruct> get CategoriaAux => _CategoriaAux;
-  set CategoriaAux(List<CategoriasStruct> value) {
-    _CategoriaAux = value;
+  set CategoriaAux(List<CategoriasStruct> _value) {
+    _CategoriaAux = _value;
     prefs.setStringList(
-        'ff_CategoriaAux', value.map((x) => x.serialize()).toList());
+        'ff_CategoriaAux', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToCategoriaAux(CategoriasStruct value) {
-    _CategoriaAux.add(value);
-    prefs.setStringList(
-        'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
-  }
-
-  void removeFromCategoriaAux(CategoriasStruct value) {
-    _CategoriaAux.remove(value);
+  void addToCategoriaAux(CategoriasStruct _value) {
+    _CategoriaAux.add(_value);
     prefs.setStringList(
         'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromCategoriaAux(int index) {
-    _CategoriaAux.removeAt(index);
+  void removeFromCategoriaAux(CategoriasStruct _value) {
+    _CategoriaAux.remove(_value);
+    prefs.setStringList(
+        'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
+  }
+
+  void removeAtIndexFromCategoriaAux(int _index) {
+    _CategoriaAux.removeAt(_index);
     prefs.setStringList(
         'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
   }
 
   void updateCategoriaAuxAtIndex(
-    int index,
+    int _index,
     CategoriasStruct Function(CategoriasStruct) updateFn,
   ) {
-    _CategoriaAux[index] = updateFn(_CategoriaAux[index]);
+    _CategoriaAux[_index] = updateFn(_CategoriaAux[_index]);
     prefs.setStringList(
         'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInCategoriaAux(int index, CategoriasStruct value) {
-    _CategoriaAux.insert(index, value);
+  void insertAtIndexInCategoriaAux(int _index, CategoriasStruct _value) {
+    _CategoriaAux.insert(_index, _value);
     prefs.setStringList(
         'ff_CategoriaAux', _CategoriaAux.map((x) => x.serialize()).toList());
   }
 
   List<TarefasStruct> _ListaTarefaConcluida = [];
   List<TarefasStruct> get ListaTarefaConcluida => _ListaTarefaConcluida;
-  set ListaTarefaConcluida(List<TarefasStruct> value) {
-    _ListaTarefaConcluida = value;
+  set ListaTarefaConcluida(List<TarefasStruct> _value) {
+    _ListaTarefaConcluida = _value;
     prefs.setStringList(
-        'ff_ListaTarefaConcluida', value.map((x) => x.serialize()).toList());
+        'ff_ListaTarefaConcluida', _value.map((x) => x.serialize()).toList());
   }
 
-  void addToListaTarefaConcluida(TarefasStruct value) {
-    _ListaTarefaConcluida.add(value);
+  void addToListaTarefaConcluida(TarefasStruct _value) {
+    _ListaTarefaConcluida.add(_value);
     prefs.setStringList('ff_ListaTarefaConcluida',
         _ListaTarefaConcluida.map((x) => x.serialize()).toList());
   }
 
-  void removeFromListaTarefaConcluida(TarefasStruct value) {
-    _ListaTarefaConcluida.remove(value);
+  void removeFromListaTarefaConcluida(TarefasStruct _value) {
+    _ListaTarefaConcluida.remove(_value);
     prefs.setStringList('ff_ListaTarefaConcluida',
         _ListaTarefaConcluida.map((x) => x.serialize()).toList());
   }
 
-  void removeAtIndexFromListaTarefaConcluida(int index) {
-    _ListaTarefaConcluida.removeAt(index);
+  void removeAtIndexFromListaTarefaConcluida(int _index) {
+    _ListaTarefaConcluida.removeAt(_index);
     prefs.setStringList('ff_ListaTarefaConcluida',
         _ListaTarefaConcluida.map((x) => x.serialize()).toList());
   }
 
   void updateListaTarefaConcluidaAtIndex(
-    int index,
+    int _index,
     TarefasStruct Function(TarefasStruct) updateFn,
   ) {
-    _ListaTarefaConcluida[index] = updateFn(_ListaTarefaConcluida[index]);
+    _ListaTarefaConcluida[_index] = updateFn(_ListaTarefaConcluida[_index]);
     prefs.setStringList('ff_ListaTarefaConcluida',
         _ListaTarefaConcluida.map((x) => x.serialize()).toList());
   }
 
-  void insertAtIndexInListaTarefaConcluida(int index, TarefasStruct value) {
-    _ListaTarefaConcluida.insert(index, value);
+  void insertAtIndexInListaTarefaConcluida(int _index, TarefasStruct _value) {
+    _ListaTarefaConcluida.insert(_index, _value);
     prefs.setStringList('ff_ListaTarefaConcluida',
         _ListaTarefaConcluida.map((x) => x.serialize()).toList());
   }
 
   String _NomeUser = '';
   String get NomeUser => _NomeUser;
-  set NomeUser(String value) {
-    _NomeUser = value;
-    prefs.setString('ff_NomeUser', value);
+  set NomeUser(String _value) {
+    _NomeUser = _value;
+    prefs.setString('ff_NomeUser', _value);
   }
 
   int _IDcategorias = 0;
   int get IDcategorias => _IDcategorias;
-  set IDcategorias(int value) {
-    _IDcategorias = value;
-    prefs.setInt('ff_IDcategorias', value);
+  set IDcategorias(int _value) {
+    _IDcategorias = _value;
+    prefs.setInt('ff_IDcategorias', _value);
   }
 
   bool _PopUpTarefas = false;
   bool get PopUpTarefas => _PopUpTarefas;
-  set PopUpTarefas(bool value) {
-    _PopUpTarefas = value;
-    prefs.setBool('ff_PopUpTarefas', value);
+  set PopUpTarefas(bool _value) {
+    _PopUpTarefas = _value;
+    prefs.setBool('ff_PopUpTarefas', _value);
   }
 
   bool _PopUpBuscarTarefas = true;
   bool get PopUpBuscarTarefas => _PopUpBuscarTarefas;
-  set PopUpBuscarTarefas(bool value) {
-    _PopUpBuscarTarefas = value;
-    prefs.setBool('ff_PopUpBuscarTarefas', value);
+  set PopUpBuscarTarefas(bool _value) {
+    _PopUpBuscarTarefas = _value;
+    prefs.setBool('ff_PopUpBuscarTarefas', _value);
   }
 
   String _base64lmage = '';
   String get base64lmage => _base64lmage;
-  set base64lmage(String value) {
-    _base64lmage = value;
-    prefs.setString('ff_base64lmage', value);
+  set base64lmage(String _value) {
+    _base64lmage = _value;
+    prefs.setString('ff_base64lmage', _value);
   }
 
   String _DataTarefa = '';
   String get DataTarefa => _DataTarefa;
-  set DataTarefa(String value) {
-    _DataTarefa = value;
-    prefs.setString('ff_DataTarefa', value);
+  set DataTarefa(String _value) {
+    _DataTarefa = _value;
+    prefs.setString('ff_DataTarefa', _value);
   }
 
   String _HoraTarefa = '';
   String get HoraTarefa => _HoraTarefa;
-  set HoraTarefa(String value) {
-    _HoraTarefa = value;
-    prefs.setString('ff_HoraTarefa', value);
+  set HoraTarefa(String _value) {
+    _HoraTarefa = _value;
+    prefs.setString('ff_HoraTarefa', _value);
   }
 
   int _contador = -1;
   int get contador => _contador;
-  set contador(int value) {
-    _contador = value;
+  set contador(int _value) {
+    _contador = _value;
   }
 }
 

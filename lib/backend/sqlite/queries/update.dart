@@ -6,7 +6,7 @@ Future performAddCategoriaTarefas(
   String? nomeCategoria,
 }) {
   final query = '''
-INSERT INTO CategoriaTarefas (nomeCategoria, selectCategoria) VALUES ('$nomeCategoria'0);
+INSERT INTO CategoriaTarefas (nomeCategoria, selectCategoria) VALUES ('${nomeCategoria}'0);
 ''';
   return database.rawQuery(query);
 }
@@ -22,7 +22,7 @@ Future performAddListaTarefas(
   int? hora,
 }) {
   final query = '''
-INSERT INTO ListaTarefas (nometarefa, categoriaID, dataTarefa, hora, ePendente) VALUES ('$nometarefa', '$categoriaID', $dataTarefa, {hora}, 0);
+INSERT INTO ListaTarefas (nometarefa, categoriaID, dataTarefa, hora, ePendente) VALUES ('${nometarefa}', '${categoriaID}', ${dataTarefa}, {hora}, 0);
 ''';
   return database.rawQuery(query);
 }
@@ -41,11 +41,11 @@ Future performEditarListaTarefas(
   final query = '''
 INSEUPDATE ListaTarefas
 SET 
-    nometarefa = '$nometarefa',
-    dataTarefa = $dataTarefa,
-    hora = $hora,
-    ePendente = $ePendente
-WHERE ID = $id;
+    nometarefa = '${nometarefa}',
+    dataTarefa = ${dataTarefa},
+    hora = ${hora},
+    ePendente = ${ePendente}
+WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -61,8 +61,8 @@ Future performEditarCategoriaTarefas(
   final query = '''
 INSEUPDATE CategoriaTarefas
 SET 
-    nomeCategoria = '$nomeCategoria',
-WHERE ID = $id;
+    nomeCategoria = '${nomeCategoria}',
+WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -76,7 +76,7 @@ Future performDeletarCategoriaTarefas(
 }) {
   final query = '''
 DELETE FROM CategoriaTarefas
- WHERE ID = $id;
+ WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -90,7 +90,7 @@ Future performDeletarListaTarefas(
 }) {
   final query = '''
 DELETE FROM ListaTarefas
- WHERE ID = $id;
+ WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -106,8 +106,8 @@ Future performConcluirListaTarefas(
   final query = '''
 INSEUPDATE ListaTarefas
 SET 
-    ePendente = '$ePendente',
-WHERE ID = $id;
+    ePendente = '${ePendente}',
+WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -121,8 +121,8 @@ Future performSelectCategoriaTarefas(
   int? id,
 }) {
   final query = '''
-INSERT INTO CategoriaTarefas (selectCategoria) VALUES ($selectCategoria)
-WHERE ID = $id;
+INSERT INTO CategoriaTarefas (selectCategoria) VALUES (${selectCategoria})
+WHERE ID = ${id};
 ''';
   return database.rawQuery(query);
 }

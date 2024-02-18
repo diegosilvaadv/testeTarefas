@@ -7,7 +7,10 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:expandable/expandable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'add_tarefas_model.dart';
 export 'add_tarefas_model.dart';
@@ -68,12 +71,12 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               children: [
                 Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -82,7 +85,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                     onTap: () async {
                       context.safePop();
                     },
-                    child: const Icon(
+                    child: Icon(
                       Icons.west,
                       color: Colors.white,
                       size: 35.0,
@@ -93,11 +96,11 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
             ),
           ),
           Align(
-            alignment: const AlignmentDirectional(0.0, -1.0),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
+              padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 0.0),
               child: Container(
-                decoration: const BoxDecoration(
+                decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(0.0),
@@ -107,9 +110,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                   ),
                 ),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(0.0),
                         bottomRight: Radius.circular(0.0),
@@ -118,9 +121,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                       ),
                       shape: BoxShape.rectangle,
                     ),
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Container(
-                      decoration: const BoxDecoration(
+                      decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(0.0),
                           bottomRight: Radius.circular(0.0),
@@ -130,7 +133,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                       ),
                       child: Padding(
                         padding:
-                            const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
                         child: Container(
                           width: double.infinity,
                           color: Colors.white,
@@ -138,7 +141,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                             controller: _model.expandableController1,
                             child: ExpandablePanel(
                               header: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 6.0, 0.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
@@ -148,7 +151,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: const Color(0xFF036B90),
+                                        color: Color(0xFF036B90),
                                         fontSize: 16.0,
                                       ),
                                 ),
@@ -164,7 +167,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                     child: Container(
                                       width: double.infinity,
                                       height: 186.0,
-                                      decoration: const BoxDecoration(
+                                      decoration: BoxDecoration(
                                         color: Colors.white,
                                         borderRadius: BorderRadius.only(
                                           bottomLeft: Radius.circular(10.0),
@@ -174,7 +177,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                         ),
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsetsDirectional.fromSTEB(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 5.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -182,7 +185,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                               MainAxisAlignment.center,
                                           children: [
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       10.0, 0.0, 10.0, 0.0),
                                               child: Row(
@@ -191,7 +194,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                   AlignedTooltip(
                                                     content: Padding(
                                                         padding:
-                                                            const EdgeInsets.all(4.0),
+                                                            EdgeInsets.all(4.0),
                                                         child: Text(
                                                           FFLocalizations.of(
                                                                   context)
@@ -216,17 +219,17 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     backgroundColor:
-                                                        const Color(0xFF03B5A1),
+                                                        Color(0xFF03B5A1),
                                                     elevation: 4.0,
                                                     tailBaseWidth: 24.0,
                                                     tailLength: 12.0,
-                                                    waitDuration: const Duration(
+                                                    waitDuration: Duration(
                                                         milliseconds: 100),
-                                                    showDuration: const Duration(
+                                                    showDuration: Duration(
                                                         milliseconds: 30000),
                                                     triggerMode:
                                                         TooltipTriggerMode.tap,
-                                                    child: const Icon(
+                                                    child: Icon(
                                                       Icons.live_help,
                                                       color: Color(0xFF82BDB1),
                                                       size: 24.0,
@@ -240,7 +243,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                               children: [
                                                 Expanded(
                                                   child: AnimatedContainer(
-                                                    duration: const Duration(
+                                                    duration: Duration(
                                                         milliseconds: 100),
                                                     curve: Curves.easeIn,
                                                     width: 100.0,
@@ -252,18 +255,18 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                               10.0),
                                                       border: Border.all(
                                                         color:
-                                                            const Color(0xFF42BEA5),
+                                                            Color(0xFF42BEA5),
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   0.0,
                                                                   0.0,
                                                                   5.0),
-                                                      child: SizedBox(
+                                                      child: Container(
                                                         width: double.infinity,
                                                         child: TextFormField(
                                                           controller: _model
@@ -281,7 +284,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFFD0D3D7),
                                                                       fontSize:
                                                                           12.0,
@@ -304,7 +307,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                     .override(
                                                                       fontFamily:
                                                                           'Readex Pro',
-                                                                      color: const Color(
+                                                                      color: Color(
                                                                           0xFF6A6970),
                                                                       fontSize:
                                                                           13.0,
@@ -322,7 +325,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 InputBorder
                                                                     .none,
                                                             contentPadding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         10.0,
                                                                         20.0,
@@ -335,7 +338,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                               .override(
                                                                 fontFamily:
                                                                     'Readex Pro',
-                                                                color: const Color(
+                                                                color: Color(
                                                                     0xFF138F76),
                                                                 fontSize: 17.0,
                                                               ),
@@ -351,7 +354,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                               ],
                                             ),
                                             Padding(
-                                              padding: const EdgeInsetsDirectional
+                                              padding: EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
                                               child: FFButtonWidget(
@@ -384,14 +387,14 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                 options: FFButtonOptions(
                                                   width: double.infinity,
                                                   height: 50.0,
-                                                  padding: const EdgeInsetsDirectional
+                                                  padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   iconPadding:
-                                                      const EdgeInsetsDirectional
+                                                      EdgeInsetsDirectional
                                                           .fromSTEB(0.0, 0.0,
                                                               0.0, 0.0),
-                                                  color: const Color(0xFF039FD5),
+                                                  color: Color(0xFF039FD5),
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -403,7 +406,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                             fontSize: 19.0,
                                                           ),
                                                   elevation: 3.0,
-                                                  borderSide: const BorderSide(
+                                                  borderSide: BorderSide(
                                                     color: Colors.transparent,
                                                     width: 1.0,
                                                   ),
@@ -420,7 +423,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                   ),
                                 ],
                               ),
-                              theme: const ExpandableThemeData(
+                              theme: ExpandableThemeData(
                                 tapHeaderToExpand: true,
                                 tapBodyToExpand: false,
                                 tapBodyToCollapse: false,
@@ -445,9 +448,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(8.0, 2.0, 8.0, 0.0),
             child: Container(
-              decoration: const BoxDecoration(
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(10.0),
@@ -457,11 +460,11 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                 ),
               ),
               child: Align(
-                alignment: const AlignmentDirectional(0.0, -1.0),
+                alignment: AlignmentDirectional(0.0, -1.0),
                 child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                   child: Container(
-                    decoration: const BoxDecoration(
+                    decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.only(
                         bottomLeft: Radius.circular(10.0),
@@ -471,10 +474,10 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                       ),
                       shape: BoxShape.rectangle,
                     ),
-                    alignment: const AlignmentDirectional(0.0, -1.0),
+                    alignment: AlignmentDirectional(0.0, -1.0),
                     child: Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: Container(
                         width: double.infinity,
                         color: Colors.white,
@@ -482,7 +485,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                           controller: _model.expandableController2,
                           child: ExpandablePanel(
                             header: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -492,7 +495,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                     .displaySmall
                                     .override(
                                       fontFamily: 'Poppins',
-                                      color: const Color(0xFF036B90),
+                                      color: Color(0xFF036B90),
                                       fontSize: 17.0,
                                     ),
                               ),
@@ -503,7 +506,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
-                                borderRadius: const BorderRadius.only(
+                                borderRadius: BorderRadius.only(
                                   bottomLeft: Radius.circular(0.0),
                                   bottomRight: Radius.circular(0.0),
                                   topLeft: Radius.circular(10.0),
@@ -516,12 +519,12 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
                                 Align(
-                                  alignment: const AlignmentDirectional(0.0, -1.0),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Form(
                                     key: _model.formKey1,
                                     autovalidateMode: AutovalidateMode.disabled,
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Container(
                                         width: double.infinity,
@@ -551,19 +554,19 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 .circular(10.0),
                                                         border: Border.all(
                                                           color:
-                                                              const Color(0xFFCBCCCD),
+                                                              Color(0xFFCBCCCD),
                                                           width: 2.0,
                                                         ),
                                                       ),
                                                       child: Padding(
                                                         padding:
-                                                            const EdgeInsetsDirectional
+                                                            EdgeInsetsDirectional
                                                                 .fromSTEB(
                                                                     0.0,
                                                                     10.0,
                                                                     0.0,
                                                                     0.0),
-                                                        child: SizedBox(
+                                                        child: Container(
                                                           width:
                                                               double.infinity,
                                                           child: TextFormField(
@@ -599,7 +602,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                       .override(
                                                                         fontFamily:
                                                                             'Readex Pro',
-                                                                        color: const Color(
+                                                                        color: Color(
                                                                             0xFF6A6970),
                                                                         fontSize:
                                                                             16.0,
@@ -617,7 +620,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                   InputBorder
                                                                       .none,
                                                               contentPadding:
-                                                                  const EdgeInsetsDirectional
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
                                                                           0.0,
@@ -630,7 +633,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 .override(
                                                                   fontFamily:
                                                                       'Readex Pro',
-                                                                  color: const Color(
+                                                                  color: Color(
                                                                       0xFF138F76),
                                                                   fontSize:
                                                                       17.0,
@@ -648,7 +651,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                 ],
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 10.0, 0.0, 10.0),
                                                 child: InkWell(
@@ -661,7 +664,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    final datePickedDate =
+                                                    final _datePickedDate =
                                                         await showDatePicker(
                                                       context: context,
                                                       initialDate:
@@ -720,10 +723,10 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                       },
                                                     );
 
-                                                    TimeOfDay? datePickedTime;
-                                                    if (datePickedDate !=
+                                                    TimeOfDay? _datePickedTime;
+                                                    if (_datePickedDate !=
                                                         null) {
-                                                      datePickedTime =
+                                                      _datePickedTime =
                                                           await showTimePicker(
                                                         context: context,
                                                         initialTime: TimeOfDay
@@ -781,18 +784,18 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                       );
                                                     }
 
-                                                    if (datePickedDate !=
+                                                    if (_datePickedDate !=
                                                             null &&
-                                                        datePickedTime !=
+                                                        _datePickedTime !=
                                                             null) {
                                                       safeSetState(() {
                                                         _model.datePicked =
                                                             DateTime(
-                                                          datePickedDate.year,
-                                                          datePickedDate.month,
-                                                          datePickedDate.day,
-                                                          datePickedTime!.hour,
-                                                          datePickedTime
+                                                          _datePickedDate.year,
+                                                          _datePickedDate.month,
+                                                          _datePickedDate.day,
+                                                          _datePickedTime!.hour,
+                                                          _datePickedTime
                                                               .minute,
                                                         );
                                                       });
@@ -810,13 +813,13 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                               8.0),
                                                       border: Border.all(
                                                         color:
-                                                            const Color(0xFFCBCCCD),
+                                                            Color(0xFFCBCCCD),
                                                         width: 2.0,
                                                       ),
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   10.0,
                                                                   0.0,
@@ -848,7 +851,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                           ),
                                                           Padding(
                                                             padding:
-                                                                const EdgeInsetsDirectional
+                                                                EdgeInsetsDirectional
                                                                     .fromSTEB(
                                                                         0.0,
                                                                         0.0,
@@ -856,7 +859,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                         0.0),
                                                             child:
                                                                 FlutterFlowIconButton(
-                                                              borderColor: const Color(
+                                                              borderColor: Color(
                                                                   0xFFCBCCCD),
                                                               borderRadius: 8.0,
                                                               borderWidth: 1.0,
@@ -882,7 +885,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 5.0, 0.0, 0.0),
                                                 child: Row(
@@ -891,7 +894,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                   children: [
                                                     Padding(
                                                       padding:
-                                                          const EdgeInsetsDirectional
+                                                          EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   0.0,
                                                                   10.0,
@@ -909,7 +912,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Readex Pro',
-                                                              color: const Color(
+                                                              color: Color(
                                                                   0xFF036B90),
                                                               fontSize: 18.0,
                                                               fontWeight:
@@ -922,7 +925,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         10.0, 3.0, 10.0, 9.0),
                                                 child: SingleChildScrollView(
@@ -935,7 +938,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         MainAxisAlignment.start,
                                                     children: [
                                                       Padding(
-                                                        padding: const EdgeInsets.all(
+                                                        padding: EdgeInsets.all(
                                                             10.0),
                                                         child: FutureBuilder<
                                                             List<
@@ -982,7 +985,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                       categoriasPendentesGetCategoriasRowList[
                                                                           categoriasPendentesIndex];
                                                                   return Padding(
-                                                                    padding: const EdgeInsetsDirectional
+                                                                    padding: EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
                                                                             0.0,
@@ -1044,15 +1047,15 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color: categoriasPendentesGetCategoriasRow.selectCategoria == 1
-                                                                              ? const Color(0xFF027CA7)
-                                                                              : const Color(0xFFB4E1D8),
+                                                                              ? Color(0xFF027CA7)
+                                                                              : Color(0xFFB4E1D8),
                                                                           borderRadius:
                                                                               BorderRadius.circular(7.0),
                                                                         ),
                                                                         child:
                                                                             Padding(
                                                                           padding:
-                                                                              const EdgeInsets.all(5.0),
+                                                                              EdgeInsets.all(5.0),
                                                                           child:
                                                                               Row(
                                                                             mainAxisSize:
@@ -1061,12 +1064,12 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                                 MainAxisAlignment.center,
                                                                             children: [
                                                                               Padding(
-                                                                                padding: const EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(3.0, 0.0, 3.0, 0.0),
                                                                                 child: Text(
                                                                                   categoriasPendentesGetCategoriasRow.nomeCategoria,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Poppins',
-                                                                                        color: categoriasPendentesGetCategoriasRow.selectCategoria == 1 ? Colors.white : const Color(0xFF9299A1),
+                                                                                        color: categoriasPendentesGetCategoriasRow.selectCategoria == 1 ? Colors.white : Color(0xFF9299A1),
                                                                                         fontWeight: FontWeight.w600,
                                                                                       ),
                                                                                 ),
@@ -1088,7 +1091,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                 ),
                                               ),
                                               Padding(
-                                                padding: const EdgeInsetsDirectional
+                                                padding: EdgeInsetsDirectional
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
@@ -1136,14 +1139,14 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     width: double.infinity,
                                                     height: 50.0,
                                                     padding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(24.0, 0.0,
                                                                 24.0, 0.0),
                                                     iconPadding:
-                                                        const EdgeInsetsDirectional
+                                                        EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
                                                                 0.0, 0.0),
-                                                    color: const Color(0xFF039FD5),
+                                                    color: Color(0xFF039FD5),
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .titleSmall
@@ -1154,7 +1157,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                           fontSize: 19.0,
                                                         ),
                                                     elevation: 3.0,
-                                                    borderSide: const BorderSide(
+                                                    borderSide: BorderSide(
                                                       color: Colors.transparent,
                                                       width: 1.0,
                                                     ),
@@ -1162,7 +1165,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     disabledColor:
-                                                        const Color(0x70B4F7E9),
+                                                        Color(0x70B4F7E9),
                                                   ),
                                                 ),
                                               ),
@@ -1175,7 +1178,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                 ),
                               ],
                             ),
-                            theme: const ExpandableThemeData(
+                            theme: ExpandableThemeData(
                               tapHeaderToExpand: true,
                               tapBodyToExpand: false,
                               tapBodyToCollapse: false,

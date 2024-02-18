@@ -4,6 +4,8 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'edit_categoria_model.dart';
 export 'edit_categoria_model.dart';
@@ -67,13 +69,13 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
           key: _model.formKey,
           autovalidateMode: AutovalidateMode.disabled,
           child: Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(20.0, 250.0, 20.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(20.0, 250.0, 20.0, 0.0),
             child: Container(
               width: double.infinity,
               height: 170.0,
               decoration: BoxDecoration(
                 color: Colors.white,
-                boxShadow: const [
+                boxShadow: [
                   BoxShadow(
                     blurRadius: 4.0,
                     color: Color(0x33000000),
@@ -92,13 +94,13 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 8.0),
+                          EdgeInsetsDirectional.fromSTEB(5.0, 5.0, 5.0, 8.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 5.0, 0.0, 0.0, 0.0),
                             child: InkWell(
                               splashColor: Colors.transparent,
@@ -108,7 +110,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                               onTap: () async {
                                 context.safePop();
                               },
-                              child: const Icon(
+                              child: Icon(
                                 Icons.arrow_back,
                                 color: Color(0xFFD0A803),
                                 size: 24.0,
@@ -116,9 +118,9 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                             ),
                           ),
                           Align(
-                            alignment: const AlignmentDirectional(0.0, 0.0),
+                            alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(
+                              padding: EdgeInsetsDirectional.fromSTEB(
                                   65.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
@@ -129,7 +131,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: const Color(0xFFC9AC03),
+                                      color: Color(0xFFC9AC03),
                                       fontSize: 17.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -141,7 +143,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -153,13 +155,13 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10.0),
                                 border: Border.all(
-                                  color: const Color(0xFF42BEA5),
+                                  color: Color(0xFF42BEA5),
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 0.0, 8.0, 5.0),
-                                child: SizedBox(
+                                child: Container(
                                   width: double.infinity,
                                   child: TextFormField(
                                     controller:
@@ -172,7 +174,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFFD0D3D7),
+                                            color: Color(0xFFD0D3D7),
                                             fontSize: 12.0,
                                             fontWeight: FontWeight.w300,
                                           ),
@@ -185,7 +187,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                           .labelMedium
                                           .override(
                                             fontFamily: 'Readex Pro',
-                                            color: const Color(0xFF6A6970),
+                                            color: Color(0xFF6A6970),
                                             fontSize: 13.0,
                                           ),
                                       enabledBorder: InputBorder.none,
@@ -197,7 +199,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                         .bodyMedium
                                         .override(
                                           fontFamily: 'Readex Pro',
-                                          color: const Color(0xFF138F76),
+                                          color: Color(0xFF138F76),
                                           fontSize: 17.0,
                                         ),
                                     validator: _model
@@ -213,14 +215,14 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                     ),
                     Padding(
                       padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(10.0, 20.0, 10.0, 0.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
+                            padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 5.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
@@ -234,7 +236,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                 context.pushNamed(
                                   'ListadeTarefas',
                                   extra: <String, dynamic>{
-                                    kTransitionInfoKey: const TransitionInfo(
+                                    kTransitionInfoKey: TransitionInfo(
                                       hasTransition: true,
                                       transitionType: PageTransitionType.fade,
                                       duration: Duration(milliseconds: 0),
@@ -248,11 +250,11 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                               options: FFButtonOptions(
                                 width: 200.0,
                                 height: 40.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
+                                padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 0.0, 24.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
+                                iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFF1788E2),
+                                color: Color(0xFF1788E2),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -261,7 +263,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                       fontSize: 17.0,
                                     ),
                                 elevation: 3.0,
-                                borderSide: const BorderSide(
+                                borderSide: BorderSide(
                                   color: Colors.transparent,
                                   width: 1.0,
                                 ),

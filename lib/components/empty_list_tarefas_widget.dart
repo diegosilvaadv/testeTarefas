@@ -1,6 +1,8 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'empty_list_tarefas_model.dart';
 export 'empty_list_tarefas_model.dart';
@@ -41,14 +43,14 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
     context.watch<FFAppState>();
 
     return Align(
-      alignment: const AlignmentDirectional(0.0, 0.0),
+      alignment: AlignmentDirectional(0.0, 0.0),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
+            padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
             child: Text(
               FFLocalizations.of(context).getText(
                 '9hvp7b9w' /* OPS!  */,
@@ -56,14 +58,14 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).headlineSmall.override(
                     fontFamily: 'Poppins',
-                    color: const Color(0xFF04A584),
+                    color: Color(0xFF04A584),
                     fontSize: 30.0,
                     fontWeight: FontWeight.w500,
                   ),
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +73,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'sbz07975' /*          Parece que você não t... */,
@@ -80,7 +82,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
                                 fontFamily: 'Poppins',
-                                color: const Color(0xFF928D02),
+                                color: Color(0xFF928D02),
                                 fontSize: 13.0,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -91,7 +93,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
             ),
           ),
           Padding(
-            padding: const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
+            padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 0.0),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +101,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                 Flexible(
                   child: Padding(
                     padding:
-                        const EdgeInsetsDirectional.fromSTEB(1.0, 10.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(1.0, 10.0, 0.0, 0.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         '2te5x992' /*  Adicione categorias em seguid... */,
@@ -107,7 +109,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',
-                            color: const Color(0xFF272C31),
+                            color: Color(0xFF272C31),
                             fontSize: 13.0,
                             fontWeight: FontWeight.normal,
                           ),

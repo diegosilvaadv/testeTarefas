@@ -1,8 +1,18 @@
+import '/backend/schema/structs/index.dart';
 import '/backend/sqlite/sqlite_manager.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
+import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'add_tarefas_widget.dart' show AddTarefasWidget;
+import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:expandable/expandable.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   ///  Local state fields for this component.
