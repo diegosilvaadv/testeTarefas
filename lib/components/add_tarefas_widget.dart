@@ -136,15 +136,12 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     10.0, 6.0, 0.0, 0.0),
                                 child: Text(
-                                  FFLocalizations.of(context).getText(
-                                    'e048rukf' /* Adicionar categoria? */,
-                                  ),
+                                  'Adicionar categoria?',
                                   style: FlutterFlowTheme.of(context)
                                       .displaySmall
                                       .override(
                                         fontFamily: 'Poppins',
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
+                                        color: Color(0xFF036B90),
                                         fontSize: 16.0,
                                       ),
                                 ),
@@ -189,11 +186,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         padding:
                                                             EdgeInsets.all(4.0),
                                                         child: Text(
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                            'aaqaejb0' /* Defina um nome para a sua list... */,
-                                                          ),
+                                                          'Defina um nome para a sua lista de tarefas. Por exemplo, \'Lista de livros para ler\'',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .bodyLarge
@@ -288,11 +281,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                             alignLabelWithHint:
                                                                 false,
                                                             hintText:
-                                                                FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                              '53kwylsg' /* Nome da categoria */,
-                                                            ),
+                                                                'Nome da categoria',
                                                             hintStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -372,11 +361,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         ?.clear();
                                                   });
                                                 },
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  '3g0n25kn' /* Adicionar */,
-                                                ),
+                                                text: 'Adicionar',
                                                 options: FFButtonOptions(
                                                   width: double.infinity,
                                                   height: 50.0,
@@ -481,9 +466,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   10.0, 5.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'cjmikkgl' /* Adicionar tarefas? */,
-                                ),
+                                'Adicionar tarefas?',
                                 style: FlutterFlowTheme.of(context)
                                     .displaySmall
                                     .override(
@@ -583,11 +566,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                             FontWeight.w300,
                                                                       ),
                                                               hintText:
-                                                                  FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                'c5jr358a' /* Descrição da tarefa  */,
-                                                              ),
+                                                                  'Descrição da tarefa ',
                                                               hintStyle:
                                                                   FlutterFlowTheme.of(
                                                                           context)
@@ -894,11 +873,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                   0.0,
                                                                   0.0),
                                                       child: Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'rxava8be' /* Selecione uma Categoria abaixo */,
-                                                        ),
+                                                        'Selecione uma Categoria abaixo',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium
@@ -1123,11 +1098,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                     ?.clear();
                                                               });
                                                             },
-                                                  text: FFLocalizations.of(
-                                                          context)
-                                                      .getText(
-                                                    '9j9jy0x7' /* Adicionar */,
-                                                  ),
+                                                  text: 'Adicionar',
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
                                                     height: 50.0,

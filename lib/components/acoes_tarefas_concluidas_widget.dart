@@ -86,9 +86,7 @@ class _AcoesTarefasConcluidasWidgetState
                     );
                     Navigator.pop(context);
                   },
-                  text: FFLocalizations.of(context).getText(
-                    'x32p3oc4' /* Refazer tarefa atual ? */,
-                  ),
+                  text: 'Refazer tarefa atual ?',
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 80.0,
@@ -176,11 +174,7 @@ class _AcoesTarefasConcluidasWidgetState
 
                         setState(() {});
                       },
-                      text: FFLocalizations.of(context).getText(
-                        '3n6jzi1q' /* Refazer todas as tarefas ?
- */
-                        ,
-                      ),
+                      text: 'Refazer todas as tarefas ?\n',
                       options: FFButtonOptions(
                         width: 270.0,
                         height: 70.0,
@@ -220,9 +214,7 @@ class _AcoesTarefasConcluidasWidgetState
                       },
                     ).then((value) => safeSetState(() {}));
                   },
-                  text: FFLocalizations.of(context).getText(
-                    '8r6h9e71' /* Deletar tarefa atual ? */,
-                  ),
+                  text: 'Deletar tarefa atual ?',
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 70.0,
@@ -262,9 +254,7 @@ class _AcoesTarefasConcluidasWidgetState
                         },
                       ).then((value) => safeSetState(() {}));
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'v2jm6a8z' /* Deletar todas as tarefas? */,
-                    ),
+                    text: 'Deletar todas as tarefas?',
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 70.0,
@@ -293,9 +283,7 @@ class _AcoesTarefasConcluidasWidgetState
                     onPressed: () async {
                       context.safePop();
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'm2098ooc' /* Cancelar ? */,
-                    ),
+                    text: 'Cancelar ?',
                     options: FFButtonOptions(
                       width: 164.0,
                       height: 46.0,

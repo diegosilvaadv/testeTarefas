@@ -74,9 +74,7 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              FFLocalizations.of(context).getText(
-                '4g577y5y' /* Tem certeza? */,
-              ),
+              'Tem certeza?',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     color: Color(0xFFC9AC03),
@@ -94,9 +92,7 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  'yfyptq8g' /* Deletar */,
-                ),
+                text: 'Deletar',
                 icon: Icon(
                   Icons.delete_sharp,
                   size: 15.0,
@@ -127,9 +123,7 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  'ctwkqouk' /* Cancel */,
-                ),
+                text: 'Cancel',
                 icon: Icon(
                   Icons.arrow_back,
                   size: 15.0,

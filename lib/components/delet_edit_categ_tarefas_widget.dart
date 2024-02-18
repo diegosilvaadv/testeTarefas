@@ -116,9 +116,7 @@ class _DeletEditCategTarefasWidgetState
                           },
                         ).then((value) => setState(() {}));
                       },
-                      text: FFLocalizations.of(context).getText(
-                        'j627emah' /* Editar */,
-                      ),
+                      text: 'Editar',
                       icon: FaIcon(
                         FontAwesomeIcons.edit,
                         size: 20.0,
@@ -166,9 +164,7 @@ class _DeletEditCategTarefasWidgetState
                         },
                       ).then((value) => safeSetState(() {}));
                     },
-                    text: FFLocalizations.of(context).getText(
-                      '7zozisa8' /* Deletar */,
-                    ),
+                    text: 'Deletar',
                     icon: Icon(
                       Icons.delete_sharp,
                       size: 25.0,

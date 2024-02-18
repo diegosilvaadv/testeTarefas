@@ -52,9 +52,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 5.0),
             child: Text(
-              FFLocalizations.of(context).getText(
-                '9hvp7b9w' /* OPS!  */,
-              ),
+              'OPS! ',
               textAlign: TextAlign.center,
               style: FlutterFlowTheme.of(context).headlineSmall.override(
                     fontFamily: 'Poppins',
@@ -75,9 +73,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 30.0, 0.0),
                     child: Text(
-                      FFLocalizations.of(context).getText(
-                        'sbz07975' /*          Parece que você não t... */,
-                      ),
+                      '         Parece que você não tem \n        tarefas cadastrados. ',
                       textAlign: TextAlign.center,
                       style:
                           FlutterFlowTheme.of(context).headlineSmall.override(
@@ -103,9 +99,7 @@ class _EmptyListTarefasWidgetState extends State<EmptyListTarefasWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(1.0, 10.0, 0.0, 0.0),
                     child: Text(
-                      FFLocalizations.of(context).getText(
-                        '2te5x992' /*  Adicione categorias em seguid... */,
-                      ),
+                      ' Adicione categorias em seguida \n  as tarefas para começar usar o Task',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).bodyMedium.override(
                             fontFamily: 'Poppins',

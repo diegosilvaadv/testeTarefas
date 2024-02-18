@@ -83,9 +83,7 @@ class _AcoesTarefasPendentesWidgetState
                     );
                     context.safePop();
                   },
-                  text: FFLocalizations.of(context).getText(
-                    'o1oxc6kn' /* Concluir tarefa ? */,
-                  ),
+                  text: 'Concluir tarefa ?',
                   options: FFButtonOptions(
                     width: 270.0,
                     height: 70.0,
@@ -125,9 +123,7 @@ class _AcoesTarefasPendentesWidgetState
                         },
                       ).then((value) => safeSetState(() {}));
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'c9dpgm1r' /* Editar tarefa ? */,
-                    ),
+                    text: 'Editar tarefa ?',
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 70.0,
@@ -181,9 +177,7 @@ class _AcoesTarefasPendentesWidgetState
                         },
                       );
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'de6tikke' /* Deletar tarefa atual ? */,
-                    ),
+                    text: 'Deletar tarefa atual ?',
                     options: FFButtonOptions(
                       width: 2170.0,
                       height: 70.0,
@@ -237,9 +231,7 @@ class _AcoesTarefasPendentesWidgetState
                         },
                       );
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'xg6681kp' /* Deletar todas as tarefas ? */,
-                    ),
+                    text: 'Deletar todas as tarefas ?',
                     options: FFButtonOptions(
                       width: 270.0,
                       height: 70.0,
@@ -269,9 +261,7 @@ class _AcoesTarefasPendentesWidgetState
                     onPressed: () async {
                       context.pop();
                     },
-                    text: FFLocalizations.of(context).getText(
-                      'onrub61z' /* Cancelar ? */,
-                    ),
+                    text: 'Cancelar ?',
                     options: FFButtonOptions(
                       width: 164.0,
                       height: 46.0,

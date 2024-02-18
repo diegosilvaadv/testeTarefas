@@ -76,9 +76,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              FFLocalizations.of(context).getText(
-                '7m9qvg60' /* Tem certeza? */,
-              ),
+              'Tem certeza?',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     color: Color(0xFFFEB300),
@@ -118,9 +116,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
 
                   setState(() {});
                 },
-                text: FFLocalizations.of(context).getText(
-                  'gcaecxit' /* Deletar Todas */,
-                ),
+                text: 'Deletar Todas',
                 icon: Icon(
                   Icons.delete_sharp,
                   size: 15.0,
@@ -151,9 +147,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  't76n81xw' /* Cancel */,
-                ),
+                text: 'Cancel',
                 icon: Icon(
                   Icons.arrow_back,
                   size: 15.0,

@@ -39,7 +39,7 @@ Future performEditarListaTarefas(
   String? ePendente,
 }) {
   final query = '''
-INSEUPDATE ListaTarefas
+UPDATE ListaTarefas
 SET 
     nometarefa = '${nometarefa}',
     dataTarefa = ${dataTarefa},
@@ -59,7 +59,7 @@ Future performEditarCategoriaTarefas(
   int? id,
 }) {
   final query = '''
-INSEUPDATE CategoriaTarefas
+UPDATE CategoriaTarefas
 SET 
     nomeCategoria = '${nomeCategoria}',
 WHERE ID = ${id};
@@ -104,7 +104,7 @@ Future performConcluirListaTarefas(
   int? id,
 }) {
   final query = '''
-INSEUPDATE ListaTarefas
+UPDATE ListaTarefas
 SET 
     ePendente = '${ePendente}',
 WHERE ID = ${id};

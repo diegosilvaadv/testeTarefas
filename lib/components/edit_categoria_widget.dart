@@ -123,9 +123,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   65.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'do5ism23' /* Editar categoria ? */,
-                                ),
+                                'Editar categoria ?',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -179,10 +177,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                             fontWeight: FontWeight.w300,
                                           ),
                                       alignLabelWithHint: false,
-                                      hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'q7mmv70o' /* Digite o nome da categoria */,
-                                      ),
+                                      hintText: 'Digite o nome da categoria',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -244,9 +239,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                   },
                                 );
                               },
-                              text: FFLocalizations.of(context).getText(
-                                'z8st3tdc' /* Editar */,
-                              ),
+                              text: 'Editar',
                               options: FFButtonOptions(
                                 width: 200.0,
                                 height: 40.0,

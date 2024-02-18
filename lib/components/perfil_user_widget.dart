@@ -112,9 +112,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                       ),
                                     ),
                                     Text(
-                                      FFLocalizations.of(context).getText(
-                                        'pr6u3ozd' /* Meu Perfil */,
-                                      ),
+                                      'Meu Perfil',
                                       textAlign: TextAlign.end,
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -148,10 +146,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
                                               Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'vsldcj4y' /* Nome:  */,
-                                                ),
+                                                'Nome: ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -239,9 +234,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 5.0, 0.0, 0.0),
                                       child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'qxix2y25' /*    Toque na imagem para carreg... */,
-                                        ),
+                                        '   Toque na imagem para carregar a\n foto em seguido no botão adicionar',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -269,9 +262,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
 
                                         context.pushNamed('HomePage');
                                       },
-                                      text: FFLocalizations.of(context).getText(
-                                        '9p6znvo9' /* Adicionar */,
-                                      ),
+                                      text: 'Adicionar',
                                       options: FFButtonOptions(
                                         width: 200.0,
                                         height: 40.0,
@@ -329,9 +320,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                         alignment:
                                             AlignmentDirectional(0.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'tj2ppox0' /* Como você gostaria de ser cham... */,
-                                          ),
+                                          'Como você gostaria de ser chamado(a)?',
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -385,11 +374,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                           fontWeight:
                                                               FontWeight.w300,
                                                         ),
-                                                hintText:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'aaxiwmg9' /* Digite seu nome  */,
-                                                ),
+                                                hintText: 'Digite seu nome ',
                                                 hintStyle:
                                                     FlutterFlowTheme.of(context)
                                                         .labelMedium,
@@ -442,10 +427,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                     ?.clear();
                                               });
                                             },
-                                            text: FFLocalizations.of(context)
-                                                .getText(
-                                              '3f1kja2w' /* Salvar/Editar */,
-                                            ),
+                                            text: 'Salvar/Editar',
                                             options: FFButtonOptions(
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
@@ -608,10 +590,7 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                 );
                                               },
                                               child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'cs0qrpjl' /* Termos de uso */,
-                                                ),
+                                                'Termos de uso',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium

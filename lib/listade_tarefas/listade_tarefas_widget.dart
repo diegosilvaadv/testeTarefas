@@ -133,9 +133,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         25.0, 1.0, 55.0, 3.0),
                                     child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'ml4npzqo' /* MINHA LISTA DE TAREFAS */,
-                                      ),
+                                      'MINHA LISTA DE TAREFAS',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium
@@ -214,10 +212,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               ),
                                             ),
                                             Tab(
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                '7xty0tb7' /* Pendentes */,
-                                              ),
+                                              text: 'Pendentes',
                                             ),
                                           ],
                                         ),
@@ -235,10 +230,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                               ),
                                             ),
                                             Tab(
-                                              text: FFLocalizations.of(context)
-                                                  .getText(
-                                                'ko43og50' /* Concluidas */,
-                                              ),
+                                              text: 'Concluidas',
                                             ),
                                           ],
                                         ),
@@ -268,11 +260,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             .fromSTEB(10.0,
                                                                 15.0, 0.0, 0.0),
                                                     child: Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'yvpn3ddo' /* Escolha uma categoria abaixo */,
-                                                      ),
+                                                      'Escolha uma categoria abaixo',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -597,11 +585,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         fontWeight:
                                                                             FontWeight.w300,
                                                                       ),
-                                                                  hintText: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '1r3ulmp1' /* Buscar tarefa */,
-                                                                  ),
+                                                                  hintText:
+                                                                      'Buscar tarefa',
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
@@ -886,9 +871,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            '5qjv8xg8' /* Data: */,
-                                                                                          ),
+                                                                                          'Data:',
                                                                                           textAlign: TextAlign.start,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Readex Pro',
@@ -930,9 +913,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       Padding(
                                                                                         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                         child: Text(
-                                                                                          FFLocalizations.of(context).getText(
-                                                                                            'goxovvdd' /* Hora: */,
-                                                                                          ),
+                                                                                          'Hora:',
                                                                                           textAlign: TextAlign.start,
                                                                                           style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                 fontFamily: 'Readex Pro',
@@ -984,9 +965,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     },
                                                                                   ).then((value) => safeSetState(() {}));
                                                                                 },
-                                                                                text: FFLocalizations.of(context).getText(
-                                                                                  '2jcamqiu' /* Ações */,
-                                                                                ),
+                                                                                text: 'Ações',
                                                                                 options: FFButtonOptions(
                                                                                   width: 71.0,
                                                                                   height: 23.0,
@@ -1039,10 +1018,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                   .fromSTEB(
                                                       10.0, 15.0, 0.0, 0.0),
                                               child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'rnv2yowz' /* Escolha uma categoria abaixo  */,
-                                                ),
+                                                'Escolha uma categoria abaixo ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1337,11 +1313,8 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         fontWeight:
                                                                             FontWeight.w300,
                                                                       ),
-                                                                  hintText: FFLocalizations.of(
-                                                                          context)
-                                                                      .getText(
-                                                                    '620j7es8' /* Buscar tarefa */,
-                                                                  ),
+                                                                  hintText:
+                                                                      'Buscar tarefa',
                                                                   hintStyle: FlutterFlowTheme.of(
                                                                           context)
                                                                       .labelMedium,
@@ -1600,9 +1573,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                       child: Text(
-                                                                                        FFLocalizations.of(context).getText(
-                                                                                          'ufvrtv92' /* Concluida:  */,
-                                                                                        ),
+                                                                                        'Concluida: ',
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
@@ -1639,9 +1610,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                     Padding(
                                                                                       padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                       child: Text(
-                                                                                        FFLocalizations.of(context).getText(
-                                                                                          'kljep671' /* Hora: */,
-                                                                                        ),
+                                                                                        'Hora:',
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                               fontFamily: 'Readex Pro',
@@ -1698,9 +1667,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   },
                                                                                 ).then((value) => safeSetState(() {}));
                                                                               },
-                                                                              text: FFLocalizations.of(context).getText(
-                                                                                'q8pepa7a' /* Ações */,
-                                                                              ),
+                                                                              text: 'Ações',
                                                                               options: FFButtonOptions(
                                                                                 width: 70.0,
                                                                                 height: 23.0,

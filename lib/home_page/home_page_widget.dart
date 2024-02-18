@@ -119,9 +119,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                     crossAxisAlignment: CrossAxisAlignment.end,
                                     children: [
                                       Text(
-                                        FFLocalizations.of(context).getText(
-                                          '57b3gpnv' /* Hoje é */,
-                                        ),
+                                        'Hoje é',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -286,9 +284,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             5.0, 0.0, 0.0, 0.0),
                                         child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'u7tynzwo' /* Olá,  */,
-                                          ),
+                                          'Olá, ',
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -400,9 +396,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   3.0, 0.0, 3.0, 0.0),
                                           child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'zxnwujv8' /* Lista de Tarefas */,
-                                            ),
+                                            'Lista de Tarefas',
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(

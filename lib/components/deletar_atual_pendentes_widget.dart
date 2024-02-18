@@ -76,9 +76,7 @@ class _DeletarAtualPendentesWidgetState
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              FFLocalizations.of(context).getText(
-                '006m46xn' /* Tem certeza? */,
-              ),
+              'Tem certeza?',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     color: Color(0xFFFEB300),
@@ -96,9 +94,7 @@ class _DeletarAtualPendentesWidgetState
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  'lkygh9mq' /* Deletar atual */,
-                ),
+                text: 'Deletar atual',
                 icon: Icon(
                   Icons.delete_sharp,
                   size: 15.0,
@@ -129,9 +125,7 @@ class _DeletarAtualPendentesWidgetState
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  '8m5r7y17' /* Cancel */,
-                ),
+                text: 'Cancel',
                 icon: Icon(
                   Icons.arrow_back,
                   size: 15.0,

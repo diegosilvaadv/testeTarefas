@@ -78,9 +78,7 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
             child: Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 60.0, 0.0),
               child: Text(
-                FFLocalizations.of(context).getText(
-                  'mwp5fg5j' /* Termos de uso */,
-                ),
+                'Termos de uso',
                 textAlign: TextAlign.center,
                 style: FlutterFlowTheme.of(context).bodyLarge.override(
                       fontFamily: 'Readex Pro',
@@ -151,9 +149,7 @@ class _TermoUsoWidgetState extends State<TermoUsoWidget> {
                         child: Align(
                           alignment: AlignmentDirectional(0.0, 0.0),
                           child: Text(
-                            FFLocalizations.of(context).getText(
-                              'mpf1rfih' /* Termo de uso Termo de uso Term... */,
-                            ),
+                            'Termo de uso Termo de uso Termo de e uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\nTermo de uso Termo de uso Termo de uso Termo de uso\n',
                             textAlign: TextAlign.justify,
                             style: FlutterFlowTheme.of(context)
                                 .labelMedium

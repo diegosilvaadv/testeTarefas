@@ -120,9 +120,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   2.0, 0.0, 0.0, 5.0),
                               child: Text(
-                                FFLocalizations.of(context).getText(
-                                  'qc28fwuu' /* Editar Tarefa */,
-                                ),
+                                'Editar Tarefa',
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -176,9 +174,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                                             fontWeight: FontWeight.w300,
                                           ),
                                       hintText:
-                                          FFLocalizations.of(context).getText(
-                                        'b3okzppd' /* Exemplo, comprar:   Arroz, Car... */,
-                                      ),
+                                          'Exemplo, comprar:   Arroz, Carne, Pão...',
                                       hintStyle: FlutterFlowTheme.of(context)
                                           .labelMedium
                                           .override(
@@ -463,9 +459,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                           Navigator.pop(context);
                           Navigator.pop(context);
                         },
-                        text: FFLocalizations.of(context).getText(
-                          '7vmlw742' /* Salvar */,
-                        ),
+                        text: 'Salvar',
                         options: FFButtonOptions(
                           width: double.infinity,
                           height: 60.0,

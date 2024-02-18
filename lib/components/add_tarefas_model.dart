@@ -32,9 +32,7 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   String? _inputCategoriaControllerValidator(
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'xvnxt59i' /* Esse campo é obrigatório! */,
-      );
+      return 'Esse campo é obrigatório!';
     }
 
     return null;
@@ -49,9 +47,7 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   String? Function(BuildContext, String?)? inputTarefaControllerValidator;
   String? _inputTarefaControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
-      return FFLocalizations.of(context).getText(
-        'v1gblysj' /* Esse campo é obrigatório! */,
-      );
+      return 'Esse campo é obrigatório!';
     }
 
     return null;

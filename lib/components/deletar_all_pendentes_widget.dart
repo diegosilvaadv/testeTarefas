@@ -76,9 +76,7 @@ class _DeletarAllPendentesWidgetState extends State<DeletarAllPendentesWidget> {
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              FFLocalizations.of(context).getText(
-                'kerxdod4' /* Tem certeza? */,
-              ),
+              'Tem certeza?',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     color: Color(0xFFFEB300),
@@ -118,9 +116,7 @@ class _DeletarAllPendentesWidgetState extends State<DeletarAllPendentesWidget> {
 
                   setState(() {});
                 },
-                text: FFLocalizations.of(context).getText(
-                  'qea0ienx' /* Deletar todas */,
-                ),
+                text: 'Deletar todas',
                 icon: Icon(
                   Icons.delete_sharp,
                   size: 15.0,
@@ -151,9 +147,7 @@ class _DeletarAllPendentesWidgetState extends State<DeletarAllPendentesWidget> {
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  'f2do0jsp' /* Cancel */,
-                ),
+                text: 'Cancel',
                 icon: Icon(
                   Icons.arrow_back,
                   size: 15.0,

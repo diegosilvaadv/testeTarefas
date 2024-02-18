@@ -76,9 +76,7 @@ class _DeletarAtualConcluidasWidgetState
           mainAxisSize: MainAxisSize.max,
           children: [
             Text(
-              FFLocalizations.of(context).getText(
-                'y7gmkzqo' /* Tem certeza? */,
-              ),
+              'Tem certeza?',
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Readex Pro',
                     color: Color(0xFFFEB300),
@@ -96,9 +94,7 @@ class _DeletarAtualConcluidasWidgetState
                   Navigator.pop(context);
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  '105bdaxf' /* Deletar atual */,
-                ),
+                text: 'Deletar atual',
                 icon: Icon(
                   Icons.delete_sharp,
                   size: 15.0,
@@ -129,9 +125,7 @@ class _DeletarAtualConcluidasWidgetState
                 onPressed: () async {
                   Navigator.pop(context);
                 },
-                text: FFLocalizations.of(context).getText(
-                  'i1d07o4i' /* Cancel */,
-                ),
+                text: 'Cancel',
                 icon: Icon(
                   Icons.arrow_back,
                   size: 15.0,
