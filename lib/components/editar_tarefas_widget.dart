@@ -452,9 +452,8 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                             nometarefa: _model.inputEditTarefaController.text,
                             dataTarefa: functions
                                 .converteDataToInteger(_model.datePicked!),
-                            hora: 0,
-                            id: widget.taferaRef!.id,
                             ePendente: widget.taferaRef?.ePendente?.toString(),
+                            id: widget.taferaRef!.id,
                           );
                           Navigator.pop(context);
                           Navigator.pop(context);

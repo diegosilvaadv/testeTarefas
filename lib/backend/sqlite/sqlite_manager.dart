@@ -90,7 +90,6 @@ class SQLiteManager {
   Future editarListaTarefas({
     String? nometarefa,
     int? dataTarefa,
-    int? hora,
     int? id,
     String? ePendente,
   }) =>
@@ -98,7 +97,6 @@ class SQLiteManager {
         _database,
         nometarefa: nometarefa,
         dataTarefa: dataTarefa,
-        hora: hora,
         id: id,
         ePendente: ePendente,
       );

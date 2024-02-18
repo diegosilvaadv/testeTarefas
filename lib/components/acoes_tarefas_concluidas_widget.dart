@@ -81,7 +81,6 @@ class _AcoesTarefasConcluidasWidgetState
                       id: widget.tarefasRef!.id,
                       nometarefa: widget.tarefasRef!.nometarefa,
                       dataTarefa: widget.tarefasRef!.dataTarefa,
-                      hora: widget.tarefasRef!.hora,
                       ePendente: '0',
                     );
                     Navigator.pop(context);
@@ -158,7 +157,6 @@ class _AcoesTarefasConcluidasWidgetState
                                 await SQLiteManager.instance.editarListaTarefas(
                                   nometarefa: widget.tarefasRef!.nometarefa,
                                   dataTarefa: widget.tarefasRef!.dataTarefa,
-                                  hora: widget.tarefasRef!.hora,
                                   id: _model
                                       .resultadoTarefas![FFAppState().contador]
                                       .id,
