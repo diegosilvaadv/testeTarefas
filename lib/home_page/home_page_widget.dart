@@ -1,3 +1,4 @@
+import '/components/add_tarefas_widget.dart';
 import '/components/nav_bar_home_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -164,25 +165,63 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 color: Colors.white,
                                                 size: 18.0,
                                               ),
-                                              Text(
-                                                dateTimeFormat(
-                                                  'Hm',
-                                                  getCurrentTimestamp,
-                                                  locale: FFLocalizations.of(
-                                                          context)
-                                                      .languageCode,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Readex Pro',
-                                                          color: Colors.white,
-                                                          fontSize: 19.0,
-                                                          fontStyle:
-                                                              FontStyle.italic,
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await showModalBottomSheet(
+                                                    isScrollControlled: true,
+                                                    backgroundColor:
+                                                        Colors.transparent,
+                                                    enableDrag: false,
+                                                    context: context,
+                                                    builder: (context) {
+                                                      return GestureDetector(
+                                                        onTap: () => _model
+                                                                .unfocusNode
+                                                                .canRequestFocus
+                                                            ? FocusScope.of(
+                                                                    context)
+                                                                .requestFocus(_model
+                                                                    .unfocusNode)
+                                                            : FocusScope.of(
+                                                                    context)
+                                                                .unfocus(),
+                                                        child: Padding(
+                                                          padding: MediaQuery
+                                                              .viewInsetsOf(
+                                                                  context),
+                                                          child:
+                                                              AddTarefasWidget(),
                                                         ),
+                                                      );
+                                                    },
+                                                  ).then((value) =>
+                                                      safeSetState(() {}));
+                                                },
+                                                child: Text(
+                                                  dateTimeFormat(
+                                                    'Hm',
+                                                    getCurrentTimestamp,
+                                                    locale: FFLocalizations.of(
+                                                            context)
+                                                        .languageCode,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily:
+                                                            'Readex Pro',
+                                                        color: Colors.white,
+                                                        fontSize: 19.0,
+                                                        fontStyle:
+                                                            FontStyle.italic,
+                                                      ),
+                                                ),
                                               ),
                                             ],
                                           ),
@@ -337,7 +376,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             hasTransition: true,
                                             transitionType:
                                                 PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
+                                            duration:
+                                                Duration(milliseconds: 300),
                                           ),
                                         },
                                       );

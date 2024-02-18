@@ -1,4 +1,3 @@
-import '/backend/schema/structs/index.dart';
 import '/components/add_tarefas_widget.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -173,10 +172,7 @@ class _NavBarListadeTarefasWidgetState extends State<NavBarListadeTarefasWidget>
                                 backgroundColor: Colors.transparent,
                                 alignment: AlignmentDirectional(0.0, 0.0)
                                     .resolve(Directionality.of(context)),
-                                child: AddTarefasWidget(
-                                  parametroAddTarefa: TarefasStruct(),
-                                  parametroAddCategoria: CategoriasStruct(),
-                                ),
+                                child: AddTarefasWidget(),
                               );
                             },
                           ).then((value) => setState(() {}));

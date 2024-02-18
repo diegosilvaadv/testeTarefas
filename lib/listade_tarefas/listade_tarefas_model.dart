@@ -22,7 +22,7 @@ import 'package:text_search/text_search.dart';
 class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   ///  Local state fields for this page.
 
-  int? categoriaSelecionada;
+  int? categoriaSelecionada = 1;
 
   ///  State fields for stateful widgets in this page.
 

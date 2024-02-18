@@ -1,4 +1,3 @@
-import '/backend/schema/structs/index.dart';
 import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -16,14 +15,7 @@ import 'add_tarefas_model.dart';
 export 'add_tarefas_model.dart';
 
 class AddTarefasWidget extends StatefulWidget {
-  const AddTarefasWidget({
-    super.key,
-    required this.parametroAddTarefa,
-    required this.parametroAddCategoria,
-  });
-
-  final TarefasStruct? parametroAddTarefa;
-  final CategoriasStruct? parametroAddCategoria;
+  const AddTarefasWidget({super.key});
 
   @override
   State<AddTarefasWidget> createState() => _AddTarefasWidgetState();

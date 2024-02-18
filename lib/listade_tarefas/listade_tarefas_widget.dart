@@ -1424,9 +1424,14 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                     future: SQLiteManager
                                                         .instance
                                                         .getListaTarefas(
-                                                      categoriaID: _model
-                                                          .categoriaSelecionada!
-                                                          .toString(),
+                                                      categoriaID:
+                                                          valueOrDefault<
+                                                              String>(
+                                                        _model
+                                                            .categoriaSelecionada
+                                                            ?.toString(),
+                                                        '1',
+                                                      ),
                                                       ePendente: 1,
                                                     ),
                                                     builder:
