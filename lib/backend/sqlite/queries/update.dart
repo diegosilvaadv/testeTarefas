@@ -120,8 +120,10 @@ Future performSelectCategoriaTarefas(
   int? id,
 }) {
   final query = '''
-INSERT INTO CategoriaTarefas (selectCategoria) VALUES (${selectCategoria})
-WHERE id = ${id};
+UPDATE CategoriaTarefas
+SET 
+    selectCategoria = ${selectCategoria}
+ WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
