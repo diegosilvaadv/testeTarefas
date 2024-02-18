@@ -216,10 +216,8 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                         onTap: () async {
                           final _datePickedDate = await showDatePicker(
                             context: context,
-                            initialDate: functions.converterintegerToData(
-                                widget.taferaRef!.dataTarefa),
-                            firstDate: functions.converterintegerToData(
-                                widget.taferaRef!.dataTarefa),
+                            initialDate: getCurrentTimestamp,
+                            firstDate: getCurrentTimestamp,
                             lastDate: DateTime(2050),
                             builder: (context, child) {
                               return wrapInMaterialDatePickerTheme(
@@ -256,9 +254,8 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                           if (_datePickedDate != null) {
                             _datePickedTime = await showTimePicker(
                               context: context,
-                              initialTime: TimeOfDay.fromDateTime(
-                                  functions.converterintegerToData(
-                                      widget.taferaRef!.dataTarefa)),
+                              initialTime:
+                                  TimeOfDay.fromDateTime(getCurrentTimestamp),
                               builder: (context, child) {
                                 return wrapInMaterialTimePickerTheme(
                                   context,
@@ -323,19 +320,29 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  valueOrDefault<String>(
+                                if (_model.datePicked == null)
+                                  Text(
                                     dateTimeFormat(
-                                      'd/M/y',
+                                      'dd/MM/yy | kk:mm',
+                                      functions.converterintegerToData(
+                                          widget.taferaRef!.dataTarefa),
+                                      locale: FFLocalizations.of(context)
+                                          .languageCode,
+                                    ),
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
+                                  ),
+                                if (_model.datePicked != null)
+                                  Text(
+                                    dateTimeFormat(
+                                      'dd/MM/yy | kk:mm',
                                       _model.datePicked,
                                       locale: FFLocalizations.of(context)
                                           .languageCode,
                                     ),
-                                    'Defina uma data',
+                                    style:
+                                        FlutterFlowTheme.of(context).bodyMedium,
                                   ),
-                                  style:
-                                      FlutterFlowTheme.of(context).bodyMedium,
-                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 5.0, 0.0),
