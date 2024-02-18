@@ -13,10 +13,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
-  ///  Local state fields for this component.
-
-  int? categoriaSelecionado;
-
   ///  State fields for stateful widgets in this component.
 
   final formKey2 = GlobalKey<FormState>();
@@ -54,6 +50,8 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   }
 
   DateTime? datePicked;
+  // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in Container widget.
+  List<GetCategoriaColorRow>? selectCategoriaColor;
 
   /// Initialization and disposal methods.
 

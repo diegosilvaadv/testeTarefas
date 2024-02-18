@@ -976,9 +976,25 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                           () async {
                                                                         setState(
                                                                             () {
-                                                                          _model.categoriaSelecionado =
+                                                                          FFAppState().selectCategoria =
                                                                               categoriasPendentesGetCategoriasRow.id;
                                                                         });
+                                                                        _model.selectCategoriaColor = await SQLiteManager
+                                                                            .instance
+                                                                            .getCategoriaColor(
+                                                                          selectCategoria:
+                                                                              1,
+                                                                        );
+                                                                        await SQLiteManager
+                                                                            .instance
+                                                                            .selectCategoriaTarefas(
+                                                                          selectCategoria:
+                                                                              0,
+                                                                          id: _model
+                                                                              .selectCategoriaColor!
+                                                                              .first
+                                                                              .id,
+                                                                        );
                                                                         await SQLiteManager
                                                                             .instance
                                                                             .selectCategoriaTarefas(
@@ -987,6 +1003,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                           id: categoriasPendentesGetCategoriasRow
                                                                               .id,
                                                                         );
+
+                                                                        setState(
+                                                                            () {});
                                                                       },
                                                                       child:
                                                                           Container(
@@ -1060,8 +1079,8 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                       dataTarefa: _model
                                                           .datePicked!
                                                           .secondsSinceEpoch,
-                                                      categoriaID: _model
-                                                          .categoriaSelecionado!,
+                                                      categoriaID: FFAppState()
+                                                          .selectCategoria,
                                                     );
                                                     setState(() {
                                                       _model
