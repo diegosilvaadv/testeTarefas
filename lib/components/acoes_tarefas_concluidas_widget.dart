@@ -245,7 +245,7 @@ class _AcoesTarefasConcluidasWidgetState
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: DeleteAllConcluidosWidget(
-                              tarefaRef: widget.tarefasRef!.id,
+                              tarefaRef: widget.tarefasRef!.categoriaID!,
                             ),
                           );
                         },

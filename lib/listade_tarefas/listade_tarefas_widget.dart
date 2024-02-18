@@ -1647,7 +1647,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: AcoesTarefasConcluidasWidget(),
+                                                                                        child: AcoesTarefasConcluidasWidget(
+                                                                                          tarefasRef: listViewConcluidasGetListaTarefasRow,
+                                                                                        ),
                                                                                       ),
                                                                                     );
                                                                                   },
