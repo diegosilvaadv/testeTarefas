@@ -259,17 +259,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             .fromSTEB(10.0,
                                                                 15.0, 0.0, 0.0),
                                                     child: Text(
-                                                      valueOrDefault<String>(
-                                                        formatNumber(
-                                                          _model
-                                                              .categoriaSelecionada,
-                                                          formatType:
-                                                              FormatType.custom,
-                                                          format: '',
-                                                          locale: '',
-                                                        ),
-                                                        '0000',
-                                                      ),
+                                                      'Escolha uma categoria abaixo',
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .bodyMedium
@@ -1194,44 +1184,6 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           categoriaConcluidasGetCategoriasRow
                                                                               .nomeCategoria,
                                                                           '--',
-                                                                        ).maybeHandleOverflow(
-                                                                          maxChars:
-                                                                              60,
-                                                                          replacement:
-                                                                              '…',
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Poppins',
-                                                                              color: categoriaConcluidasGetCategoriasRow.selectCategoria == 1 ? Colors.white : Color(0xFFAAADAE),
-                                                                              fontSize: 15.0,
-                                                                              fontWeight: FontWeight.bold,
-                                                                            ),
-                                                                        minFontSize:
-                                                                            12.0,
-                                                                      ),
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          AutoSizeText(
-                                                                        valueOrDefault<
-                                                                            String>(
-                                                                          formatNumber(
-                                                                            categoriaConcluidasGetCategoriasRow.id,
-                                                                            formatType:
-                                                                                FormatType.custom,
-                                                                            format:
-                                                                                '',
-                                                                            locale:
-                                                                                '',
-                                                                          ),
-                                                                          '0',
                                                                         ).maybeHandleOverflow(
                                                                           maxChars:
                                                                               60,

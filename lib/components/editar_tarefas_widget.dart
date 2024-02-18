@@ -450,8 +450,9 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                         onPressed: () async {
                           await SQLiteManager.instance.editarListaTarefas(
                             nometarefa: _model.inputEditTarefaController.text,
-                            dataTarefa: functions
-                                .converteDataToInteger(_model.datePicked!),
+                            dataTarefa: _model.datePicked != null
+                                ? _model.datePicked!.secondsSinceEpoch
+                                : widget.taferaRef!.dataTarefa,
                             ePendente: widget.taferaRef?.ePendente?.toString(),
                             id: widget.taferaRef!.id,
                           );
