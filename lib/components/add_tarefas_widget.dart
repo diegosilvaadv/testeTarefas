@@ -975,6 +975,11 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
+                                                                        setState(
+                                                                            () {
+                                                                          _model.categoriaSelecionado =
+                                                                              categoriasPendentesGetCategoriasRow.id;
+                                                                        });
                                                                         await SQLiteManager
                                                                             .instance
                                                                             .selectCategoriaTarefas(
@@ -983,11 +988,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                           id: categoriasPendentesGetCategoriasRow
                                                                               .id,
                                                                         );
-                                                                        setState(
-                                                                            () {
-                                                                          _model.categoriaSelecionado =
-                                                                              categoriasPendentesGetCategoriasRow.id;
-                                                                        });
                                                                       },
                                                                       child:
                                                                           Container(

@@ -338,6 +338,11 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
+                                                              setState(() {
+                                                                _model.categoriaSelecionada =
+                                                                    categoriasPendentesGetCategoriasRow
+                                                                        .id;
+                                                              });
                                                               _model.selectCategoriaCoor =
                                                                   await SQLiteManager
                                                                       .instance
@@ -363,11 +368,6 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 id: categoriasPendentesGetCategoriasRow
                                                                     .id,
                                                               );
-                                                              setState(() {
-                                                                _model.categoriaSelecionada =
-                                                                    categoriasPendentesGetCategoriasRow
-                                                                        .id;
-                                                              });
 
                                                               setState(() {});
                                                             },
