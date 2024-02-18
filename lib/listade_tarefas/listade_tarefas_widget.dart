@@ -419,9 +419,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           0.0),
                                                                       child:
                                                                           AutoSizeText(
-                                                                        categoriasPendentesGetCategoriasRow
-                                                                            .nomeCategoria
-                                                                            .maybeHandleOverflow(
+                                                                        valueOrDefault<
+                                                                            String>(
+                                                                          categoriasPendentesGetCategoriasRow
+                                                                              .nomeCategoria,
+                                                                          '--',
+                                                                        ).maybeHandleOverflow(
                                                                           maxChars:
                                                                               60,
                                                                           replacement:
@@ -817,7 +820,10 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   child: Padding(
                                                                                     padding: const EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                                                                                     child: AutoSizeText(
-                                                                                      listViewPendentesGetListaTarefasRow.nometarefa.maybeHandleOverflow(
+                                                                                      valueOrDefault<String>(
+                                                                                        listViewPendentesGetListaTarefasRow.nometarefa,
+                                                                                        '--',
+                                                                                      ).maybeHandleOverflow(
                                                                                         maxChars: 145,
                                                                                         replacement: '…',
                                                                                       ),
@@ -901,7 +907,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                             functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
                                                                                             locale: FFLocalizations.of(context).languageCode,
                                                                                           ),
-                                                                                          '--',
+                                                                                          '0',
                                                                                         ),
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -945,7 +951,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                             functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
                                                                                             locale: FFLocalizations.of(context).languageCode,
                                                                                           ),
-                                                                                          '--',
+                                                                                          '0',
                                                                                         ),
                                                                                         textAlign: TextAlign.start,
                                                                                         style: FlutterFlowTheme.of(context).bodyMedium.override(
