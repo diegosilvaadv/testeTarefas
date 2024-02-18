@@ -1611,6 +1611,21 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         ),
                                                                       ),
                                                                     ),
+                                                                    StyledDivider(
+                                                                      height:
+                                                                          5.0,
+                                                                      thickness:
+                                                                          1.0,
+                                                                      indent:
+                                                                          10.0,
+                                                                      endIndent:
+                                                                          10.0,
+                                                                      color: Color(
+                                                                          0xFF33A2E0),
+                                                                      lineStyle:
+                                                                          DividerLineStyle
+                                                                              .dashed,
+                                                                    ),
                                                                     Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
                                                                           10.0,
@@ -1638,25 +1653,17 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                      child: Text(
-                                                                                        valueOrDefault<String>(
-                                                                                          formatNumber(
-                                                                                            listViewConcluidasGetListaTarefasCopyRow.categoriaID,
-                                                                                            formatType: FormatType.custom,
-                                                                                            format: '',
-                                                                                            locale: '',
-                                                                                          ),
-                                                                                          '0',
+                                                                                    Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        formatNumber(
+                                                                                          listViewConcluidasGetListaTarefasCopyRow.categoriaID,
+                                                                                          formatType: FormatType.custom,
+                                                                                          format: '',
+                                                                                          locale: '',
                                                                                         ),
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Readex Pro',
-                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                              fontSize: 13.0,
-                                                                                            ),
+                                                                                        '0',
                                                                                       ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                     Text(
                                                                                       valueOrDefault<String>(
@@ -1683,17 +1690,17 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Hora:',
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Readex Pro',
-                                                                                              color: Color(0xFF57636C),
-                                                                                              fontSize: 13.0,
-                                                                                            ),
+                                                                                    Text(
+                                                                                      valueOrDefault<String>(
+                                                                                        formatNumber(
+                                                                                          listViewConcluidasGetListaTarefasCopyRow.ePendente,
+                                                                                          formatType: FormatType.custom,
+                                                                                          format: '',
+                                                                                          locale: '',
+                                                                                        ),
+                                                                                        '0',
                                                                                       ),
+                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                     Text(
                                                                                       valueOrDefault<String>(
@@ -1765,21 +1772,6 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           ),
                                                                         ],
                                                                       ),
-                                                                    ),
-                                                                    StyledDivider(
-                                                                      height:
-                                                                          5.0,
-                                                                      thickness:
-                                                                          1.0,
-                                                                      indent:
-                                                                          10.0,
-                                                                      endIndent:
-                                                                          10.0,
-                                                                      color: Color(
-                                                                          0xFF33A2E0),
-                                                                      lineStyle:
-                                                                          DividerLineStyle
-                                                                              .dashed,
                                                                     ),
                                                                   ],
                                                                 ),

@@ -90,7 +90,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 8.0, 0.0, 0.0),
+                                    0.0, 10.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -130,7 +130,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            2.0, 0.0, 5.0, 2.0),
+                                            2.0, 0.0, 6.0, 2.0),
                                         child: Text(
                                           dateTimeFormat(
                                             ' EEEE, d MMMM yyyy',
@@ -158,10 +158,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.end,
                                             children: [
-                                              Icon(
-                                                Icons.watch_later_outlined,
-                                                color: Colors.white,
-                                                size: 18.0,
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        6.0, 0.0, 0.0, 0.0),
+                                                child: Icon(
+                                                  Icons.watch_later_outlined,
+                                                  color: Colors.white,
+                                                  size: 18.0,
+                                                ),
                                               ),
                                               InkWell(
                                                 splashColor: Colors.transparent,

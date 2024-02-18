@@ -40,8 +40,8 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
     _model.inputCategoriaFocusNode ??= FocusNode();
 
     _model.expandableController2 = ExpandableController(initialExpanded: false);
-    _model.inputTarefaController ??= TextEditingController();
-    _model.inputTarefaFocusNode ??= FocusNode();
+    _model.inputAddTarefaController ??= TextEditingController();
+    _model.inputAddTarefaFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -321,7 +321,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 fontFamily:
                                                                     'Readex Pro',
                                                                 color: Color(
-                                                                    0xFF138F76),
+                                                                    0xFF3D85B2),
                                                                 fontSize: 17.0,
                                                               ),
                                                           validator: _model
@@ -547,9 +547,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                               double.infinity,
                                                           child: TextFormField(
                                                             controller: _model
-                                                                .inputTarefaController,
+                                                                .inputAddTarefaController,
                                                             focusNode: _model
-                                                                .inputTarefaFocusNode,
+                                                                .inputAddTarefaFocusNode,
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -606,13 +606,13 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                   fontFamily:
                                                                       'Readex Pro',
                                                                   color: Color(
-                                                                      0xFF138F76),
+                                                                      0xFF3D85B2),
                                                                   fontSize:
                                                                       17.0,
                                                                 ),
                                                             maxLines: 2,
                                                             validator: _model
-                                                                .inputTarefaControllerValidator
+                                                                .inputAddTarefaControllerValidator
                                                                 .asValidator(
                                                                     context),
                                                           ),
@@ -1056,7 +1056,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     await SQLiteManager.instance
                                                         .addListaTarefas(
                                                       nometarefa: _model
-                                                          .inputTarefaController
+                                                          .inputAddTarefaController
                                                           .text,
                                                       dataTarefa: functions
                                                           .converteDataToInteger(
@@ -1067,7 +1067,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     );
                                                     setState(() {
                                                       _model
-                                                          .inputTarefaController
+                                                          .inputAddTarefaController
                                                           ?.clear();
                                                     });
                                                   },

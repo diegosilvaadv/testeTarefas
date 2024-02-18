@@ -41,11 +41,12 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   // State field(s) for Expandable widget.
   late ExpandableController expandableController2;
 
-  // State field(s) for InputTarefa widget.
-  FocusNode? inputTarefaFocusNode;
-  TextEditingController? inputTarefaController;
-  String? Function(BuildContext, String?)? inputTarefaControllerValidator;
-  String? _inputTarefaControllerValidator(BuildContext context, String? val) {
+  // State field(s) for InputAddTarefa widget.
+  FocusNode? inputAddTarefaFocusNode;
+  TextEditingController? inputAddTarefaController;
+  String? Function(BuildContext, String?)? inputAddTarefaControllerValidator;
+  String? _inputAddTarefaControllerValidator(
+      BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return 'Esse campo é obrigatório!';
     }
@@ -60,7 +61,7 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   @override
   void initState(BuildContext context) {
     inputCategoriaControllerValidator = _inputCategoriaControllerValidator;
-    inputTarefaControllerValidator = _inputTarefaControllerValidator;
+    inputAddTarefaControllerValidator = _inputAddTarefaControllerValidator;
   }
 
   @override
@@ -70,8 +71,8 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
     inputCategoriaController?.dispose();
 
     expandableController2.dispose();
-    inputTarefaFocusNode?.dispose();
-    inputTarefaController?.dispose();
+    inputAddTarefaFocusNode?.dispose();
+    inputAddTarefaController?.dispose();
   }
 
   /// Action blocks are added here.
