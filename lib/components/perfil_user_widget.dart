@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -185,43 +184,32 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           5.0, 0.0, 0.0, 0.0),
-                                      child: InkWell(
-                                        splashColor: Colors.transparent,
-                                        focusColor: Colors.transparent,
-                                        hoverColor: Colors.transparent,
-                                        highlightColor: Colors.transparent,
-                                        onTap: () async {
-                                          await actions.fotoPerfil(
-                                            context,
-                                          );
-                                        },
-                                        child: Container(
-                                          width: 55.0,
-                                          height: 55.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            image: DecorationImage(
-                                              fit: BoxFit.cover,
-                                              image: Image.network(
-                                                'https://cvws.icloud-content.com/B/AZEtcKHc2Hew1Sx_zlVFkOiKW5ooAZuhw7SROKK9FxD7eaGwgbirMMRZ/Designer++PNG+%281%29.png?o=AosHDppkJcu4Y7PTDztZeDaqqS38abdIKexyc1WYbJuC&v=1&x=3&a=CAogj4qYHsP8PdUNKTuVNTAElLJa2jClO7NKKnQ8Nwmv7M8SbxC-5qu1yjEYvsOHt8oxIgEAUgSKW5ooWgSrMMRZaieH5qs8HcbZcRXzgtaNMOvLPaiX4cxVh5Mwxzl6Bcwj7p_6Rvz0VHdyJ6MmqeX-ZakSMfx_tQWbGvF_wtqxC-1QYv9oGQ9QVouKkV-V3vBL1g&e=1703606870&fl=&r=ac56b91e-2a6c-4aaf-bb7f-8436e1ebf37b-1&k=SbRun5k-Ejq0aXA0X6GItA&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=VS55odC1T_yflbaEOA2S3j_4MhM&cd=i',
-                                              ).image,
-                                            ),
-                                            boxShadow: [
-                                              BoxShadow(
-                                                blurRadius: 4.0,
-                                                color: Color(0x33000000),
-                                                offset: Offset(0.0, 2.0),
-                                              )
-                                            ],
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color: Color(0xFFBBB5F6),
-                                            ),
+                                      child: Container(
+                                        width: 55.0,
+                                        height: 55.0,
+                                        decoration: BoxDecoration(
+                                          color: FlutterFlowTheme.of(context)
+                                              .secondaryBackground,
+                                          image: DecorationImage(
+                                            fit: BoxFit.cover,
+                                            image: Image.network(
+                                              'https://cvws.icloud-content.com/B/AZEtcKHc2Hew1Sx_zlVFkOiKW5ooAZuhw7SROKK9FxD7eaGwgbirMMRZ/Designer++PNG+%281%29.png?o=AosHDppkJcu4Y7PTDztZeDaqqS38abdIKexyc1WYbJuC&v=1&x=3&a=CAogj4qYHsP8PdUNKTuVNTAElLJa2jClO7NKKnQ8Nwmv7M8SbxC-5qu1yjEYvsOHt8oxIgEAUgSKW5ooWgSrMMRZaieH5qs8HcbZcRXzgtaNMOvLPaiX4cxVh5Mwxzl6Bcwj7p_6Rvz0VHdyJ6MmqeX-ZakSMfx_tQWbGvF_wtqxC-1QYv9oGQ9QVouKkV-V3vBL1g&e=1703606870&fl=&r=ac56b91e-2a6c-4aaf-bb7f-8436e1ebf37b-1&k=SbRun5k-Ejq0aXA0X6GItA&ckc=com.apple.clouddocs&ckz=com.apple.CloudDocs&p=104&s=VS55odC1T_yflbaEOA2S3j_4MhM&cd=i',
+                                            ).image,
                                           ),
-                                          alignment:
-                                              AlignmentDirectional(-1.0, 0.0),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              blurRadius: 4.0,
+                                              color: Color(0x33000000),
+                                              offset: Offset(0.0, 2.0),
+                                            )
+                                          ],
+                                          shape: BoxShape.circle,
+                                          border: Border.all(
+                                            color: Color(0xFFBBB5F6),
+                                          ),
                                         ),
+                                        alignment:
+                                            AlignmentDirectional(-1.0, 0.0),
                                       ),
                                     ),
                                     Padding(
