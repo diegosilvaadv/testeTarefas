@@ -372,7 +372,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                       padding: EdgeInsets.all(10.0),
                       child: FutureBuilder<List<GetCategoriasSelecionadaRow>>(
                         future: SQLiteManager.instance.getCategoriasSelecionada(
-                          id: widget.taferaRef?.categoriaID?.toString(),
+                          id: widget.taferaRef!.categoriaID!,
                         ),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.

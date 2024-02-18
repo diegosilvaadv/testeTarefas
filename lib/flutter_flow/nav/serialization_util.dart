@@ -214,8 +214,6 @@ dynamic deserializeParam<T>(
             return GetCategoriasSelecionadaRow(data);
           case GetCategoriaColorRow:
             return GetCategoriaColorRow(data);
-          case GetListaTarefasCopyRow:
-            return GetListaTarefasCopyRow(data);
           default:
             return null;
         }

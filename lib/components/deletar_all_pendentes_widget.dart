@@ -90,7 +90,7 @@ class _DeletarAllPendentesWidgetState extends State<DeletarAllPendentesWidget> {
                 onPressed: () async {
                   _model.listaDeTarefas =
                       await SQLiteManager.instance.getCategoriasSelecionada(
-                    id: widget.idCategoria?.toString(),
+                    id: widget.idCategoria!,
                   );
                   setState(() {
                     FFAppState().contador = -1;

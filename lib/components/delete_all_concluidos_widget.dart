@@ -90,7 +90,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                 onPressed: () async {
                   _model.listaDeTarefas1 =
                       await SQLiteManager.instance.getCategoriasSelecionada(
-                    id: widget.tarefaRef?.toString(),
+                    id: widget.tarefaRef!,
                   );
                   setState(() {
                     FFAppState().contador = -1;

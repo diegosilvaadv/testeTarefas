@@ -75,7 +75,7 @@ class GetPerfilUserRow extends SqliteRow {
 /// BEGIN GETCATEGORIASSELECIONADA
 Future<List<GetCategoriasSelecionadaRow>> performGetCategoriasSelecionada(
   Database database, {
-  String? id,
+  int? id,
 }) {
   final query = '''
 Select * from CategoriaTarefas
@@ -114,25 +114,3 @@ class GetCategoriaColorRow extends SqliteRow {
 }
 
 /// END GETCATEGORIACOLOR
-
-/// BEGIN GETLISTATAREFASCOPY
-Future<List<GetListaTarefasCopyRow>> performGetListaTarefasCopy(
-  Database database,
-) {
-  final query = '''
-Select * from ListaTarefas
-''';
-  return _readQuery(database, query, (d) => GetListaTarefasCopyRow(d));
-}
-
-class GetListaTarefasCopyRow extends SqliteRow {
-  GetListaTarefasCopyRow(Map<String, dynamic> data) : super(data);
-
-  String get nometarefa => data['nometarefa'] as String;
-  int get dataTarefa => data['dataTarefa'] as int;
-  int get ePendente => data['ePendente'] as int;
-  int get id => data['id'] as int;
-  int? get categoriaID => data['categoriaID'] as int?;
-}
-
-/// END GETLISTATAREFASCOPY

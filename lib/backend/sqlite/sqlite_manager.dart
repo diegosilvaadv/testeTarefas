@@ -48,7 +48,7 @@ class SQLiteManager {
       );
 
   Future<List<GetCategoriasSelecionadaRow>> getCategoriasSelecionada({
-    String? id,
+    int? id,
   }) =>
       performGetCategoriasSelecionada(
         _database,
@@ -61,11 +61,6 @@ class SQLiteManager {
       performGetCategoriaColor(
         _database,
         selectCategoria: selectCategoria,
-      );
-
-  Future<List<GetListaTarefasCopyRow>> getListaTarefasCopy() =>
-      performGetListaTarefasCopy(
-        _database,
       );
 
   /// END READ QUERY CALLS
