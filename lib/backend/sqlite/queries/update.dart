@@ -17,12 +17,11 @@ INSERT INTO CategoriaTarefas (nomeCategoria, selectCategoria) VALUES ('${nomeCat
 Future performAddListaTarefas(
   Database database, {
   String? nometarefa,
-  String? categoriaID,
+  int? categoriaID,
   int? dataTarefa,
-  int? hora,
 }) {
   final query = '''
-INSERT INTO ListaTarefas (nometarefa, categoriaID, dataTarefa, hora, ePendente) VALUES ('${nometarefa}', '${categoriaID}', ${dataTarefa}, {hora}, 0);
+INSERT INTO ListaTarefas (nometarefa, categoriaID, dataTarefa, hora, ePendente) VALUES ('${nometarefa}', ${categoriaID}, ${dataTarefa}, 0);
 ''';
   return database.rawQuery(query);
 }
@@ -61,8 +60,8 @@ Future performEditarCategoriaTarefas(
   final query = '''
 UPDATE CategoriaTarefas
 SET 
-    nomeCategoria = '${nomeCategoria}',
-WHERE id = ${id};
+    nomeCategoria = '${nomeCategoria}'
+ WHERE id = ${id};
 ''';
   return database.rawQuery(query);
 }
@@ -106,7 +105,7 @@ Future performConcluirListaTarefas(
   final query = '''
 UPDATE ListaTarefas
 SET 
-    ePendente = '${ePendente}',
+    ePendente = '${ePendente}'
 WHERE id = ${id};
 ''';
   return database.rawQuery(query);

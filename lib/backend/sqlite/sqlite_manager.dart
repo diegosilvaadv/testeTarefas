@@ -77,16 +77,14 @@ class SQLiteManager {
 
   Future addListaTarefas({
     String? nometarefa,
-    String? categoriaID,
+    int? categoriaID,
     int? dataTarefa,
-    int? hora,
   }) =>
       performAddListaTarefas(
         _database,
         nometarefa: nometarefa,
         categoriaID: categoriaID,
         dataTarefa: dataTarefa,
-        hora: hora,
       );
 
   Future editarListaTarefas({

@@ -1063,9 +1063,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                               _model
                                                                   .datePicked!),
                                                       categoriaID: _model
-                                                          .categoriaSelecionado!
-                                                          .toString(),
-                                                      hora: 0,
+                                                          .categoriaSelecionado!,
                                                     );
                                                     setState(() {
                                                       _model
