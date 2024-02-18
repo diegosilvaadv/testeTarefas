@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:aligned_tooltip/aligned_tooltip.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
@@ -1058,10 +1057,9 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                       nometarefa: _model
                                                           .inputAddTarefaController
                                                           .text,
-                                                      dataTarefa: functions
-                                                          .converteDataToInteger(
-                                                              _model
-                                                                  .datePicked!),
+                                                      dataTarefa: _model
+                                                          .datePicked!
+                                                          .secondsSinceEpoch,
                                                       categoriaID: _model
                                                           .categoriaSelecionado!,
                                                     );

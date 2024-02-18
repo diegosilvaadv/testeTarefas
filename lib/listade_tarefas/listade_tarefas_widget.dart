@@ -1045,17 +1045,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                   .fromSTEB(
                                                       10.0, 15.0, 0.0, 0.0),
                                               child: Text(
-                                                valueOrDefault<String>(
-                                                  formatNumber(
-                                                    FFAppState()
-                                                        .selectCategoria,
-                                                    formatType:
-                                                        FormatType.custom,
-                                                    format: '',
-                                                    locale: '',
-                                                  ),
-                                                  '0',
-                                                ),
+                                                'Escolha uma categoria abaixo ',
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -1632,15 +1622,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        formatNumber(
-                                                                                          listViewConcluidasGetListaTarefasRow.categoriaID,
-                                                                                          formatType: FormatType.custom,
-                                                                                          format: '',
-                                                                                          locale: '',
-                                                                                        ),
-                                                                                        '0',
-                                                                                      ),
+                                                                                      'Concluida em: ',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                     Text(
@@ -1669,15 +1651,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   mainAxisAlignment: MainAxisAlignment.start,
                                                                                   children: [
                                                                                     Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        formatNumber(
-                                                                                          listViewConcluidasGetListaTarefasRow.ePendente,
-                                                                                          formatType: FormatType.custom,
-                                                                                          format: '',
-                                                                                          locale: '',
-                                                                                        ),
-                                                                                        '0',
-                                                                                      ),
+                                                                                      'Hora: ',
                                                                                       style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                     ),
                                                                                     Text(
