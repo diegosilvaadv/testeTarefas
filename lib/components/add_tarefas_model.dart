@@ -54,8 +54,6 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
   }
 
   DateTime? datePicked;
-  // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in Container widget.
-  List<GetCategoriaColorRow>? selectCategoriaColor2;
 
   /// Initialization and disposal methods.
 

@@ -975,22 +975,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
-                                                                        _model.selectCategoriaColor2 = await SQLiteManager
-                                                                            .instance
-                                                                            .getCategoriaColor(
-                                                                          selectCategoria:
-                                                                              1,
-                                                                        );
-                                                                        await SQLiteManager
-                                                                            .instance
-                                                                            .selectCategoriaTarefas(
-                                                                          selectCategoria:
-                                                                              0,
-                                                                          id: _model
-                                                                              .selectCategoriaColor2!
-                                                                              .first
-                                                                              .id,
-                                                                        );
                                                                         await SQLiteManager
                                                                             .instance
                                                                             .selectCategoriaTarefas(
@@ -1004,9 +988,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                           _model.categoriaSelecionado =
                                                                               categoriasPendentesGetCategoriasRow.id;
                                                                         });
-
-                                                                        setState(
-                                                                            () {});
                                                                       },
                                                                       child:
                                                                           Container(
