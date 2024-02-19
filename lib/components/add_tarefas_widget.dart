@@ -74,7 +74,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.safePop();
+                      context.goNamed('ListadeTarefas');
                     },
                     child: Icon(
                       Icons.west,

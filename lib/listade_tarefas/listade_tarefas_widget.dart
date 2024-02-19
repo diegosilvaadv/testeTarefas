@@ -369,24 +369,6 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                     .id,
                                                               );
 
-                                                              context.goNamed(
-                                                                'ListadeTarefas',
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  kTransitionInfoKey:
-                                                                      TransitionInfo(
-                                                                    hasTransition:
-                                                                        true,
-                                                                    transitionType:
-                                                                        PageTransitionType
-                                                                            .fade,
-                                                                    duration: Duration(
-                                                                        milliseconds:
-                                                                            0),
-                                                                  ),
-                                                                },
-                                                              );
-
                                                               setState(() {});
                                                             },
                                                             child: Container(
