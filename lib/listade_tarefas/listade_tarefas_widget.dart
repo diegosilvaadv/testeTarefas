@@ -614,11 +614,13 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                             String>.empty();
                                                                       }
                                                                       return listadeTarefasGetListaTarefasAllRowList
-                                                                          .map((e) => e
-                                                                              .nometarefa)
+                                                                          .map((e) =>
+                                                                              valueOrDefault<String>(
+                                                                                e.nometarefa,
+                                                                                '-',
+                                                                              ))
                                                                           .toList()
-                                                                          .where(
-                                                                              (option) {
+                                                                          .where((option) {
                                                                         final lowercaseOption =
                                                                             option.toLowerCase();
                                                                         return lowercaseOption.contains(textEditingValue
