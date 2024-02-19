@@ -46,7 +46,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'HomePage',
           path: '/homePage',
-          builder: (context, params) => HomePageWidget(),
+          builder: (context, params) => HomePageWidget(
+            nomeUserHome: params.getParam('nomeUserHome', ParamType.SqliteRow),
+          ),
         ),
         FFRoute(
           name: 'TermoUso',

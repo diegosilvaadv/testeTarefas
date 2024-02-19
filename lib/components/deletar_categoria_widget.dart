@@ -111,6 +111,9 @@ class _DeletarCategoriaWidgetState extends State<DeletarCategoriaWidget> {
                         );
                       }
                       _model.instantTimer10?.cancel();
+                      setState(() {
+                        FFAppState().selectCategoria = 0;
+                      });
                       Navigator.pop(context);
                       Navigator.pop(context);
                     },

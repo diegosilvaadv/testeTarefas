@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:aligned_tooltip/aligned_tooltip.dart';
+import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -549,6 +550,16 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 .inputAddTarefaController,
                                                             focusNode: _model
                                                                 .inputAddTarefaFocusNode,
+                                                            onChanged: (_) =>
+                                                                EasyDebounce
+                                                                    .debounce(
+                                                              '_model.inputAddTarefaController',
+                                                              Duration(
+                                                                  milliseconds:
+                                                                      100),
+                                                              () => setState(
+                                                                  () {}),
+                                                            ),
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -1105,6 +1116,24 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 .inputAddTarefaController
                                                                 ?.clear();
                                                           });
+
+                                                          context.pushNamed(
+                                                            'ListadeTarefas',
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              kTransitionInfoKey:
+                                                                  TransitionInfo(
+                                                                hasTransition:
+                                                                    true,
+                                                                transitionType:
+                                                                    PageTransitionType
+                                                                        .fade,
+                                                                duration: Duration(
+                                                                    milliseconds:
+                                                                        0),
+                                                              ),
+                                                            },
+                                                          );
                                                         },
                                                   text: 'Adicionar',
                                                   options: FFButtonOptions(

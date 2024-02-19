@@ -1,3 +1,4 @@
+import '/backend/sqlite/sqlite_manager.dart';
 import '/components/add_tarefas_widget.dart';
 import '/components/nav_bar_home_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -15,7 +16,12 @@ import 'home_page_model.dart';
 export 'home_page_model.dart';
 
 class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({super.key});
+  const HomePageWidget({
+    super.key,
+    this.nomeUserHome,
+  });
+
+  final GetPerfilUserRow? nomeUserHome;
 
   @override
   State<HomePageWidget> createState() => _HomePageWidgetState();
@@ -109,17 +115,21 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Text(
-                                      '${functions.saudacao()}',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Poppins',
-                                            color: Colors.white,
-                                            fontSize: 20.0,
-                                            fontWeight: FontWeight.w600,
-                                            fontStyle: FontStyle.italic,
-                                          ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 8.0, 0.0, 0.0),
+                                      child: Text(
+                                        '${functions.saudacao()}',
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              color: Colors.white,
+                                              fontSize: 20.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                      ),
                                     ),
                                   ],
                                 ),
@@ -128,7 +138,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 alignment: AlignmentDirectional(0.0, 0.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 8.0, 0.0),
+                                      0.0, 0.0, 9.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.max,
                                     crossAxisAlignment: CrossAxisAlignment.end,
@@ -140,7 +150,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             .override(
                                               fontFamily: 'Readex Pro',
                                               color: Colors.white,
-                                              fontSize: 18.0,
+                                              fontSize: 14.0,
                                             ),
                                       ),
                                       Padding(
@@ -158,7 +168,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               .override(
                                                 fontFamily: 'Readex Pro',
                                                 color: Colors.white,
-                                                fontSize: 10.0,
+                                                fontSize: 9.0,
+                                                fontWeight: FontWeight.w500,
                                                 fontStyle: FontStyle.italic,
                                               ),
                                         ),
@@ -176,11 +187,11 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        6.0, 0.0, 0.0, 0.0),
+                                                        3.0, 5.0, 0.0, 0.0),
                                                 child: Icon(
                                                   Icons.watch_later_outlined,
                                                   color: Colors.white,
-                                                  size: 18.0,
+                                                  size: 16.0,
                                                 ),
                                               ),
                                               InkWell(
@@ -235,7 +246,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                         fontFamily:
                                                             'Readex Pro',
                                                         color: Colors.white,
-                                                        fontSize: 19.0,
+                                                        fontSize: 16.0,
                                                         fontStyle:
                                                             FontStyle.italic,
                                                       ),
@@ -317,7 +328,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 3.0, 0.0, 0.0),
                                         child: Text(
-                                          'Hello World',
+                                          valueOrDefault<String>(
+                                            widget.nomeUserHome?.nomePerfil,
+                                            'Sem nome',
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

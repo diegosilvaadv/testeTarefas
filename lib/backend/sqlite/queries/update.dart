@@ -127,3 +127,16 @@ SET
 }
 
 /// END SELECTCATEGORIATAREFAS
+
+/// BEGIN ADDNOMEPERFIL
+Future performAddNomePerfil(
+  Database database, {
+  String? nomeUser,
+}) {
+  final query = '''
+INSERT INTO PerfilUser (nomeUser, ) VALUES ('${nomeUser}');
+''';
+  return database.rawQuery(query);
+}
+
+/// END ADDNOMEPERFIL

@@ -67,7 +67,7 @@ class GetPerfilUserRow extends SqliteRow {
   GetPerfilUserRow(Map<String, dynamic> data) : super(data);
 
   String get fotoPerfil => data['fotoPerfil'] as String;
-  String get nomeUser => data['nomeUser'] as String;
+  String get nomePerfil => data['nomePerfil'] as String;
 }
 
 /// END GETPERFILUSER

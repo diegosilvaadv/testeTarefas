@@ -1,3 +1,4 @@
+import '/backend/sqlite/sqlite_manager.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -157,7 +158,10 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                         ),
                                               ),
                                               Text(
-                                                'Hello World',
+                                                valueOrDefault<String>(
+                                                  _model.userPerfil?.nomePerfil,
+                                                  'Sem nome',
+                                                ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -395,6 +399,12 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                                   0.0, 10.0, 0.0, 0.0),
                                           child: FFButtonWidget(
                                             onPressed: () async {
+                                              await SQLiteManager.instance
+                                                  .addNomePerfil(
+                                                nomeUser: _model
+                                                    .inpuNomePerfilController
+                                                    .text,
+                                              );
                                               setState(() {
                                                 _model.inpuNomePerfilController
                                                     ?.clear();

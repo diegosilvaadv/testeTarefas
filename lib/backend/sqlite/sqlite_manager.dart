@@ -157,5 +157,13 @@ class SQLiteManager {
         id: id,
       );
 
+  Future addNomePerfil({
+    String? nomeUser,
+  }) =>
+      performAddNomePerfil(
+        _database,
+        nomeUser: nomeUser,
+      );
+
   /// END UPDATE QUERY CALLS
 }

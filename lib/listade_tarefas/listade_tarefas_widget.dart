@@ -681,341 +681,632 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                 decoration: BoxDecoration(
                                                   color: Colors.white,
                                                 ),
-                                                child: Padding(
-                                                  padding: EdgeInsets.all(10.0),
-                                                  child: FutureBuilder<
-                                                      List<GetListaTarefasRow>>(
-                                                    future: SQLiteManager
-                                                        .instance
-                                                        .getListaTarefas(
-                                                      categoria: FFAppState()
-                                                          .selectCategoria,
-                                                      ePendente: 0,
-                                                    ),
-                                                    builder:
-                                                        (context, snapshot) {
-                                                      // Customize what your widget looks like when it's loading.
-                                                      if (!snapshot.hasData) {
-                                                        return Center(
-                                                          child: SizedBox(
-                                                            width: 50.0,
-                                                            height: 50.0,
-                                                            child:
-                                                                CircularProgressIndicator(
-                                                              valueColor:
-                                                                  AlwaysStoppedAnimation<
-                                                                      Color>(
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                              ),
+                                                child: SingleChildScrollView(
+                                                  child: Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
+                                                      if (_model.inputBuscaTarefaController
+                                                                  .text !=
+                                                              null &&
+                                                          _model.inputBuscaTarefaController
+                                                                  .text !=
+                                                              '')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  10.0),
+                                                          child: FutureBuilder<
+                                                              List<
+                                                                  GetListaTarefasRow>>(
+                                                            future: SQLiteManager
+                                                                .instance
+                                                                .getListaTarefas(
+                                                              categoria:
+                                                                  FFAppState()
+                                                                      .selectCategoria,
+                                                              ePendente: 0,
                                                             ),
-                                                          ),
-                                                        );
-                                                      }
-                                                      final listViewPendentesGetListaTarefasRowList =
-                                                          snapshot.data!;
-                                                      return ReorderableListView
-                                                          .builder(
-                                                        padding:
-                                                            EdgeInsets.zero,
-                                                        shrinkWrap: true,
-                                                        scrollDirection:
-                                                            Axis.vertical,
-                                                        itemCount:
-                                                            listViewPendentesGetListaTarefasRowList
-                                                                .length,
-                                                        itemBuilder: (context,
-                                                            listViewPendentesIndex) {
-                                                          final listViewPendentesGetListaTarefasRow =
-                                                              listViewPendentesGetListaTarefasRowList[
-                                                                  listViewPendentesIndex];
-                                                          return Container(
-                                                            key: ValueKey(
-                                                                "ListView_6dts1koc" +
-                                                                    '_' +
-                                                                    listViewPendentesIndex
-                                                                        .toString()),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                );
+                                                              }
+                                                              final listViewPendentesGetListaTarefasRowList =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return ReorderableListView
+                                                                  .builder(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                shrinkWrap:
+                                                                    true,
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    listViewPendentesGetListaTarefasRowList
+                                                                        .length,
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        listViewPendentesIndex) {
+                                                                  final listViewPendentesGetListaTarefasRow =
+                                                                      listViewPendentesGetListaTarefasRowList[
+                                                                          listViewPendentesIndex];
+                                                                  return Container(
+                                                                    key: ValueKey("ListView_6dts1koc" +
+                                                                        '_' +
+                                                                        listViewPendentesIndex
+                                                                            .toString()),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
                                                                           10.0,
                                                                           0.0,
                                                                           0.0),
-                                                              child: Container(
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    1.0,
-                                                                height: 157.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .only(
-                                                                    bottomLeft:
-                                                                        Radius.circular(
-                                                                            3.0),
-                                                                    bottomRight:
-                                                                        Radius.circular(
-                                                                            3.0),
-                                                                    topLeft: Radius
-                                                                        .circular(
-                                                                            10.0),
-                                                                    topRight: Radius
-                                                                        .circular(
-                                                                            10.0),
-                                                                  ),
-                                                                  border: Border
-                                                                      .all(
-                                                                    color: Color(
-                                                                        0xFFEE8B60),
-                                                                  ),
-                                                                ),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  children: [
-                                                                    Expanded(
                                                                       child:
-                                                                          Align(
-                                                                        alignment: AlignmentDirectional(
-                                                                            0.0,
-                                                                            -1.0),
+                                                                          Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            1.0,
+                                                                        height:
+                                                                            157.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          borderRadius:
+                                                                              BorderRadius.only(
+                                                                            bottomLeft:
+                                                                                Radius.circular(3.0),
+                                                                            bottomRight:
+                                                                                Radius.circular(3.0),
+                                                                            topLeft:
+                                                                                Radius.circular(10.0),
+                                                                            topRight:
+                                                                                Radius.circular(10.0),
+                                                                          ),
+                                                                          border:
+                                                                              Border.all(
+                                                                            color:
+                                                                                Color(0xFFEE8B60),
+                                                                          ),
+                                                                        ),
                                                                         child:
-                                                                            Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              2.0,
-                                                                              0.0,
-                                                                              2.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Row(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.start,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.center,
-                                                                            children: [
-                                                                              Expanded(
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                alignment: AlignmentDirectional(0.0, -1.0),
                                                                                 child: Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
-                                                                                  child: AutoSizeText(
-                                                                                    valueOrDefault<String>(
-                                                                                      listViewPendentesGetListaTarefasRow.nometarefa,
-                                                                                      '--',
-                                                                                    ).maybeHandleOverflow(
-                                                                                      maxChars: 145,
-                                                                                      replacement: '…',
-                                                                                    ),
-                                                                                    textAlign: TextAlign.start,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Poppins',
-                                                                                          color: Color(0xFF0D0705),
-                                                                                          fontSize: 14.0,
-                                                                                          fontWeight: FontWeight.bold,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Expanded(
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                                                                                          child: AutoSizeText(
+                                                                                            valueOrDefault<String>(
+                                                                                              listViewPendentesGetListaTarefasRow.nometarefa,
+                                                                                              '--',
+                                                                                            ).maybeHandleOverflow(
+                                                                                              maxChars: 145,
+                                                                                              replacement: '…',
+                                                                                            ),
+                                                                                            textAlign: TextAlign.start,
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Poppins',
+                                                                                                  color: Color(0xFF0D0705),
+                                                                                                  fontSize: 14.0,
+                                                                                                  fontWeight: FontWeight.bold,
+                                                                                                ),
+                                                                                            minFontSize: 12.0,
+                                                                                          ),
                                                                                         ),
-                                                                                    minFontSize: 12.0,
+                                                                                      ),
+                                                                                    ],
                                                                                   ),
                                                                                 ),
                                                                               ),
-                                                                            ],
-                                                                          ),
+                                                                            ),
+                                                                            StyledDivider(
+                                                                              height: 5.0,
+                                                                              thickness: 1.0,
+                                                                              indent: 10.0,
+                                                                              endIndent: 10.0,
+                                                                              color: Color(0xFFEE8B60),
+                                                                              lineStyle: DividerLineStyle.dashed,
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Icon(
+                                                                                              Icons.calendar_month_outlined,
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Data:',
+                                                                                                textAlign: TextAlign.start,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Readex Pro',
+                                                                                                      color: Color(0xFF57636C),
+                                                                                                      fontSize: 13.0,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              valueOrDefault<String>(
+                                                                                                dateTimeFormat(
+                                                                                                  'dd/MM/yy',
+                                                                                                  functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
+                                                                                                  locale: FFLocalizations.of(context).languageCode,
+                                                                                                ),
+                                                                                                '0',
+                                                                                              ),
+                                                                                              textAlign: TextAlign.start,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Readex Pro',
+                                                                                                    color: Color(0xFF08BBBB),
+                                                                                                    fontSize: 13.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Icon(
+                                                                                              Icons.timer_sharp,
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Hora:',
+                                                                                                textAlign: TextAlign.start,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Readex Pro',
+                                                                                                      color: Color(0xFF57636C),
+                                                                                                      fontSize: 13.0,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              valueOrDefault<String>(
+                                                                                                dateTimeFormat(
+                                                                                                  'kk:mm',
+                                                                                                  functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
+                                                                                                  locale: FFLocalizations.of(context).languageCode,
+                                                                                                ),
+                                                                                                '0',
+                                                                                              ),
+                                                                                              textAlign: TextAlign.start,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Readex Pro',
+                                                                                                    color: Color(0xFF08BBBB),
+                                                                                                    fontSize: 13.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 3.0),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: () async {
+                                                                                        await showModalBottomSheet(
+                                                                                          isScrollControlled: true,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          isDismissible: false,
+                                                                                          context: context,
+                                                                                          builder: (context) {
+                                                                                            return GestureDetector(
+                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                              child: Padding(
+                                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                                child: AcoesTarefasPendentesWidget(
+                                                                                                  idTarefas: listViewPendentesGetListaTarefasRow,
+                                                                                                ),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ).then((value) => safeSetState(() {}));
+                                                                                      },
+                                                                                      text: 'Ações',
+                                                                                      options: FFButtonOptions(
+                                                                                        width: 71.0,
+                                                                                        height: 23.0,
+                                                                                        padding: EdgeInsets.all(0.0),
+                                                                                        iconPadding: EdgeInsets.all(2.0),
+                                                                                        color: Color(0xFFBCBDBD),
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: Colors.white,
+                                                                                              fontSize: 6.0,
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                            ),
+                                                                                        elevation: 3.0,
+                                                                                        borderSide: BorderSide(
+                                                                                          color: Colors.transparent,
+                                                                                          width: 1.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ],
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                    StyledDivider(
-                                                                      height:
-                                                                          5.0,
-                                                                      thickness:
-                                                                          1.0,
-                                                                      indent:
-                                                                          10.0,
-                                                                      endIndent:
-                                                                          10.0,
-                                                                      color: Color(
-                                                                          0xFFEE8B60),
-                                                                      lineStyle:
-                                                                          DividerLineStyle
-                                                                              .dashed,
-                                                                    ),
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          5.0,
-                                                                          0.0,
-                                                                          5.0,
-                                                                          3.0),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.spaceBetween,
-                                                                        children: [
-                                                                          Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.start,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                                                  children: [
-                                                                                    Icon(
-                                                                                      Icons.calendar_month_outlined,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      size: 20.0,
-                                                                                    ),
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Data:',
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Readex Pro',
-                                                                                              color: Color(0xFF57636C),
-                                                                                              fontSize: 13.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                    Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        dateTimeFormat(
-                                                                                          'dd/MM/yy',
-                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
-                                                                                          locale: FFLocalizations.of(context).languageCode,
-                                                                                        ),
-                                                                                        '0',
-                                                                                      ),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Readex Pro',
-                                                                                            color: Color(0xFF08BBBB),
-                                                                                            fontSize: 13.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-                                                                                child: Row(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                                                  children: [
-                                                                                    Icon(
-                                                                                      Icons.timer_sharp,
-                                                                                      color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                      size: 20.0,
-                                                                                    ),
-                                                                                    Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
-                                                                                      child: Text(
-                                                                                        'Hora:',
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                              fontFamily: 'Readex Pro',
-                                                                                              color: Color(0xFF57636C),
-                                                                                              fontSize: 13.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                    Text(
-                                                                                      valueOrDefault<String>(
-                                                                                        dateTimeFormat(
-                                                                                          'kk:mm',
-                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
-                                                                                          locale: FFLocalizations.of(context).languageCode,
-                                                                                        ),
-                                                                                        '0',
-                                                                                      ),
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                            fontFamily: 'Readex Pro',
-                                                                                            color: Color(0xFF08BBBB),
-                                                                                            fontSize: 13.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
-                                                                          Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                5.0,
-                                                                                3.0),
-                                                                            child:
-                                                                                FFButtonWidget(
-                                                                              onPressed: () async {
-                                                                                await showModalBottomSheet(
-                                                                                  isScrollControlled: true,
-                                                                                  backgroundColor: Colors.transparent,
-                                                                                  isDismissible: false,
-                                                                                  context: context,
-                                                                                  builder: (context) {
-                                                                                    return GestureDetector(
-                                                                                      onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
-                                                                                      child: Padding(
-                                                                                        padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: AcoesTarefasPendentesWidget(
-                                                                                          idTarefas: listViewPendentesGetListaTarefasRow,
-                                                                                        ),
-                                                                                      ),
-                                                                                    );
-                                                                                  },
-                                                                                ).then((value) => safeSetState(() {}));
-                                                                              },
-                                                                              text: 'Ações',
-                                                                              options: FFButtonOptions(
-                                                                                width: 71.0,
-                                                                                height: 23.0,
-                                                                                padding: EdgeInsets.all(0.0),
-                                                                                iconPadding: EdgeInsets.all(2.0),
-                                                                                color: Color(0xFFBCBDBD),
-                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                      fontFamily: 'Poppins',
-                                                                                      color: Colors.white,
-                                                                                      fontSize: 6.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ),
-                                                                                elevation: 3.0,
-                                                                                borderSide: BorderSide(
-                                                                                  color: Colors.transparent,
-                                                                                  width: 1.0,
-                                                                                ),
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ],
+                                                                  );
+                                                                },
+                                                                onReorder: (int
+                                                                        reorderableOldIndex,
+                                                                    int reorderableNewIndex) async {},
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                      if (_model.inputBuscaTarefaController
+                                                                  .text ==
+                                                              null ||
+                                                          _model.inputBuscaTarefaController
+                                                                  .text ==
+                                                              '')
+                                                        Padding(
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  10.0),
+                                                          child: FutureBuilder<
+                                                              List<
+                                                                  GetListaTarefasBuscaRow>>(
+                                                            future: SQLiteManager
+                                                                .instance
+                                                                .getListaTarefasBusca(
+                                                              nometarefa: _model
+                                                                  .inputBuscaTarefaController
+                                                                  .text,
+                                                              ePendente: 0,
+                                                            ),
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      SizedBox(
+                                                                    width: 50.0,
+                                                                    height:
+                                                                        50.0,
+                                                                    child:
+                                                                        CircularProgressIndicator(
+                                                                      valueColor:
+                                                                          AlwaysStoppedAnimation<
+                                                                              Color>(
+                                                                        FlutterFlowTheme.of(context)
+                                                                            .primary,
                                                                       ),
                                                                     ),
-                                                                  ],
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          );
-                                                        },
-                                                        onReorder: (int
-                                                                reorderableOldIndex,
-                                                            int reorderableNewIndex) async {},
-                                                      );
-                                                    },
+                                                                  ),
+                                                                );
+                                                              }
+                                                              final listViewPendentesBuscaGetListaTarefasBuscaRowList =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return ReorderableListView
+                                                                  .builder(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                shrinkWrap:
+                                                                    true,
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    listViewPendentesBuscaGetListaTarefasBuscaRowList
+                                                                        .length,
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        listViewPendentesBuscaIndex) {
+                                                                  final listViewPendentesBuscaGetListaTarefasBuscaRow =
+                                                                      listViewPendentesBuscaGetListaTarefasBuscaRowList[
+                                                                          listViewPendentesBuscaIndex];
+                                                                  return Container(
+                                                                    key: ValueKey("ListView_n9l0csn4" +
+                                                                        '_' +
+                                                                        listViewPendentesBuscaIndex
+                                                                            .toString()),
+                                                                    child:
+                                                                        Padding(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          0.0,
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                      child:
+                                                                          Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            1.0,
+                                                                        height:
+                                                                            157.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          borderRadius:
+                                                                              BorderRadius.only(
+                                                                            bottomLeft:
+                                                                                Radius.circular(3.0),
+                                                                            bottomRight:
+                                                                                Radius.circular(3.0),
+                                                                            topLeft:
+                                                                                Radius.circular(10.0),
+                                                                            topRight:
+                                                                                Radius.circular(10.0),
+                                                                          ),
+                                                                          border:
+                                                                              Border.all(
+                                                                            color:
+                                                                                Color(0xFFEE8B60),
+                                                                          ),
+                                                                        ),
+                                                                        child:
+                                                                            Column(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Expanded(
+                                                                              child: Align(
+                                                                                alignment: AlignmentDirectional(0.0, -1.0),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(2.0, 0.0, 2.0, 0.0),
+                                                                                  child: Row(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.start,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Expanded(
+                                                                                        child: Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
+                                                                                          child: AutoSizeText(
+                                                                                            valueOrDefault<String>(
+                                                                                              listViewPendentesBuscaGetListaTarefasBuscaRow.nometarefa,
+                                                                                              '--',
+                                                                                            ).maybeHandleOverflow(
+                                                                                              maxChars: 145,
+                                                                                              replacement: '…',
+                                                                                            ),
+                                                                                            textAlign: TextAlign.start,
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Poppins',
+                                                                                                  color: Color(0xFF0D0705),
+                                                                                                  fontSize: 14.0,
+                                                                                                  fontWeight: FontWeight.bold,
+                                                                                                ),
+                                                                                            minFontSize: 12.0,
+                                                                                          ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                            StyledDivider(
+                                                                              height: 5.0,
+                                                                              thickness: 1.0,
+                                                                              indent: 10.0,
+                                                                              endIndent: 10.0,
+                                                                              color: Color(0xFFEE8B60),
+                                                                              lineStyle: DividerLineStyle.dashed,
+                                                                            ),
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 3.0),
+                                                                              child: Row(
+                                                                                mainAxisSize: MainAxisSize.max,
+                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                children: [
+                                                                                  Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                    children: [
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Icon(
+                                                                                              Icons.calendar_month_outlined,
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Data:',
+                                                                                                textAlign: TextAlign.start,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Readex Pro',
+                                                                                                      color: Color(0xFF57636C),
+                                                                                                      fontSize: 13.0,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              valueOrDefault<String>(
+                                                                                                dateTimeFormat(
+                                                                                                  'dd/MM/yy',
+                                                                                                  functions.converterintegerToData(listViewPendentesBuscaGetListaTarefasBuscaRow.dataTarefa),
+                                                                                                  locale: FFLocalizations.of(context).languageCode,
+                                                                                                ),
+                                                                                                '0',
+                                                                                              ),
+                                                                                              textAlign: TextAlign.start,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Readex Pro',
+                                                                                                    color: Color(0xFF08BBBB),
+                                                                                                    fontSize: 13.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
+                                                                                        child: Row(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                          children: [
+                                                                                            Icon(
+                                                                                              Icons.timer_sharp,
+                                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                              size: 20.0,
+                                                                                            ),
+                                                                                            Padding(
+                                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
+                                                                                              child: Text(
+                                                                                                'Hora:',
+                                                                                                textAlign: TextAlign.start,
+                                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                      fontFamily: 'Readex Pro',
+                                                                                                      color: Color(0xFF57636C),
+                                                                                                      fontSize: 13.0,
+                                                                                                    ),
+                                                                                              ),
+                                                                                            ),
+                                                                                            Text(
+                                                                                              valueOrDefault<String>(
+                                                                                                dateTimeFormat(
+                                                                                                  'kk:mm',
+                                                                                                  functions.converterintegerToData(listViewPendentesBuscaGetListaTarefasBuscaRow.dataTarefa),
+                                                                                                  locale: FFLocalizations.of(context).languageCode,
+                                                                                                ),
+                                                                                                '0',
+                                                                                              ),
+                                                                                              textAlign: TextAlign.start,
+                                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                    fontFamily: 'Readex Pro',
+                                                                                                    color: Color(0xFF08BBBB),
+                                                                                                    fontSize: 13.0,
+                                                                                                  ),
+                                                                                            ),
+                                                                                          ],
+                                                                                        ),
+                                                                                      ),
+                                                                                    ],
+                                                                                  ),
+                                                                                  Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 5.0, 3.0),
+                                                                                    child: FFButtonWidget(
+                                                                                      onPressed: () async {
+                                                                                        await showModalBottomSheet(
+                                                                                          isScrollControlled: true,
+                                                                                          backgroundColor: Colors.transparent,
+                                                                                          isDismissible: false,
+                                                                                          context: context,
+                                                                                          builder: (context) {
+                                                                                            return GestureDetector(
+                                                                                              onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
+                                                                                              child: Padding(
+                                                                                                padding: MediaQuery.viewInsetsOf(context),
+                                                                                                child: AcoesTarefasPendentesWidget(),
+                                                                                              ),
+                                                                                            );
+                                                                                          },
+                                                                                        ).then((value) => safeSetState(() {}));
+                                                                                      },
+                                                                                      text: 'Ações',
+                                                                                      options: FFButtonOptions(
+                                                                                        width: 71.0,
+                                                                                        height: 23.0,
+                                                                                        padding: EdgeInsets.all(0.0),
+                                                                                        iconPadding: EdgeInsets.all(2.0),
+                                                                                        color: Color(0xFFBCBDBD),
+                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                              fontFamily: 'Poppins',
+                                                                                              color: Colors.white,
+                                                                                              fontSize: 6.0,
+                                                                                              fontWeight: FontWeight.w600,
+                                                                                            ),
+                                                                                        elevation: 3.0,
+                                                                                        borderSide: BorderSide(
+                                                                                          color: Colors.transparent,
+                                                                                          width: 1.0,
+                                                                                        ),
+                                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ),
+                                                                                ],
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                onReorder: (int
+                                                                        reorderableOldIndex,
+                                                                    int reorderableNewIndex) async {},
+                                                              );
+                                                            },
+                                                          ),
+                                                        ),
+                                                    ],
                                                   ),
                                                 ),
                                               ),
