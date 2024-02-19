@@ -122,7 +122,7 @@ Future<List<GetListaTarefasBuscaRow>> performGetListaTarefasBusca(
 }) {
   final query = '''
 Select * from ListaTarefas
-WHERE nometarefa = ${nometarefa};
+WHERE nometarefa = '${nometarefa}';
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasBuscaRow(d));
 }
