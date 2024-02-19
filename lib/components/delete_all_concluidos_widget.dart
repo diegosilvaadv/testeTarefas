@@ -109,6 +109,8 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                         );
                       }
                       _model.instantTimer1?.cancel();
+                      Navigator.pop(context);
+                      Navigator.pop(context);
 
                       context.goNamed('ListadeTarefas');
                     },

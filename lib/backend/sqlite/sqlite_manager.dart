@@ -63,6 +63,16 @@ class SQLiteManager {
         selectCategoria: selectCategoria,
       );
 
+  Future<List<GetListaTarefasBuscaRow>> getListaTarefasBusca({
+    String? nometarefa,
+    int? ePendente,
+  }) =>
+      performGetListaTarefasBusca(
+        _database,
+        nometarefa: nometarefa,
+        ePendente: ePendente,
+      );
+
   /// END READ QUERY CALLS
 
   /// START UPDATE QUERY CALLS

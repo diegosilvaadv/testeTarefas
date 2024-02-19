@@ -15,7 +15,7 @@ export 'acoes_tarefas_pendentes_model.dart';
 class AcoesTarefasPendentesWidget extends StatefulWidget {
   const AcoesTarefasPendentesWidget({
     super.key,
-    required this.idTarefas,
+    this.idTarefas,
   });
 
   final GetListaTarefasRow? idTarefas;

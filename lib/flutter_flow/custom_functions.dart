@@ -29,35 +29,7 @@ String? converterBase64PNG(String? imageBase64) {
   return 'data:image/png;base64,' + imageBase64;
 }
 
-bool temSemelhante(
-  String busca,
-  String listaNomes,
-) {
-  return listaNomes.contains(busca);
-}
-
-int converteDataToInteger(DateTime data) {
-  // converta a data e horario para integer
-  return data.millisecondsSinceEpoch;
-}
-
 DateTime converterintegerToData(int dataInteger) {
   // convertar a dataInteger para datatime
   return DateTime.fromMillisecondsSinceEpoch(dataInteger * 1000);
-}
-
-List<GetListaTarefasRow> buscaTarefas(
-  List<GetListaTarefasRow> pesquisa,
-  List<GetListaTarefasRow> lista,
-) {
-  // faça uma pesquisa se o resultado for vazio retorne a lista
-  if (pesquisa.isEmpty) {
-    return lista;
-  } else {
-    return lista.where((tarefa) {
-      return pesquisa.any((pesquisaTarefa) {
-        return tarefa.id == pesquisaTarefa.id;
-      });
-    }).toList();
-  }
 }

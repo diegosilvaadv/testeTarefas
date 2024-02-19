@@ -109,6 +109,8 @@ class _DeletarAllPendentesWidgetState extends State<DeletarAllPendentesWidget> {
                         );
                       }
                       _model.instantTimer?.cancel();
+                      Navigator.pop(context);
+                      Navigator.pop(context);
 
                       context.goNamed('ListadeTarefas');
                     },
