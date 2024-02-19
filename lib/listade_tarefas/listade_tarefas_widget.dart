@@ -665,14 +665,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                 child: Padding(
                                                   padding: EdgeInsets.all(10.0),
                                                   child: FutureBuilder<
-                                                      List<
-                                                          GetListaTarefasBuscaRow>>(
+                                                      List<GetListaTarefasRow>>(
                                                     future: SQLiteManager
                                                         .instance
-                                                        .getListaTarefasBusca(
-                                                      nometarefa: _model
-                                                          .inputBuscaTarefaController
-                                                          .text,
+                                                        .getListaTarefas(
+                                                      categoria: FFAppState()
+                                                          .selectCategoria,
                                                       ePendente: 0,
                                                     ),
                                                     builder:
@@ -696,7 +694,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                           ),
                                                         );
                                                       }
-                                                      final listViewPendentesGetListaTarefasBuscaRowList =
+                                                      final listViewPendentesGetListaTarefasRowList =
                                                           snapshot.data!;
                                                       return ReorderableListView
                                                           .builder(
@@ -706,12 +704,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         scrollDirection:
                                                             Axis.vertical,
                                                         itemCount:
-                                                            listViewPendentesGetListaTarefasBuscaRowList
+                                                            listViewPendentesGetListaTarefasRowList
                                                                 .length,
                                                         itemBuilder: (context,
                                                             listViewPendentesIndex) {
-                                                          final listViewPendentesGetListaTarefasBuscaRow =
-                                                              listViewPendentesGetListaTarefasBuscaRowList[
+                                                          final listViewPendentesGetListaTarefasRow =
+                                                              listViewPendentesGetListaTarefasRowList[
                                                                   listViewPendentesIndex];
                                                           return Container(
                                                             key: ValueKey(
@@ -792,7 +790,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                   padding: EdgeInsetsDirectional.fromSTEB(10.0, 10.0, 10.0, 0.0),
                                                                                   child: AutoSizeText(
                                                                                     valueOrDefault<String>(
-                                                                                      listViewPendentesGetListaTarefasBuscaRow.nometarefa,
+                                                                                      listViewPendentesGetListaTarefasRow.nometarefa,
                                                                                       '--',
                                                                                     ).maybeHandleOverflow(
                                                                                       maxChars: 145,
@@ -877,7 +875,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'dd/MM/yy',
-                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasBuscaRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',
@@ -919,7 +917,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       valueOrDefault<String>(
                                                                                         dateTimeFormat(
                                                                                           'kk:mm',
-                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasBuscaRow.dataTarefa),
+                                                                                          functions.converterintegerToData(listViewPendentesGetListaTarefasRow.dataTarefa),
                                                                                           locale: FFLocalizations.of(context).languageCode,
                                                                                         ),
                                                                                         '0',
@@ -955,7 +953,9 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                       onTap: () => _model.unfocusNode.canRequestFocus ? FocusScope.of(context).requestFocus(_model.unfocusNode) : FocusScope.of(context).unfocus(),
                                                                                       child: Padding(
                                                                                         padding: MediaQuery.viewInsetsOf(context),
-                                                                                        child: AcoesTarefasPendentesWidget(),
+                                                                                        child: AcoesTarefasPendentesWidget(
+                                                                                          idTarefas: listViewPendentesGetListaTarefasRow,
+                                                                                        ),
                                                                                       ),
                                                                                     );
                                                                                   },
