@@ -119,11 +119,10 @@ class GetCategoriaColorRow extends SqliteRow {
 Future<List<GetListaTarefasBuscaRow>> performGetListaTarefasBusca(
   Database database, {
   String? nometarefa,
-  int? ePendente,
 }) {
   final query = '''
 Select * from ListaTarefas
-WHERE nometarefa = ${nometarefa} AND ePendente = ${ePendente};
+WHERE nometarefa = ${nometarefa};
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasBuscaRow(d));
 }
@@ -139,3 +138,25 @@ class GetListaTarefasBuscaRow extends SqliteRow {
 }
 
 /// END GETLISTATAREFASBUSCA
+
+/// BEGIN GETLISTATAREFASALL
+Future<List<GetListaTarefasAllRow>> performGetListaTarefasAll(
+  Database database,
+) {
+  final query = '''
+Select * from ListaTarefas
+''';
+  return _readQuery(database, query, (d) => GetListaTarefasAllRow(d));
+}
+
+class GetListaTarefasAllRow extends SqliteRow {
+  GetListaTarefasAllRow(Map<String, dynamic> data) : super(data);
+
+  String get nometarefa => data['nometarefa'] as String;
+  int get dataTarefa => data['dataTarefa'] as int;
+  int get ePendente => data['ePendente'] as int;
+  int get id => data['id'] as int;
+  int? get categoriaID => data['categoriaID'] as int?;
+}
+
+/// END GETLISTATAREFASALL

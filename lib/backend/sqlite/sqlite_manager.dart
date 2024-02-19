@@ -65,12 +65,15 @@ class SQLiteManager {
 
   Future<List<GetListaTarefasBuscaRow>> getListaTarefasBusca({
     String? nometarefa,
-    int? ePendente,
   }) =>
       performGetListaTarefasBusca(
         _database,
         nometarefa: nometarefa,
-        ePendente: ePendente,
+      );
+
+  Future<List<GetListaTarefasAllRow>> getListaTarefasAll() =>
+      performGetListaTarefasAll(
+        _database,
       );
 
   /// END READ QUERY CALLS
