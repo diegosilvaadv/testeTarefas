@@ -222,7 +222,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                 },
                                                 child: Text(
                                                   dateTimeFormat(
-                                                    'Hm',
+                                                    'jms',
                                                     _model.horario,
                                                     locale: FFLocalizations.of(
                                                             context)

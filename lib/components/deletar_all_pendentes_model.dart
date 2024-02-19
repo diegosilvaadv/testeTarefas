@@ -13,8 +13,8 @@ class DeletarAllPendentesModel
     extends FlutterFlowModel<DeletarAllPendentesWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // Stores action output result for [Backend Call - SQLite (getCategoriasSelecionada)] action in Button widget.
-  List<GetCategoriasSelecionadaRow>? listaDeTarefas;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in Button widget.
+  List<GetListaTarefasRow>? listaDeTarefas;
   InstantTimer? instantTimer;
 
   /// Initialization and disposal methods.

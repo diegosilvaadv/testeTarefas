@@ -13,8 +13,8 @@ class DeleteAllConcluidosModel
     extends FlutterFlowModel<DeleteAllConcluidosWidget> {
   ///  State fields for stateful widgets in this component.
 
-  // Stores action output result for [Backend Call - SQLite (getCategoriasSelecionada)] action in Button widget.
-  List<GetCategoriasSelecionadaRow>? listaDeTarefas1;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in Button widget.
+  List<GetListaTarefasRow>? listaDeTarefas1;
   InstantTimer? instantTimer1;
 
   /// Initialization and disposal methods.

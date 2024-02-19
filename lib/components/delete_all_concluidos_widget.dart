@@ -89,8 +89,9 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
               child: FFButtonWidget(
                 onPressed: () async {
                   _model.listaDeTarefas1 =
-                      await SQLiteManager.instance.getCategoriasSelecionada(
-                    id: widget.tarefaRef!,
+                      await SQLiteManager.instance.getListaTarefas(
+                    categoria: widget.tarefaRef!,
+                    ePendente: 1,
                   );
                   setState(() {
                     FFAppState().contador = -1;
@@ -108,8 +109,8 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                         );
                       }
                       _model.instantTimer1?.cancel();
-                      Navigator.pop(context);
-                      Navigator.pop(context);
+
+                      context.goNamed('ListadeTarefas');
                     },
                     startImmediately: true,
                   );
