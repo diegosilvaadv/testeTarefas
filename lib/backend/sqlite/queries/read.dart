@@ -144,7 +144,8 @@ Future<List<GetListaTarefasAllRow>> performGetListaTarefasAll(
   Database database,
 ) {
   final query = '''
-Select * from ListaTarefas
+SELECT *
+FROM ListaTarefas
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasAllRow(d));
 }
