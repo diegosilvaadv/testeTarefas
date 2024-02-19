@@ -774,6 +774,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                   color: Colors.white,
                                                 ),
                                                 child: SingleChildScrollView(
+                                                  primary: false,
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,

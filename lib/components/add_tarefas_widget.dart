@@ -8,6 +8,7 @@ import 'package:easy_debounce/easy_debounce.dart';
 import 'package:expandable/expandable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -34,6 +35,13 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => AddTarefasModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      setState(() {
+        FFAppState().selectCategoria = 0;
+      });
+    });
 
     _model.expandableController1 = ExpandableController(initialExpanded: false);
     _model.inputCategoriaController ??= TextEditingController();
