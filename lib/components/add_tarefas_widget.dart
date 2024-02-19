@@ -74,7 +74,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.goNamed('ListadeTarefas');
+                      context.safePop();
                     },
                     child: Icon(
                       Icons.west,
@@ -974,35 +974,47 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                               .transparent,
                                                                       onTap:
                                                                           () async {
-                                                                        setState(
-                                                                            () {
-                                                                          FFAppState().selectCategoria =
-                                                                              categoriasPendentesGetCategoriasRow.id;
-                                                                        });
-                                                                        _model.selectCategoriaColor = await SQLiteManager
-                                                                            .instance
-                                                                            .getCategoriaColor(
-                                                                          selectCategoria:
-                                                                              1,
-                                                                        );
-                                                                        await SQLiteManager
-                                                                            .instance
-                                                                            .selectCategoriaTarefas(
-                                                                          selectCategoria:
-                                                                              0,
-                                                                          id: _model
-                                                                              .selectCategoriaColor!
-                                                                              .first
-                                                                              .id,
-                                                                        );
-                                                                        await SQLiteManager
-                                                                            .instance
-                                                                            .selectCategoriaTarefas(
-                                                                          selectCategoria:
-                                                                              1,
-                                                                          id: categoriasPendentesGetCategoriasRow
-                                                                              .id,
-                                                                        );
+                                                                        if (FFAppState().selectCategoria ==
+                                                                            0) {
+                                                                          await SQLiteManager
+                                                                              .instance
+                                                                              .selectCategoriaTarefas(
+                                                                            selectCategoria:
+                                                                                1,
+                                                                            id: categoriasPendentesGetCategoriasRow.id,
+                                                                          );
+                                                                          setState(
+                                                                              () {
+                                                                            FFAppState().selectCategoria =
+                                                                                categoriasPendentesGetCategoriasRow.id;
+                                                                          });
+                                                                        } else {
+                                                                          _model.selectCategoriaColor = await SQLiteManager
+                                                                              .instance
+                                                                              .getCategoriaColor(
+                                                                            selectCategoria:
+                                                                                1,
+                                                                          );
+                                                                          await SQLiteManager
+                                                                              .instance
+                                                                              .selectCategoriaTarefas(
+                                                                            selectCategoria:
+                                                                                0,
+                                                                            id: _model.selectCategoriaColor!.first.id,
+                                                                          );
+                                                                          await SQLiteManager
+                                                                              .instance
+                                                                              .selectCategoriaTarefas(
+                                                                            selectCategoria:
+                                                                                1,
+                                                                            id: categoriasPendentesGetCategoriasRow.id,
+                                                                          );
+                                                                          setState(
+                                                                              () {
+                                                                            FFAppState().selectCategoria =
+                                                                                categoriasPendentesGetCategoriasRow.id;
+                                                                          });
+                                                                        }
 
                                                                         setState(
                                                                             () {});
@@ -1062,32 +1074,38 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     .fromSTEB(
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
-                                                  onPressed: () async {
-                                                    if (_model.formKey1
-                                                                .currentState ==
-                                                            null ||
-                                                        !_model.formKey1
-                                                            .currentState!
-                                                            .validate()) {
-                                                      return;
-                                                    }
-                                                    await SQLiteManager.instance
-                                                        .addListaTarefas(
-                                                      nometarefa: _model
-                                                          .inputAddTarefaController
-                                                          .text,
-                                                      dataTarefa: _model
-                                                          .datePicked!
-                                                          .secondsSinceEpoch,
-                                                      categoriaID: FFAppState()
-                                                          .selectCategoria,
-                                                    );
-                                                    setState(() {
-                                                      _model
-                                                          .inputAddTarefaController
-                                                          ?.clear();
-                                                    });
-                                                  },
+                                                  onPressed: (FFAppState()
+                                                              .selectCategoria >=
+                                                          1)
+                                                      ? null
+                                                      : () async {
+                                                          if (_model.formKey1
+                                                                      .currentState ==
+                                                                  null ||
+                                                              !_model.formKey1
+                                                                  .currentState!
+                                                                  .validate()) {
+                                                            return;
+                                                          }
+                                                          await SQLiteManager
+                                                              .instance
+                                                              .addListaTarefas(
+                                                            nometarefa: _model
+                                                                .inputAddTarefaController
+                                                                .text,
+                                                            dataTarefa: _model
+                                                                .datePicked!
+                                                                .secondsSinceEpoch,
+                                                            categoriaID:
+                                                                FFAppState()
+                                                                    .selectCategoria,
+                                                          );
+                                                          setState(() {
+                                                            _model
+                                                                .inputAddTarefaController
+                                                                ?.clear();
+                                                          });
+                                                        },
                                                   text: 'Adicionar',
                                                   options: FFButtonOptions(
                                                     width: double.infinity,
@@ -1118,6 +1136,8 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),
+                                                    disabledColor:
+                                                        Color(0x70B4F7E9),
                                                   ),
                                                 ),
                                               ),

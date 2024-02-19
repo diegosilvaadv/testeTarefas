@@ -163,6 +163,8 @@ class _AcoesTarefasConcluidasWidgetState
                                 );
                               }
                               _model.instantTimer?.cancel();
+
+                              context.goNamed('ListadeTarefas');
                             },
                             startImmediately: true,
                           );

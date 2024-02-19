@@ -337,37 +337,56 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                              setState(() {
-                                                                FFAppState()
-                                                                        .selectCategoria =
-                                                                    categoriasPendentesGetCategoriasRow
-                                                                        .id;
-                                                              });
-                                                              _model.selectCategoriaCoor =
-                                                                  await SQLiteManager
-                                                                      .instance
-                                                                      .getCategoriaColor(
-                                                                selectCategoria:
-                                                                    1,
-                                                              );
-                                                              await SQLiteManager
-                                                                  .instance
-                                                                  .selectCategoriaTarefas(
-                                                                selectCategoria:
-                                                                    0,
-                                                                id: _model
-                                                                    .selectCategoriaCoor!
-                                                                    .first
-                                                                    .id,
-                                                              );
-                                                              await SQLiteManager
-                                                                  .instance
-                                                                  .selectCategoriaTarefas(
-                                                                selectCategoria:
-                                                                    1,
-                                                                id: categoriasPendentesGetCategoriasRow
-                                                                    .id,
-                                                              );
+                                                              if (FFAppState()
+                                                                      .selectCategoria ==
+                                                                  0) {
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                  id: categoriasPendentesGetCategoriasRow
+                                                                      .id,
+                                                                );
+                                                                setState(() {
+                                                                  FFAppState()
+                                                                          .selectCategoria =
+                                                                      categoriasPendentesGetCategoriasRow
+                                                                          .id;
+                                                                });
+                                                              } else {
+                                                                _model.selectCategoriaCoor =
+                                                                    await SQLiteManager
+                                                                        .instance
+                                                                        .getCategoriaColor(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                );
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      0,
+                                                                  id: _model
+                                                                      .selectCategoriaCoor!
+                                                                      .first
+                                                                      .id,
+                                                                );
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                  id: categoriasPendentesGetCategoriasRow
+                                                                      .id,
+                                                                );
+                                                                setState(() {
+                                                                  FFAppState()
+                                                                          .selectCategoria =
+                                                                      categoriasPendentesGetCategoriasRow
+                                                                          .id;
+                                                                });
+                                                              }
 
                                                               setState(() {});
                                                             },
@@ -1087,37 +1106,56 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                 Colors
                                                                     .transparent,
                                                             onTap: () async {
-                                                              _model.selectCategoriaColor1 =
-                                                                  await SQLiteManager
-                                                                      .instance
-                                                                      .getCategoriaColor(
-                                                                selectCategoria:
-                                                                    1,
-                                                              );
-                                                              await SQLiteManager
-                                                                  .instance
-                                                                  .selectCategoriaTarefas(
-                                                                selectCategoria:
-                                                                    0,
-                                                                id: _model
-                                                                    .selectCategoriaColor1!
-                                                                    .first
-                                                                    .id,
-                                                              );
-                                                              await SQLiteManager
-                                                                  .instance
-                                                                  .selectCategoriaTarefas(
-                                                                selectCategoria:
-                                                                    1,
-                                                                id: categoriaConcluidasGetCategoriasRow
-                                                                    .id,
-                                                              );
-                                                              setState(() {
-                                                                FFAppState()
-                                                                        .selectCategoria =
-                                                                    categoriaConcluidasGetCategoriasRow
-                                                                        .id;
-                                                              });
+                                                              if (FFAppState()
+                                                                      .selectCategoria ==
+                                                                  0) {
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                  id: categoriaConcluidasGetCategoriasRow
+                                                                      .id,
+                                                                );
+                                                                setState(() {
+                                                                  FFAppState()
+                                                                          .selectCategoria =
+                                                                      categoriaConcluidasGetCategoriasRow
+                                                                          .id;
+                                                                });
+                                                              } else {
+                                                                _model.selectCategoriaCoorCopy =
+                                                                    await SQLiteManager
+                                                                        .instance
+                                                                        .getCategoriaColor(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                );
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      0,
+                                                                  id: _model
+                                                                      .selectCategoriaCoorCopy!
+                                                                      .first
+                                                                      .id,
+                                                                );
+                                                                await SQLiteManager
+                                                                    .instance
+                                                                    .selectCategoriaTarefas(
+                                                                  selectCategoria:
+                                                                      1,
+                                                                  id: categoriaConcluidasGetCategoriasRow
+                                                                      .id,
+                                                                );
+                                                                setState(() {
+                                                                  FFAppState()
+                                                                          .selectCategoria =
+                                                                      categoriaConcluidasGetCategoriasRow
+                                                                          .id;
+                                                                });
+                                                              }
 
                                                               setState(() {});
                                                             },

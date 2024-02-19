@@ -34,7 +34,7 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   TextEditingController? inputBuscaTarefaController;
   String? Function(BuildContext, String?)? inputBuscaTarefaControllerValidator;
   // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in Container widget.
-  List<GetCategoriaColorRow>? selectCategoriaColor1;
+  List<GetCategoriaColorRow>? selectCategoriaCoorCopy;
   // State field(s) for InputBuscaTarefaConcluida widget.
   FocusNode? inputBuscaTarefaConcluidaFocusNode;
   TextEditingController? inputBuscaTarefaConcluidaController;

@@ -97,7 +97,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                     FFAppState().contador = -1;
                   });
                   _model.instantTimer1 = InstantTimer.periodic(
-                    duration: Duration(milliseconds: 1000),
+                    duration: Duration(milliseconds: 100),
                     callback: (timer) async {
                       while (FFAppState().contador <=
                           _model.listaDeTarefas1!.length) {
