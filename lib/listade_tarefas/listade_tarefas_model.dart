@@ -42,8 +42,10 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in Container widget.
   List<GetCategoriaColorRow>? selectCategoriaCoorCopy;
   // State field(s) for InputBuscaTarefaConcluida widget.
+  final inputBuscaTarefaConcluidaKey = GlobalKey();
   FocusNode? inputBuscaTarefaConcluidaFocusNode;
   TextEditingController? inputBuscaTarefaConcluidaController;
+  String? inputBuscaTarefaConcluidaSelectedOption;
   String? Function(BuildContext, String?)?
       inputBuscaTarefaConcluidaControllerValidator;
   // Model for NavBarListadeTarefas component.
@@ -64,7 +66,6 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
     inputBuscaTarefaFocusNode?.dispose();
 
     inputBuscaTarefaConcluidaFocusNode?.dispose();
-    inputBuscaTarefaConcluidaController?.dispose();
 
     navBarListadeTarefasModel.dispose();
   }

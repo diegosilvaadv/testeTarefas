@@ -218,6 +218,8 @@ dynamic deserializeParam<T>(
             return GetListaTarefasBuscaRow(data);
           case GetListaTarefasAllRow:
             return GetListaTarefasAllRow(data);
+          case GetListaTarefasIDRow:
+            return GetListaTarefasIDRow(data);
           default:
             return null;
         }

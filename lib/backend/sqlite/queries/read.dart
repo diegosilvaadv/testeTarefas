@@ -161,3 +161,27 @@ class GetListaTarefasAllRow extends SqliteRow {
 }
 
 /// END GETLISTATAREFASALL
+
+/// BEGIN GETLISTATAREFASID
+Future<List<GetListaTarefasIDRow>> performGetListaTarefasID(
+  Database database, {
+  int? idTarefa,
+}) {
+  final query = '''
+Select * from ListaTarefas
+WHERE id = ${idTarefa};
+''';
+  return _readQuery(database, query, (d) => GetListaTarefasIDRow(d));
+}
+
+class GetListaTarefasIDRow extends SqliteRow {
+  GetListaTarefasIDRow(Map<String, dynamic> data) : super(data);
+
+  String get nometarefa => data['nometarefa'] as String;
+  int get dataTarefa => data['dataTarefa'] as int;
+  int get ePendente => data['ePendente'] as int;
+  int get id => data['id'] as int;
+  int? get categoriaID => data['categoriaID'] as int?;
+}
+
+/// END GETLISTATAREFASID

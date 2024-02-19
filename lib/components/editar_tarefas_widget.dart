@@ -18,7 +18,7 @@ class EditarTarefasWidget extends StatefulWidget {
     required this.taferaRef,
   });
 
-  final GetListaTarefasRow? taferaRef;
+  final GetListaTarefasIDRow? taferaRef;
 
   @override
   State<EditarTarefasWidget> createState() => _EditarTarefasWidgetState();
@@ -460,7 +460,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                             dataTarefa: _model.datePicked != null
                                 ? _model.datePicked!.secondsSinceEpoch
                                 : widget.taferaRef!.dataTarefa,
-                            ePendente: widget.taferaRef?.ePendente?.toString(),
+                            ePendente: widget.taferaRef?.ePendente,
                             id: widget.taferaRef!.id,
                           );
                           Navigator.pop(context);

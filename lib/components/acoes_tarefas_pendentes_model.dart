@@ -13,6 +13,13 @@ import 'package:provider/provider.dart';
 
 class AcoesTarefasPendentesModel
     extends FlutterFlowModel<AcoesTarefasPendentesWidget> {
+  ///  State fields for stateful widgets in this component.
+
+  // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in ButtonEditar widget.
+  List<GetListaTarefasIDRow>? listaTarefas;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in ButtonDeletar widget.
+  List<GetListaTarefasIDRow>? categoria;
+
   /// Initialization and disposal methods.
 
   @override

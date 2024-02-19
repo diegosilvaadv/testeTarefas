@@ -13,10 +13,10 @@ export 'delete_all_concluidos_model.dart';
 class DeleteAllConcluidosWidget extends StatefulWidget {
   const DeleteAllConcluidosWidget({
     super.key,
-    required this.tarefaRef,
+    required this.categoriaRef,
   });
 
-  final int? tarefaRef;
+  final int? categoriaRef;
 
   @override
   State<DeleteAllConcluidosWidget> createState() =>
@@ -90,7 +90,7 @@ class _DeleteAllConcluidosWidgetState extends State<DeleteAllConcluidosWidget> {
                 onPressed: () async {
                   _model.listaDeTarefas1 =
                       await SQLiteManager.instance.getListaTarefas(
-                    categoria: widget.tarefaRef!,
+                    categoria: widget.categoriaRef!,
                     ePendente: 1,
                   );
                   setState(() {

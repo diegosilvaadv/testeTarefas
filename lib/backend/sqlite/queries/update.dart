@@ -34,7 +34,7 @@ Future performEditarListaTarefas(
   String? nometarefa,
   int? dataTarefa,
   int? id,
-  String? ePendente,
+  int? ePendente,
 }) {
   final query = '''
 UPDATE ListaTarefas
@@ -140,3 +140,20 @@ INSERT INTO PerfilUser (nomeUser, ) VALUES ('${nomeUser}');
 }
 
 /// END ADDNOMEPERFIL
+
+/// BEGIN REFAZERLISTATAREFAS
+Future performRefazerListaTarefas(
+  Database database, {
+  int? ePendente,
+  int? idTarefa,
+}) {
+  final query = '''
+UPDATE ListaTarefas
+SET 
+    ePendente = ${ePendente}
+WHERE id = ${idTarefa};
+''';
+  return database.rawQuery(query);
+}
+
+/// END REFAZERLISTATAREFAS

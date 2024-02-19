@@ -76,6 +76,14 @@ class SQLiteManager {
         _database,
       );
 
+  Future<List<GetListaTarefasIDRow>> getListaTarefasID({
+    int? idTarefa,
+  }) =>
+      performGetListaTarefasID(
+        _database,
+        idTarefa: idTarefa,
+      );
+
   /// END READ QUERY CALLS
 
   /// START UPDATE QUERY CALLS
@@ -104,7 +112,7 @@ class SQLiteManager {
     String? nometarefa,
     int? dataTarefa,
     int? id,
-    String? ePendente,
+    int? ePendente,
   }) =>
       performEditarListaTarefas(
         _database,
@@ -166,6 +174,16 @@ class SQLiteManager {
       performAddNomePerfil(
         _database,
         nomeUser: nomeUser,
+      );
+
+  Future refazerListaTarefas({
+    int? ePendente,
+    int? idTarefa,
+  }) =>
+      performRefazerListaTarefas(
+        _database,
+        ePendente: ePendente,
+        idTarefa: idTarefa,
       );
 
   /// END UPDATE QUERY CALLS

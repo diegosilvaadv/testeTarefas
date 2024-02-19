@@ -15,10 +15,10 @@ export 'acoes_tarefas_pendentes_model.dart';
 class AcoesTarefasPendentesWidget extends StatefulWidget {
   const AcoesTarefasPendentesWidget({
     super.key,
-    this.idTarefas,
+    this.idTarefass,
   });
 
-  final GetListaTarefasRow? idTarefas;
+  final int? idTarefass;
 
   @override
   State<AcoesTarefasPendentesWidget> createState() =>
@@ -79,7 +79,7 @@ class _AcoesTarefasPendentesWidgetState
                   onPressed: () async {
                     await SQLiteManager.instance.concluirListaTarefas(
                       ePendente: 1,
-                      id: widget.idTarefas!.id,
+                      id: widget.idTarefass!,
                     );
                     context.safePop();
                   },
@@ -108,6 +108,10 @@ class _AcoesTarefasPendentesWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      _model.listaTarefas =
+                          await SQLiteManager.instance.getListaTarefasID(
+                        idTarefa: widget.idTarefass!,
+                      );
                       await showModalBottomSheet(
                         isScrollControlled: true,
                         backgroundColor: Colors.transparent,
@@ -117,11 +121,13 @@ class _AcoesTarefasPendentesWidgetState
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: EditarTarefasWidget(
-                              taferaRef: widget.idTarefas!,
+                              taferaRef: _model.listaTarefas!.first,
                             ),
                           );
                         },
                       ).then((value) => safeSetState(() {}));
+
+                      setState(() {});
                     },
                     text: 'Editar tarefa ?',
                     options: FFButtonOptions(
@@ -160,7 +166,7 @@ class _AcoesTarefasPendentesWidgetState
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: DeletarAtualPendentesWidget(
-                              idTarefa: widget.idTarefas!.id,
+                              idTarefa: widget.idTarefass!,
                             ),
                           );
                         },
@@ -205,16 +211,20 @@ class _AcoesTarefasPendentesWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      _model.categoria =
+                          await SQLiteManager.instance.getListaTarefasID(
+                        idTarefa: widget.idTarefass!,
+                      );
                       await showModalBottomSheet(
                         isScrollControlled: true,
                         backgroundColor: Colors.transparent,
-                        enableDrag: false,
+                        isDismissible: false,
                         context: context,
                         builder: (context) {
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: DeletarAllPendentesWidget(
-                              idCategoria: widget.idTarefas!.categoriaID!,
+                              idCategoria: _model.categoria!.first.categoriaID!,
                             ),
                           );
                         },
@@ -230,6 +240,8 @@ class _AcoesTarefasPendentesWidgetState
                           ),
                         },
                       );
+
+                      setState(() {});
                     },
                     text: 'Deletar todas as tarefas ?',
                     options: FFButtonOptions(

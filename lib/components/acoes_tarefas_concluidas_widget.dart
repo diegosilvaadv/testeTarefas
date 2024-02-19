@@ -6,6 +6,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/instant_timer.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -15,10 +16,10 @@ export 'acoes_tarefas_concluidas_model.dart';
 class AcoesTarefasConcluidasWidget extends StatefulWidget {
   const AcoesTarefasConcluidasWidget({
     super.key,
-    this.tarefasRef,
+    this.idTarefas,
   });
 
-  final GetListaTarefasRow? tarefasRef;
+  final int? idTarefas;
 
   @override
   State<AcoesTarefasConcluidasWidget> createState() =>
@@ -39,6 +40,13 @@ class _AcoesTarefasConcluidasWidgetState
   void initState() {
     super.initState();
     _model = createModel(context, () => AcoesTarefasConcluidasModel());
+
+    // On component load action.
+    SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.listaTarefa = await SQLiteManager.instance.getListaTarefasID(
+        idTarefa: widget.idTarefas!,
+      );
+    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -77,11 +85,9 @@ class _AcoesTarefasConcluidasWidgetState
               children: [
                 FFButtonWidget(
                   onPressed: () async {
-                    await SQLiteManager.instance.editarListaTarefas(
-                      id: widget.tarefasRef!.id,
-                      nometarefa: widget.tarefasRef!.nometarefa,
-                      dataTarefa: widget.tarefasRef!.dataTarefa,
-                      ePendente: '0',
+                    await SQLiteManager.instance.refazerListaTarefas(
+                      ePendente: 0,
+                      idTarefa: widget.idTarefas!,
                     );
                     Navigator.pop(context);
                   },
@@ -138,7 +144,7 @@ class _AcoesTarefasConcluidasWidgetState
                         if (confirmDialogResponse) {
                           _model.resultadoTarefas =
                               await SQLiteManager.instance.getListaTarefas(
-                            categoria: widget.tarefasRef!.categoriaID!,
+                            categoria: _model.listaTarefa!.first.categoriaID!,
                             ePendente: 1,
                           );
                           setState(() {
@@ -153,13 +159,12 @@ class _AcoesTarefasConcluidasWidgetState
                                   FFAppState().contador =
                                       FFAppState().contador + 1;
                                 });
-                                await SQLiteManager.instance.editarListaTarefas(
-                                  nometarefa: widget.tarefasRef!.nometarefa,
-                                  dataTarefa: widget.tarefasRef!.dataTarefa,
-                                  id: _model
+                                await SQLiteManager.instance
+                                    .refazerListaTarefas(
+                                  ePendente: 0,
+                                  idTarefa: _model
                                       .resultadoTarefas![FFAppState().contador]
                                       .id,
-                                  ePendente: '0',
                                 );
                               }
                               _model.instantTimer?.cancel();
@@ -207,7 +212,7 @@ class _AcoesTarefasConcluidasWidgetState
                         return Padding(
                           padding: MediaQuery.viewInsetsOf(context),
                           child: DeletarAtualConcluidasWidget(
-                            idtarefa: widget.tarefasRef!.id,
+                            idtarefa: widget.idTarefas!,
                           ),
                         );
                       },
@@ -238,6 +243,10 @@ class _AcoesTarefasConcluidasWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
+                      _model.categoria =
+                          await SQLiteManager.instance.getListaTarefasID(
+                        idTarefa: widget.idTarefas!,
+                      );
                       await showModalBottomSheet(
                         isScrollControlled: true,
                         backgroundColor: Colors.transparent,
@@ -247,11 +256,14 @@ class _AcoesTarefasConcluidasWidgetState
                           return Padding(
                             padding: MediaQuery.viewInsetsOf(context),
                             child: DeleteAllConcluidosWidget(
-                              tarefaRef: widget.tarefasRef!.categoriaID!,
+                              categoriaRef:
+                                  _model.categoria!.first.categoriaID!,
                             ),
                           );
                         },
                       ).then((value) => safeSetState(() {}));
+
+                      setState(() {});
                     },
                     text: 'Deletar todas as tarefas?',
                     options: FFButtonOptions(
