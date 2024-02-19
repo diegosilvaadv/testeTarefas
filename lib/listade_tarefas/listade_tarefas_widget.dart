@@ -687,10 +687,10 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                         MainAxisSize.max,
                                                     children: [
                                                       if (_model.inputBuscaTarefaController
-                                                                  .text !=
-                                                              null &&
+                                                                  .text ==
+                                                              null ||
                                                           _model.inputBuscaTarefaController
-                                                                  .text !=
+                                                                  .text ==
                                                               '')
                                                         Padding(
                                                           padding:
@@ -998,10 +998,10 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                           ),
                                                         ),
                                                       if (_model.inputBuscaTarefaController
-                                                                  .text ==
-                                                              null ||
+                                                                  .text !=
+                                                              null &&
                                                           _model.inputBuscaTarefaController
-                                                                  .text ==
+                                                                  .text !=
                                                               '')
                                                         Padding(
                                                           padding:
