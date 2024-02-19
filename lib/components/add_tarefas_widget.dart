@@ -1075,8 +1075,8 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         0.0, 20.0, 0.0, 0.0),
                                                 child: FFButtonWidget(
                                                   onPressed: (FFAppState()
-                                                              .selectCategoria >=
-                                                          1)
+                                                              .selectCategoria ==
+                                                          0)
                                                       ? null
                                                       : () async {
                                                           if (_model.formKey1
