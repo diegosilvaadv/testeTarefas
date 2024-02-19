@@ -19,6 +19,8 @@ class AddTarefasModel extends FlutterFlowModel<AddTarefasWidget> {
 
   final formKey2 = GlobalKey<FormState>();
   final formKey1 = GlobalKey<FormState>();
+  // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in AddTarefas widget.
+  List<GetCategoriaColorRow>? categoriaSelect;
   // State field(s) for Expandable widget.
   late ExpandableController expandableController1;
 

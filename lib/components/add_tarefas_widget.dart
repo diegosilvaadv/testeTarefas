@@ -38,6 +38,13 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
 
     // On component load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
+      _model.categoriaSelect = await SQLiteManager.instance.getCategoriaColor(
+        selectCategoria: FFAppState().selectCategoria,
+      );
+      await SQLiteManager.instance.selectCategoriaTarefas(
+        selectCategoria: 0,
+        id: _model.categoriaSelect!.first.id,
+      );
       setState(() {
         FFAppState().selectCategoria = 0;
       });
