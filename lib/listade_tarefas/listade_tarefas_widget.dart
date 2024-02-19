@@ -3,7 +3,6 @@ import '/components/acoes_tarefas_concluidas_widget.dart';
 import '/components/acoes_tarefas_pendentes_widget.dart';
 import '/components/delet_edit_categ_tarefas_widget.dart';
 import '/components/nav_bar_listade_tarefas_widget.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -44,6 +43,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
       initialIndex: 0,
     )..addListener(() => setState(() {}));
     _model.inputBuscaTarefaController ??= TextEditingController();
+    _model.inputBuscaTarefaFocusNode ??= FocusNode();
 
     _model.inputBuscaTarefaConcluidaController ??= TextEditingController();
     _model.inputBuscaTarefaConcluidaFocusNode ??= FocusNode();
@@ -601,136 +601,71 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                           20.0,
                                                                           0.0),
                                                                   child:
-                                                                      Autocomplete<
-                                                                          String>(
-                                                                    initialValue:
-                                                                        TextEditingValue(),
-                                                                    optionsBuilder:
-                                                                        (textEditingValue) {
-                                                                      if (textEditingValue
-                                                                              .text ==
-                                                                          '') {
-                                                                        return const Iterable<
-                                                                            String>.empty();
-                                                                      }
-                                                                      return listadeTarefasGetListaTarefasAllRowList
-                                                                          .map((e) =>
-                                                                              valueOrDefault<String>(
-                                                                                e.nometarefa,
-                                                                                '-',
-                                                                              ))
-                                                                          .toList()
-                                                                          .where((option) {
-                                                                        final lowercaseOption =
-                                                                            option.toLowerCase();
-                                                                        return lowercaseOption.contains(textEditingValue
-                                                                            .text
-                                                                            .toLowerCase());
-                                                                      });
-                                                                    },
-                                                                    optionsViewBuilder:
-                                                                        (context,
-                                                                            onSelected,
-                                                                            options) {
-                                                                      return AutocompleteOptionsList(
-                                                                        textFieldKey:
-                                                                            _model.inputBuscaTarefaKey,
-                                                                        textController:
-                                                                            _model.inputBuscaTarefaController!,
-                                                                        options:
-                                                                            options.toList(),
-                                                                        onSelected:
-                                                                            onSelected,
-                                                                        textStyle:
-                                                                            FlutterFlowTheme.of(context).bodyMedium,
-                                                                        textHighlightStyle:
-                                                                            TextStyle(),
-                                                                        elevation:
-                                                                            4.0,
-                                                                        optionBackgroundColor:
-                                                                            FlutterFlowTheme.of(context).primaryBackground,
-                                                                        optionHighlightColor:
-                                                                            FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        maxHeight:
-                                                                            200.0,
-                                                                      );
-                                                                    },
-                                                                    onSelected:
-                                                                        (String
-                                                                            selection) {
-                                                                      setState(() =>
-                                                                          _model.inputBuscaTarefaSelectedOption =
-                                                                              selection);
-                                                                      FocusScope.of(
+                                                                      TextFormField(
+                                                                    controller:
+                                                                        _model
+                                                                            .inputBuscaTarefaController,
+                                                                    focusNode:
+                                                                        _model
+                                                                            .inputBuscaTarefaFocusNode,
+                                                                    onChanged: (_) =>
+                                                                        EasyDebounce
+                                                                            .debounce(
+                                                                      '_model.inputBuscaTarefaController',
+                                                                      Duration(
+                                                                          milliseconds:
+                                                                              100),
+                                                                      () => setState(
+                                                                          () {}),
+                                                                    ),
+                                                                    obscureText:
+                                                                        false,
+                                                                    decoration:
+                                                                        InputDecoration(
+                                                                      labelStyle: FlutterFlowTheme.of(
                                                                               context)
-                                                                          .unfocus();
-                                                                    },
-                                                                    fieldViewBuilder:
-                                                                        (
-                                                                      context,
-                                                                      textEditingController,
-                                                                      focusNode,
-                                                                      onEditingComplete,
-                                                                    ) {
-                                                                      _model.inputBuscaTarefaFocusNode =
-                                                                          focusNode;
-
-                                                                      _model.inputBuscaTarefaController =
-                                                                          textEditingController;
-                                                                      return TextFormField(
-                                                                        key: _model
-                                                                            .inputBuscaTarefaKey,
-                                                                        controller:
-                                                                            textEditingController,
-                                                                        focusNode:
-                                                                            focusNode,
-                                                                        onEditingComplete:
-                                                                            onEditingComplete,
-                                                                        onChanged:
-                                                                            (_) =>
-                                                                                EasyDebounce.debounce(
-                                                                          '_model.inputBuscaTarefaController',
-                                                                          Duration(
-                                                                              milliseconds: 100),
-                                                                          () =>
-                                                                              setState(() {}),
+                                                                          .labelMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Readex Pro',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                            fontWeight:
+                                                                                FontWeight.w300,
+                                                                          ),
+                                                                      hintText:
+                                                                          'Buscar tarefa',
+                                                                      hintStyle:
+                                                                          FlutterFlowTheme.of(context)
+                                                                              .labelMedium,
+                                                                      enabledBorder:
+                                                                          InputBorder
+                                                                              .none,
+                                                                      focusedBorder:
+                                                                          InputBorder
+                                                                              .none,
+                                                                      errorBorder:
+                                                                          InputBorder
+                                                                              .none,
+                                                                      focusedErrorBorder:
+                                                                          InputBorder
+                                                                              .none,
+                                                                    ),
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .bodyMedium
+                                                                        .override(
+                                                                          fontFamily:
+                                                                              'Readex Pro',
+                                                                          color:
+                                                                              Color(0xFF138F76),
+                                                                          fontSize:
+                                                                              20.0,
                                                                         ),
-                                                                        obscureText:
-                                                                            false,
-                                                                        decoration:
-                                                                            InputDecoration(
-                                                                          labelStyle: FlutterFlowTheme.of(context)
-                                                                              .labelMedium
-                                                                              .override(
-                                                                                fontFamily: 'Readex Pro',
-                                                                                fontSize: 12.0,
-                                                                                fontWeight: FontWeight.w300,
-                                                                              ),
-                                                                          hintText:
-                                                                              'Buscar tarefa',
-                                                                          hintStyle:
-                                                                              FlutterFlowTheme.of(context).labelMedium,
-                                                                          enabledBorder:
-                                                                              InputBorder.none,
-                                                                          focusedBorder:
-                                                                              InputBorder.none,
-                                                                          errorBorder:
-                                                                              InputBorder.none,
-                                                                          focusedErrorBorder:
-                                                                              InputBorder.none,
-                                                                        ),
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Readex Pro',
-                                                                              color: Color(0xFF138F76),
-                                                                              fontSize: 20.0,
-                                                                            ),
-                                                                        validator: _model
-                                                                            .inputBuscaTarefaControllerValidator
-                                                                            .asValidator(context),
-                                                                      );
-                                                                    },
+                                                                    validator: _model
+                                                                        .inputBuscaTarefaControllerValidator
+                                                                        .asValidator(
+                                                                            context),
                                                                   ),
                                                                 ),
                                                               ),

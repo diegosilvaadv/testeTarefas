@@ -3,7 +3,6 @@ import '/components/acoes_tarefas_concluidas_widget.dart';
 import '/components/acoes_tarefas_pendentes_widget.dart';
 import '/components/delet_edit_categ_tarefas_widget.dart';
 import '/components/nav_bar_listade_tarefas_widget.dart';
-import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -31,10 +30,8 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in ContainerCategoria widget.
   List<GetCategoriaColorRow>? selectCategoriaCoor;
   // State field(s) for InputBuscaTarefa widget.
-  final inputBuscaTarefaKey = GlobalKey();
   FocusNode? inputBuscaTarefaFocusNode;
   TextEditingController? inputBuscaTarefaController;
-  String? inputBuscaTarefaSelectedOption;
   String? Function(BuildContext, String?)? inputBuscaTarefaControllerValidator;
   // Stores action output result for [Backend Call - SQLite (getCategoriaColor)] action in Container widget.
   List<GetCategoriaColorRow>? selectCategoriaCoorCopy;
@@ -59,6 +56,7 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
     unfocusNode.dispose();
     tabBarController?.dispose();
     inputBuscaTarefaFocusNode?.dispose();
+    inputBuscaTarefaController?.dispose();
 
     inputBuscaTarefaConcluidaFocusNode?.dispose();
     inputBuscaTarefaConcluidaController?.dispose();
