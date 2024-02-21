@@ -60,7 +60,7 @@ class _AcoesTarefasPendentesWidgetState
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
         child: Container(
           width: 314.0,
-          height: 588.0,
+          height: 541.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             shape: BoxShape.rectangle,
@@ -81,12 +81,13 @@ class _AcoesTarefasPendentesWidgetState
                       ePendente: 1,
                       id: widget.idTarefass!,
                     );
-                    context.safePop();
+
+                    context.pushNamed('ListadeTarefas');
                   },
                   text: 'Concluir tarefa ?',
                   options: FFButtonOptions(
                     width: 270.0,
-                    height: 70.0,
+                    height: 85.0,
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
                     iconPadding:
@@ -99,13 +100,10 @@ class _AcoesTarefasPendentesWidgetState
                           fontWeight: FontWeight.w600,
                         ),
                     elevation: 0.0,
-                    borderSide: BorderSide(
-                      width: 1.0,
-                    ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.listaTarefas =
@@ -154,7 +152,7 @@ class _AcoesTarefasPendentesWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       await showModalBottomSheet(
@@ -208,7 +206,7 @@ class _AcoesTarefasPendentesWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.categoria =
@@ -256,7 +254,7 @@ class _AcoesTarefasPendentesWidgetState
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
-                                fontSize: 15.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 0.0,
@@ -268,7 +266,7 @@ class _AcoesTarefasPendentesWidgetState
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.pop();

@@ -465,6 +465,8 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
                           );
                           Navigator.pop(context);
                           Navigator.pop(context);
+
+                          context.pushNamed('ListadeTarefas');
                         },
                         text: 'Salvar',
                         options: FFButtonOptions(

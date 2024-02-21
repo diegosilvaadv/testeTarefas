@@ -59,6 +59,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'ListadeTarefas',
           path: '/listadeTarefas',
           builder: (context, params) => ListadeTarefasWidget(),
+        ),
+        FFRoute(
+          name: 'ListadeTarefasCopy',
+          path: '/listadeTarefasCopy',
+          builder: (context, params) => ListadeTarefasCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

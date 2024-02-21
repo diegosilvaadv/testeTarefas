@@ -186,5 +186,13 @@ class SQLiteManager {
         idTarefa: idTarefa,
       );
 
+  Future fotoPerfil({
+    int? fotoPerfil,
+  }) =>
+      performFotoPerfil(
+        _database,
+        fotoPerfil: fotoPerfil,
+      );
+
   /// END UPDATE QUERY CALLS
 }

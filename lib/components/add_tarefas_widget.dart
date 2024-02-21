@@ -90,7 +90,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                     hoverColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     onTap: () async {
-                      context.safePop();
+                      context.pushNamed('ListadeTarefas');
                     },
                     child: Icon(
                       Icons.west,
@@ -248,7 +248,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                         milliseconds: 100),
                                                     curve: Curves.easeIn,
                                                     width: 100.0,
-                                                    height: 60.0,
+                                                    height: 68.0,
                                                     decoration: BoxDecoration(
                                                       color: Colors.white,
                                                       borderRadius:
@@ -537,7 +537,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                   Expanded(
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 60.0,
+                                                      height: 68.0,
                                                       decoration: BoxDecoration(
                                                         color: Colors.white,
                                                         borderRadius:
@@ -635,7 +635,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                   fontSize:
                                                                       17.0,
                                                                 ),
-                                                            maxLines: 2,
                                                             validator: _model
                                                                 .inputAddTarefaControllerValidator
                                                                 .asValidator(
@@ -800,7 +799,7 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                   },
                                                   child: Container(
                                                     width: double.infinity,
-                                                    height: 60.0,
+                                                    height: 68.0,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1131,24 +1130,6 @@ class _AddTarefasWidgetState extends State<AddTarefasWidget> {
                                                                 .inputAddTarefaController
                                                                 ?.clear();
                                                           });
-
-                                                          context.pushNamed(
-                                                            'ListadeTarefas',
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        0),
-                                                              ),
-                                                            },
-                                                          );
                                                         },
                                                   text: 'Adicionar',
                                                   options: FFButtonOptions(

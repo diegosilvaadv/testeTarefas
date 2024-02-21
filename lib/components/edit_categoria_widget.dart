@@ -112,7 +112,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                               },
                               child: Icon(
                                 Icons.arrow_back,
-                                color: Color(0xFFD0A803),
+                                color: Color(0xFF036B90),
                                 size: 24.0,
                               ),
                             ),
@@ -121,7 +121,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                             alignment: AlignmentDirectional(0.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  65.0, 0.0, 0.0, 0.0),
+                                  55.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 'Editar categoria ?',
                                 textAlign: TextAlign.start,
@@ -129,7 +129,7 @@ class _EditCategoriaWidgetState extends State<EditCategoriaWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Readex Pro',
-                                      color: Color(0xFFC9AC03),
+                                      color: Color(0xFF036B90),
                                       fontSize: 17.0,
                                       fontWeight: FontWeight.w600,
                                     ),

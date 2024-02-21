@@ -157,3 +157,16 @@ WHERE id = ${idTarefa};
 }
 
 /// END REFAZERLISTATAREFAS
+
+/// BEGIN FOTOPERFIL
+Future performFotoPerfil(
+  Database database, {
+  int? fotoPerfil,
+}) {
+  final query = '''
+INSERT INTO PerfilUser (nomeUser, ) VALUES (${fotoPerfil});
+''';
+  return database.rawQuery(query);
+}
+
+/// END FOTOPERFIL

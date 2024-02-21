@@ -74,7 +74,7 @@ class _NavBarListadeTarefasWidgetState extends State<NavBarListadeTarefasWidget>
 
     return Container(
       width: double.infinity,
-      height: 71.0,
+      height: 54.0,
       decoration: BoxDecoration(
         color: Color(0x00EEEEEE),
       ),
@@ -113,44 +113,43 @@ class _NavBarListadeTarefasWidgetState extends State<NavBarListadeTarefasWidget>
           ),
           Align(
             alignment: AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: FaIcon(
-                        FontAwesomeIcons.home,
-                        color: Color(0xFF9299A1),
-                        size: 25.0,
-                      ),
-                      onPressed: () async {
-                        context.pushNamed(
-                          'HomePage',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
-                      },
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: FaIcon(
+                      FontAwesomeIcons.home,
+                      color: Color(0xFF9299A1),
+                      size: 25.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(
+                        'HomePage',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
+                    },
                   ),
-                  Builder(
+                ),
+                Align(
+                  alignment: AlignmentDirectional(-1.0, 0.0),
+                  child: Builder(
                     builder: (context) => Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 18.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 3.0, 0.0, 0.0),
                       child: FlutterFlowIconButton(
                         borderColor: Colors.transparent,
                         borderRadius: 30.0,
@@ -181,26 +180,34 @@ class _NavBarListadeTarefasWidgetState extends State<NavBarListadeTarefasWidget>
                           animationsMap['iconButtonOnPageLoadAnimation']!),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: Icon(
-                        Icons.shopping_cart_outlined,
-                        color: Color(0xFF9299A1),
-                        size: 25.0,
-                      ),
-                      onPressed: () {
-                        print('BtnTarefas pressed ...');
-                      },
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 1.0, 0.0, 0.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: FaIcon(
+                      FontAwesomeIcons.home,
+                      color: Color(0xFF9299A1),
+                      size: 1.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(
+                        'HomePage',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

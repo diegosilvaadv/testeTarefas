@@ -68,7 +68,7 @@ class _AcoesTarefasConcluidasWidgetState
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 25.0, 0.0),
         child: Container(
           width: 314.0,
-          height: 589.0,
+          height: 530.0,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15.0),
             shape: BoxShape.rectangle,
@@ -90,11 +90,13 @@ class _AcoesTarefasConcluidasWidgetState
                       idTarefa: widget.idTarefas!,
                     );
                     Navigator.pop(context);
+
+                    context.pushNamed('ListadeTarefas');
                   },
                   text: 'Refazer tarefa atual ?',
                   options: FFButtonOptions(
                     width: 270.0,
-                    height: 80.0,
+                    height: 85.0,
                     padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 5.0, 0.0),
                     iconPadding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
@@ -108,7 +110,6 @@ class _AcoesTarefasConcluidasWidgetState
                     elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
@@ -116,87 +117,111 @@ class _AcoesTarefasConcluidasWidgetState
                 Expanded(
                   child: Align(
                     alignment: AlignmentDirectional(-1.0, 0.0),
-                    child: FFButtonWidget(
-                      onPressed: () async {
-                        var confirmDialogResponse = await showDialog<bool>(
-                              context: context,
-                              builder: (alertDialogContext) {
-                                return AlertDialog(
-                                  title: Text('TEM  CERTEZA ?'),
-                                  content: Text(
-                                      'Deseja mover todas para  Tarefas  Pendentes ?'),
-                                  actions: [
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, false),
-                                      child: Text('Não'),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 45.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          var _shouldSetState = false;
+                          var confirmDialogResponse = await showDialog<bool>(
+                                context: context,
+                                builder: (alertDialogContext) {
+                                  return AlertDialog(
+                                    title: Text('TEM  CERTEZA ?'),
+                                    content: Text(
+                                        'Deseja mover todas para  Tarefas  Pendentes ?'),
+                                    actions: [
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, false),
+                                        child: Text('Não'),
+                                      ),
+                                      TextButton(
+                                        onPressed: () => Navigator.pop(
+                                            alertDialogContext, true),
+                                        child: Text('Sim'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              ) ??
+                              false;
+                          if (confirmDialogResponse) {
+                            _model.categoriaID =
+                                await SQLiteManager.instance.getListaTarefasID(
+                              idTarefa: widget.idTarefas!,
+                            );
+                            _shouldSetState = true;
+                            _model.resultadoTarefas =
+                                await SQLiteManager.instance.getListaTarefas(
+                              categoria: _model.categoriaID!.first.categoriaID!,
+                              ePendente: 1,
+                            );
+                            _shouldSetState = true;
+                            setState(() {
+                              FFAppState().contador = -1;
+                            });
+                            _model.instantTimer10 = InstantTimer.periodic(
+                              duration: Duration(milliseconds: 10),
+                              callback: (timer) async {
+                                while (FFAppState().contador <=
+                                    _model.resultadoTarefas!.length) {
+                                  setState(() {
+                                    FFAppState().contador =
+                                        FFAppState().contador + 1;
+                                  });
+                                  await SQLiteManager.instance
+                                      .refazerListaTarefas(
+                                    ePendente: 0,
+                                    idTarefa: _model
+                                        .resultadoTarefas![
+                                            FFAppState().contador]
+                                        .id,
+                                  );
+                                }
+                                _model.instantTimer10?.cancel();
+                                Navigator.pop(context);
+
+                                context.pushNamed(
+                                  'ListadeTarefas',
+                                  extra: <String, dynamic>{
+                                    kTransitionInfoKey: TransitionInfo(
+                                      hasTransition: true,
+                                      transitionType: PageTransitionType.fade,
+                                      duration: Duration(milliseconds: 0),
                                     ),
-                                    TextButton(
-                                      onPressed: () => Navigator.pop(
-                                          alertDialogContext, true),
-                                      child: Text('Sim'),
-                                    ),
-                                  ],
+                                  },
                                 );
                               },
-                            ) ??
-                            false;
-                        if (confirmDialogResponse) {
-                          _model.resultadoTarefas =
-                              await SQLiteManager.instance.getListaTarefas(
-                            categoria: _model.listaTarefa!.first.categoriaID!,
-                            ePendente: 1,
-                          );
-                          setState(() {
-                            FFAppState().contador = -1;
-                          });
-                          _model.instantTimer = InstantTimer.periodic(
-                            duration: Duration(milliseconds: 1000),
-                            callback: (timer) async {
-                              while (FFAppState().contador <=
-                                  _model.resultadoTarefas!.length) {
-                                setState(() {
-                                  FFAppState().contador =
-                                      FFAppState().contador + 1;
-                                });
-                                await SQLiteManager.instance
-                                    .refazerListaTarefas(
-                                  ePendente: 0,
-                                  idTarefa: _model
-                                      .resultadoTarefas![FFAppState().contador]
-                                      .id,
-                                );
-                              }
-                              _model.instantTimer?.cancel();
+                              startImmediately: true,
+                            );
+                          } else {
+                            if (_shouldSetState) setState(() {});
+                            return;
+                          }
 
-                              context.goNamed('ListadeTarefas');
-                            },
-                            startImmediately: true,
-                          );
-                        }
-                        Navigator.pop(context);
-
-                        setState(() {});
-                      },
-                      text: 'Refazer todas as tarefas ?\n',
-                      options: FFButtonOptions(
-                        width: 270.0,
-                        height: 70.0,
-                        padding: EdgeInsets.all(0.0),
-                        iconPadding: EdgeInsets.all(0.0),
-                        color: FlutterFlowTheme.of(context).success,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleSmall.override(
-                                  fontFamily: 'Poppins',
-                                  color: Colors.white,
-                                  fontSize: 15.0,
-                                  fontWeight: FontWeight.w600,
-                                ),
-                        elevation: 3.0,
-                        borderSide: BorderSide(
-                          color: Colors.transparent,
+                          if (_shouldSetState) setState(() {});
+                        },
+                        text: 'Refazer todas as tarefas ?\n',
+                        options: FFButtonOptions(
+                          width: 270.0,
+                          height: 70.0,
+                          padding: EdgeInsets.all(0.0),
+                          iconPadding: EdgeInsets.all(0.0),
+                          color: FlutterFlowTheme.of(context).success,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Poppins',
+                                    color: Colors.white,
+                                    fontSize: 14.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
-                        borderRadius: BorderRadius.circular(8.0),
                       ),
                     ),
                   ),
@@ -234,13 +259,12 @@ class _AcoesTarefasConcluidasWidgetState
                     elevation: 3.0,
                     borderSide: BorderSide(
                       color: Colors.transparent,
-                      width: 1.0,
                     ),
                     borderRadius: BorderRadius.circular(8.0),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 25.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       _model.categoria =
@@ -276,20 +300,19 @@ class _AcoesTarefasConcluidasWidgetState
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
-                                fontSize: 15.0,
+                                fontSize: 13.0,
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 3.0,
                       borderSide: BorderSide(
                         color: Colors.transparent,
-                        width: 1.0,
                       ),
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
                 ),
                 Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                   child: FFButtonWidget(
                     onPressed: () async {
                       context.safePop();
@@ -305,7 +328,7 @@ class _AcoesTarefasConcluidasWidgetState
                           FlutterFlowTheme.of(context).titleSmall.override(
                                 fontFamily: 'Poppins',
                                 color: Colors.white,
-                                fontSize: 15.0,
+                                fontSize: 14.0,
                                 fontWeight: FontWeight.w600,
                               ),
                       elevation: 3.0,

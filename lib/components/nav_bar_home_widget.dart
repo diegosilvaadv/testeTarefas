@@ -73,7 +73,7 @@ class _NavBarHomeWidgetState extends State<NavBarHomeWidget>
 
     return Container(
       width: double.infinity,
-      height: 79.0,
+      height: 65.0,
       decoration: BoxDecoration(
         color: Color(0x00EEEEEE),
       ),
@@ -112,91 +112,97 @@ class _NavBarHomeWidgetState extends State<NavBarHomeWidget>
           ),
           Align(
             alignment: AlignmentDirectional(0.0, 0.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 5.0, 0.0, 0.0),
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                crossAxisAlignment: CrossAxisAlignment.end,
-                children: [
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: Icon(
-                        Icons.shopping_cart_outlined,
-                        color: Color(0xFF9299A1),
-                        size: 35.0,
-                      ),
-                      onPressed: () {
-                        print('BtnCompras pressed ...');
-                      },
+            child: Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: FaIcon(
+                      FontAwesomeIcons.tasks,
+                      color: Color(0xFF9299A1),
+                      size: 25.0,
                     ),
-                  ),
-                  Align(
-                    alignment: AlignmentDirectional(0.0, 1.0),
-                    child: Builder(
-                      builder: (context) => Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
-                        child: FlutterFlowIconButton(
-                          borderColor: Colors.transparent,
-                          icon: FaIcon(
-                            FontAwesomeIcons.solidUserCircle,
-                            color: Color(0xFF048CBC),
-                            size: 50.0,
+                    onPressed: () async {
+                      context.pushNamed(
+                        'ListadeTarefas',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
                           ),
-                          onPressed: () async {
-                            await showDialog(
-                              context: context,
-                              builder: (dialogContext) {
-                                return Dialog(
-                                  elevation: 0,
-                                  insetPadding: EdgeInsets.zero,
-                                  backgroundColor: Colors.transparent,
-                                  alignment: AlignmentDirectional(0.0, 0.0)
-                                      .resolve(Directionality.of(context)),
-                                  child: PerfilUserWidget(),
-                                );
-                              },
-                            ).then((value) => setState(() {}));
-                          },
-                        ).animateOnPageLoad(
-                            animationsMap['iconButtonOnPageLoadAnimation']!),
-                      ),
+                        },
+                      );
+                    },
+                  ),
+                ),
+                Align(
+                  alignment: AlignmentDirectional(0.0, 1.0),
+                  child: Builder(
+                    builder: (context) => Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                      child: FlutterFlowIconButton(
+                        borderColor: Colors.transparent,
+                        icon: FaIcon(
+                          FontAwesomeIcons.solidUserCircle,
+                          color: Color(0xFF048CBC),
+                          size: 50.0,
+                        ),
+                        onPressed: () async {
+                          await showDialog(
+                            context: context,
+                            builder: (dialogContext) {
+                              return Dialog(
+                                elevation: 0,
+                                insetPadding: EdgeInsets.zero,
+                                backgroundColor: Colors.transparent,
+                                alignment: AlignmentDirectional(0.0, 0.0)
+                                    .resolve(Directionality.of(context)),
+                                child: PerfilUserWidget(),
+                              );
+                            },
+                          ).then((value) => setState(() {}));
+                        },
+                      ).animateOnPageLoad(
+                          animationsMap['iconButtonOnPageLoadAnimation']!),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                    child: FlutterFlowIconButton(
-                      borderColor: Colors.transparent,
-                      borderRadius: 30.0,
-                      borderWidth: 1.0,
-                      buttonSize: 50.0,
-                      icon: FaIcon(
-                        FontAwesomeIcons.tasks,
-                        color: Color(0xFF9299A1),
-                        size: 25.0,
-                      ),
-                      onPressed: () async {
-                        context.pushNamed(
-                          'ListadeTarefas',
-                          extra: <String, dynamic>{
-                            kTransitionInfoKey: TransitionInfo(
-                              hasTransition: true,
-                              transitionType: PageTransitionType.fade,
-                              duration: Duration(milliseconds: 0),
-                            ),
-                          },
-                        );
-                      },
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                  child: FlutterFlowIconButton(
+                    borderColor: Colors.transparent,
+                    borderRadius: 30.0,
+                    borderWidth: 1.0,
+                    buttonSize: 50.0,
+                    icon: FaIcon(
+                      FontAwesomeIcons.tasks,
+                      color: Color(0xFF9299A1),
+                      size: 1.0,
                     ),
+                    onPressed: () async {
+                      context.pushNamed(
+                        'ListadeTarefas',
+                        extra: <String, dynamic>{
+                          kTransitionInfoKey: TransitionInfo(
+                            hasTransition: true,
+                            transitionType: PageTransitionType.fade,
+                            duration: Duration(milliseconds: 0),
+                          ),
+                        },
+                      );
+                    },
                   ),
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ],

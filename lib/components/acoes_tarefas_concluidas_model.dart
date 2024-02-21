@@ -18,10 +18,12 @@ class AcoesTarefasConcluidasModel
 
   // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in AcoesTarefasConcluidas widget.
   List<GetListaTarefasIDRow>? listaTarefa;
-  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in ButtonDeleteConcluidas widget.
+  // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in BtnRefazerTodasConcluida widget.
+  List<GetListaTarefasIDRow>? categoriaID;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in BtnRefazerTodasConcluida widget.
   List<GetListaTarefasRow>? resultadoTarefas;
-  InstantTimer? instantTimer;
-  // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in ButtonDeleteConcluidas widget.
+  InstantTimer? instantTimer10;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefasID)] action in ButtonDeletTodas widget.
   List<GetListaTarefasIDRow>? categoria;
 
   /// Initialization and disposal methods.
@@ -31,7 +33,7 @@ class AcoesTarefasConcluidasModel
 
   @override
   void dispose() {
-    instantTimer?.cancel();
+    instantTimer10?.cancel();
   }
 
   /// Action blocks are added here.

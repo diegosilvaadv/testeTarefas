@@ -18,26 +18,27 @@ import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'listade_tarefas_model.dart';
-export 'listade_tarefas_model.dart';
+import 'listade_tarefas_copy_model.dart';
+export 'listade_tarefas_copy_model.dart';
 
-class ListadeTarefasWidget extends StatefulWidget {
-  const ListadeTarefasWidget({super.key});
+class ListadeTarefasCopyWidget extends StatefulWidget {
+  const ListadeTarefasCopyWidget({super.key});
 
   @override
-  State<ListadeTarefasWidget> createState() => _ListadeTarefasWidgetState();
+  State<ListadeTarefasCopyWidget> createState() =>
+      _ListadeTarefasCopyWidgetState();
 }
 
-class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
+class _ListadeTarefasCopyWidgetState extends State<ListadeTarefasCopyWidget>
     with TickerProviderStateMixin {
-  late ListadeTarefasModel _model;
+  late ListadeTarefasCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => ListadeTarefasModel());
+    _model = createModel(context, () => ListadeTarefasCopyModel());
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
@@ -836,7 +837,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         listViewPendentesIndex];
                                                                 return Container(
                                                                   key: ValueKey(
-                                                                      "ListView_6dts1koc" +
+                                                                      "ListView_i1vyuelz" +
                                                                           '_' +
                                                                           listViewPendentesIndex
                                                                               .toString()),
@@ -1156,7 +1157,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         listViewPendentesBuscaIndex];
                                                                 return Container(
                                                                   key: ValueKey(
-                                                                      "ListView_n9l0csn4" +
+                                                                      "ListView_jekqiykm" +
                                                                           '_' +
                                                                           listViewPendentesBuscaIndex
                                                                               .toString()),
@@ -1928,7 +1929,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         listViewConcluidasIndex];
                                                                 return Container(
                                                                   key: ValueKey(
-                                                                      "ListView_lsqgkhtg" +
+                                                                      "ListView_gqkncw31" +
                                                                           '_' +
                                                                           listViewConcluidasIndex
                                                                               .toString()),
@@ -2217,7 +2218,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         listViewConcluidasBuscaIndex];
                                                                 return Container(
                                                                   key: ValueKey(
-                                                                      "ListView_amh6ymyu" +
+                                                                      "ListView_qyi47ueb" +
                                                                           '_' +
                                                                           listViewConcluidasBuscaIndex
                                                                               .toString()),

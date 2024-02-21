@@ -31,7 +31,11 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
     super.initState();
     _model = createModel(context, () => PerfilUserModel());
 
-    _model.inpuNomePerfilController ??= TextEditingController();
+    _model.inpuNomePerfilController ??= TextEditingController(
+        text: valueOrDefault<String>(
+      _model.userPerfil?.nomePerfil,
+      '..',
+    ));
     _model.inpuNomePerfilFocusNode ??= FocusNode();
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -242,7 +246,8 @@ class _PerfilUserWidgetState extends State<PerfilUserWidget> {
                                   children: [
                                     FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed('HomePage');
+                                        await SQLiteManager.instance
+                                            .getPerfilUser();
                                       },
                                       text: 'Adicionar',
                                       options: FFButtonOptions(
