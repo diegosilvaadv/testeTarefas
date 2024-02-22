@@ -119,10 +119,11 @@ class GetCategoriaColorRow extends SqliteRow {
 Future<List<GetListaTarefasBuscaRow>> performGetListaTarefasBusca(
   Database database, {
   String? nometarefa,
+  int? ePendente,
 }) {
   final query = '''
 Select * from ListaTarefas
-WHERE nometarefa = '${nometarefa}';
+WHERE nometarefa = '${nometarefa}' AND ePendente = '${ePendente}';
 ''';
   return _readQuery(database, query, (d) => GetListaTarefasBuscaRow(d));
 }

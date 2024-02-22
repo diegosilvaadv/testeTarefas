@@ -41,7 +41,14 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
 
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
-      _model.tarefas = await SQLiteManager.instance.getListaTarefasAll();
+      _model.tarefasPendentes = await SQLiteManager.instance.getListaTarefas(
+        categoria: FFAppState().selectCategoria,
+        ePendente: 0,
+      );
+      _model.tarefasConcluidas = await SQLiteManager.instance.getListaTarefas(
+        categoria: FFAppState().selectCategoria,
+        ePendente: 1,
+      );
     });
 
     _model.tabBarController = TabController(
@@ -592,7 +599,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         String>.empty();
                                                                   }
                                                                   return _model
-                                                                      .tarefas!
+                                                                      .tarefasPendentes!
                                                                       .map((e) => e
                                                                           .nometarefa)
                                                                       .toList()
@@ -1113,6 +1120,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             nometarefa: _model
                                                                 .inputBuscaTarefaController
                                                                 .text,
+                                                            ePendente: 0,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -1278,12 +1286,12 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           Icon(
                                                                                             Icons.calendar_month_outlined,
                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            size: 20.0,
+                                                                                            size: 18.0,
                                                                                           ),
                                                                                           Padding(
                                                                                             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
                                                                                             child: Text(
-                                                                                              'Data:',
+                                                                                              'Criada em:',
                                                                                               textAlign: TextAlign.start,
                                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                                     fontFamily: 'Readex Pro',
@@ -1295,7 +1303,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           Text(
                                                                                             valueOrDefault<String>(
                                                                                               dateTimeFormat(
-                                                                                                'dd/MM/yy',
+                                                                                                'dd/MM/yyyy',
                                                                                                 functions.converterintegerToData(listViewPendentesBuscaGetListaTarefasBuscaRow.dataTarefa),
                                                                                                 locale: FFLocalizations.of(context).languageCode,
                                                                                               ),
@@ -1320,7 +1328,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           Icon(
                                                                                             Icons.timer_sharp,
                                                                                             color: FlutterFlowTheme.of(context).secondaryText,
-                                                                                            size: 20.0,
+                                                                                            size: 18.0,
                                                                                           ),
                                                                                           Padding(
                                                                                             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 3.0, 0.0),
@@ -1695,7 +1703,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                         String>.empty();
                                                                   }
                                                                   return _model
-                                                                      .tarefas!
+                                                                      .tarefasConcluidas!
                                                                       .map((e) => e
                                                                           .nometarefa)
                                                                       .toList()
@@ -2175,6 +2183,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                             nometarefa: _model
                                                                 .inputBuscaTarefaConcluidaController
                                                                 .text,
+                                                            ePendente: 1,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -2342,7 +2351,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           Text(
                                                                                             valueOrDefault<String>(
                                                                                               dateTimeFormat(
-                                                                                                'dd/MM/yy',
+                                                                                                'dd/MM/yyyy',
                                                                                                 functions.converterintegerToData(listViewConcluidasBuscaGetListaTarefasBuscaRow.dataTarefa),
                                                                                                 locale: FFLocalizations.of(context).languageCode,
                                                                                               ),
@@ -2371,7 +2380,7 @@ class _ListadeTarefasWidgetState extends State<ListadeTarefasWidget>
                                                                                           Text(
                                                                                             valueOrDefault<String>(
                                                                                               dateTimeFormat(
-                                                                                                'kk:mm',
+                                                                                                'Hm',
                                                                                                 functions.converterintegerToData(listViewConcluidasBuscaGetListaTarefasBuscaRow.dataTarefa),
                                                                                                 locale: FFLocalizations.of(context).languageCode,
                                                                                               ),

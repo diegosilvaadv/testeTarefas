@@ -60,7 +60,7 @@ class _EditarTarefasWidgetState extends State<EditarTarefasWidget> {
       alignment: AlignmentDirectional(0.0, -1.0),
       child: Form(
         key: _model.formKey,
-        autovalidateMode: AutovalidateMode.disabled,
+        autovalidateMode: AutovalidateMode.always,
         child: Align(
           alignment: AlignmentDirectional(0.0, 0.0),
           child: Padding(

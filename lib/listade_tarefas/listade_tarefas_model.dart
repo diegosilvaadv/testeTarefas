@@ -24,8 +24,10 @@ class ListadeTarefasModel extends FlutterFlowModel<ListadeTarefasWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // Stores action output result for [Backend Call - SQLite (getListaTarefasAll)] action in ListadeTarefas widget.
-  List<GetListaTarefasAllRow>? tarefas;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in ListadeTarefas widget.
+  List<GetListaTarefasRow>? tarefasPendentes;
+  // Stores action output result for [Backend Call - SQLite (getListaTarefas)] action in ListadeTarefas widget.
+  List<GetListaTarefasRow>? tarefasConcluidas;
   // State field(s) for TabBar widget.
   TabController? tabBarController;
   int get tabBarCurrentIndex =>

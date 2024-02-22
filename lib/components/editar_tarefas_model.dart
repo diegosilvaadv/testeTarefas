@@ -19,12 +19,23 @@ class EditarTarefasModel extends FlutterFlowModel<EditarTarefasWidget> {
   FocusNode? inputEditTarefaFocusNode;
   TextEditingController? inputEditTarefaController;
   String? Function(BuildContext, String?)? inputEditTarefaControllerValidator;
+  String? _inputEditTarefaControllerValidator(
+      BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return 'Esse campo é obrigatório!';
+    }
+
+    return null;
+  }
+
   DateTime? datePicked;
 
   /// Initialization and disposal methods.
 
   @override
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    inputEditTarefaControllerValidator = _inputEditTarefaControllerValidator;
+  }
 
   @override
   void dispose() {

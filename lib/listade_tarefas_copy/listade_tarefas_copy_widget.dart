@@ -1114,6 +1114,7 @@ class _ListadeTarefasCopyWidgetState extends State<ListadeTarefasCopyWidget>
                                                             nometarefa: _model
                                                                 .inputBuscaTarefaController
                                                                 .text,
+                                                            ePendente: 0,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
@@ -2176,6 +2177,7 @@ class _ListadeTarefasCopyWidgetState extends State<ListadeTarefasCopyWidget>
                                                             nometarefa: _model
                                                                 .inputBuscaTarefaConcluidaController
                                                                 .text,
+                                                            ePendente: 0,
                                                           ),
                                                           builder: (context,
                                                               snapshot) {
